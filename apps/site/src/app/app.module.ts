@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { LayoutModule } from './layout';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     SharedModule,
     AppRoutingModule,
+    LayoutModule,
   ],
   declarations: [AppComponent],
   providers: [],
