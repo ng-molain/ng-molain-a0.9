@@ -138,6 +138,15 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/cdk@^7.0.0":
+  version "7.3.7"
+  resolved "http://npm.parim.net/@angular%2fcdk/-/cdk-7.3.7.tgz#ce1ad53ba04beb9c8e950acc5691ea0143753764"
+  integrity sha512-xbXxhHHKGkVuW6K7pzPmvpJXIwpl0ykBnvA2g+/7Sgy5Pd35wCC+UtHD9RYczDM/mkygNxMQtagyCErwFnDtQA==
+  dependencies:
+    tslib "^1.7.1"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@8.0.4":
   version "8.0.4"
   resolved "http://npm.parim.net/@angular%2fcli/-/cli-8.0.4.tgz#fd656a162634a3ce01c52293c19be1963ecf05ee"
@@ -230,6 +239,21 @@
   resolved "http://npm.parim.net/@angular%2frouter/-/router-8.0.2.tgz#0c20a462e52dd9519f40b735cc756408a440c52c"
   integrity sha512-kgSqkvx3cgY0+ZTzkBVLa0sf0y0Fl7q3N+KX746pbCNjRRGa5gBkN7z+oyPDoG1l0fEiM6NLbFfcmuFwsdBO5w==
   dependencies:
+    tslib "^1.9.0"
+
+"@ant-design/colors@^3.1.0":
+  version "3.1.0"
+  resolved "http://npm.parim.net/@ant-design%2fcolors/-/colors-3.1.0.tgz#b7e2cc61a4e86d3d109494034acfb1222dacaa3c"
+  integrity sha1-t+LMYaTobT0QlJQDSs+xIi2sqjw=
+  dependencies:
+    tinycolor2 "^1.4.1"
+
+"@ant-design/icons-angular@^2.1.0":
+  version "2.1.0"
+  resolved "http://npm.parim.net/@ant-design%2ficons-angular/-/icons-angular-2.1.0.tgz#12b0d02877b533a8271d561e71f1bab51dfbf1d1"
+  integrity sha1-ErDQKHe1M6gnHVYecfG6tR378dE=
+  dependencies:
+    "@ant-design/colors" "^3.1.0"
     tslib "^1.9.0"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.0.0-beta.35":
@@ -2364,7 +2388,7 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
-date-fns@^1.27.2:
+date-fns@^1.27.2, date-fns@^1.29.0:
   version "1.30.1"
   resolved "http://npm.parim.net/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
@@ -5566,6 +5590,16 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "http://npm.parim.net/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
+ng-zorro-antd@^7.5.1:
+  version "7.5.1"
+  resolved "http://npm.parim.net/ng-zorro-antd/-/ng-zorro-antd-7.5.1.tgz#c3facac6a1ecd105c2de2ee6bb8e1296d42cdac7"
+  integrity sha512-0V/LoARoluFjiPUX4Q7x+G7hVA+k+x4g4OyYaLLUAoPpK3o1kriR3VzjdKsuKl73gBoRHHq4SNDRSiqzfOWDeA==
+  dependencies:
+    "@angular/cdk" "^7.0.0"
+    "@ant-design/icons-angular" "^2.1.0"
+    date-fns "^1.29.0"
+    tslib "^1.9.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "http://npm.parim.net/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -6137,7 +6171,7 @@ parse5@4.0.0:
   resolved "http://npm.parim.net/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
   integrity sha512-VrZ7eOd3T1Fk4XWNXMgiGBK/z0MG48BWG2uQNU4I72fkQuKUTZpl+u9k+CxEG0twMVzSmXEEz12z5Fnw1jIQFA==
 
-parse5@5.1.0:
+parse5@5.1.0, parse5@^5.0.0:
   version "5.1.0"
   resolved "http://npm.parim.net/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
   integrity sha512-fxNG2sQjHvlVAYmzBZS9YlDp6PTSSDwa98vkD4QgVDDCAo84z5X1t5XyJQ62ImdLXx5NdIIfihey6xpum9/gRQ==
@@ -7837,6 +7871,11 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
+tinycolor2@^1.4.1:
+  version "1.4.1"
+  resolved "http://npm.parim.net/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
+  integrity sha1-9PrTM0R7wLB9TcjpIJ2POaisd+g=
+
 tmp@0.0.33, tmp@^0.0.33:
   version "0.0.33"
   resolved "http://npm.parim.net/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -7978,7 +8017,7 @@ ts-node@~7.0.0:
     source-map-support "^0.5.6"
     yn "^2.0.0"
 
-tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.10.0"
   resolved "http://npm.parim.net/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
