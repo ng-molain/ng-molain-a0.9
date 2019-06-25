@@ -12,7 +12,7 @@
       },
       "root": "apps/site",
       "sourceRoot": "apps/site/src",
-      "prefix": "ng-molain",
+      "prefix": "nms",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -56,7 +56,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "site:build"
+            "browserTarget": "site:build",
+            "port": 4700
           },
           "configurations": {
             "production": {
