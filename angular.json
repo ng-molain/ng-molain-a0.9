@@ -6,7 +6,7 @@
     "site": {
       "projectType": "application",
       "schematics": {
-        "@nrwl/workspace:component": {
+        "@nrwl/angular:component": {
           "style": "scss"
         }
       },
