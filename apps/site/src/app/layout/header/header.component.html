@@ -1,3 +1,31 @@
-<p>
-  header works!
-</p>
+
+<div nz-row>
+  <div nz-col nzXs="24" nzSm="24" nzMd="6" nzLg="5" nzXl="5" nzXXl="4">
+    <a routerLink="/" class="logo">
+      <img src="./assets/images/logo.svg" style="max-height: 32px;">
+      <img src="./assets/images/logo-molain.svg" style="max-height: 32px;">
+    </a>
+  </div>
+  <div nz-col nz-col nzXs="0" nzSm="0" nzMd="18" nzLg="19" nzXl="19" nzXXl="20">
+    <div class="header-menu-container">
+      <div class="search-box"></div>
+      <div class="header-menu">
+
+        <ul nz-menu nzMode="horizontal" class="menu-site">
+          <li nz-menu-item routerLink="/docs/getting-started">文档</li>
+          <li nz-menu-item routerLink="/docs/getting-started">组件</li>
+          <li nz-menu-item routerLink="/docs/getting-started">松散库</li>
+          <!-- <li nz-menu-item routerLink="/docs/getting-started">主题</li> -->
+        </ul>
+        
+        <nz-select [ngModel]="currentVersion" nzSize="small" (ngModelChange)="toVersion($event)" class="sel-version" style="min-width: 72px;">
+          <nz-option [nzLabel]="currentVersion" [nzValue]="currentVersion"></nz-option>
+          <nz-option *ngFor="let version of olderVersions" [nzLabel]="version" [nzValue]="version"></nz-option>
+        </nz-select>
+        
+        <button nz-button nzSize="small" (click)="changeLange('en')" class="btn-header-lang">English</button>
+
+      </div>
+    </div>
+  </div>
+</div>

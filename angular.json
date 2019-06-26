@@ -22,8 +22,14 @@
             "main": "apps/site/src/main.ts",
             "polyfills": "apps/site/src/polyfills.ts",
             "tsConfig": "apps/site/tsconfig.app.json",
-            "assets": ["apps/site/src/favicon.ico", "apps/site/src/assets"],
-            "styles": ["apps/site/src/styles.scss"],
+            "assets": [
+              "apps/site/src/favicon.ico",
+              "apps/site/src/assets"
+            ],
+            "styles": [
+              "apps/site/src/styles.scss",
+              "apps/site/src/styles/ng-zorro-antd/ng-zorro-antd.less"
+            ],
             "scripts": []
           },
           "configurations": {

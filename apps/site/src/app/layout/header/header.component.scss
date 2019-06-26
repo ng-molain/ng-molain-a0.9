@@ -1,0 +1,74 @@
+$site-heading-color: #0d1a26;
+$site-text-color: #314659;
+$site-text-color-secondary: #697b8c;
+$site-border-color-split: #ebedf0;
+
+$header-height: 64px;
+$text-color: #314659;
+$primary-color: #1890ff;
+$menu-item-border-width: 2px;
+$item-height: 24px;
+
+:host {
+  display: block;
+  padding: 0 32px;
+  box-shadow: 0 2px 8px rgba(240, 241, 242, 65);
+}
+
+.logo {
+  display: block;
+  height: $header-height;
+  line-height: $header-height;
+}
+
+.header-menu {
+  display: flex;
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sel-version,
+  .btn-header-lang {
+    margin-top: ($header-height - $item-height) / 2;
+    margin-left: 16px;
+  }
+}
+
+.ant-menu-horizontal {
+  border-bottom: none;
+
+  > .ant-menu-item {
+    height: $header-height;
+    line-height: $header-height; // - $menu-item-border-width;
+    min-width: 72px;
+    color: $text-color;
+    text-align: center;
+    outline: none;
+
+    &:hover {
+      color: $primary-color;
+      border-bottom-color: transparent;
+    }
+  }
+
+  > .ant-menu-item-selected {
+    border-bottom-color: transparent;
+    color: $primary-color;
+    a {
+      color: $primary-color;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header-menu-container {
+    justify-content: flex-end;
+  }
+}
+
+// mobile环境
+// .menu-site {
+//   border: none;
+// }
