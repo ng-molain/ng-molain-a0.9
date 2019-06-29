@@ -1,0 +1,60 @@
+= 编写指南
+
+本项目下文档均用 http://asciidoc.org/[Asciidoc] 语法编写， https://asciidoctor.org/[Asciidoctor] | https://asciidoctor.org/docs/asciidoctor.js/[Asciidoctor.js] 编译制作。
+
+== 几个和文档相关的术语和使用场景
+
+在阅读成体系的大量的技术性文档时会发现，多数编写者会对文档做简单的分类，已便于阅读者快速获得有效的信息。一般对于技术类文档会对介绍的对象分成由浅入深的几个层次做介绍，一般分为如下几个层次：
+
+* 基础
+ ** 概览、介绍、XX是什么？
+ ** 特性
+ ** 快速开始、Getting Started，下载、安装、`Hello World!`
+ ** [选] 特定工具、术语、思想介绍
+ ** 相关资源
+ ** 关于XX
+* 入门指南
+  ** 新手向导
+* [操作]手册
+  ** 体系架构，系统性介绍
+  ** 全面具体的基础功能介绍
+  ** 高级使用场景
+
+// 文档的的内容和表达技巧或各有千秋，比如 `MySql` 的官方文档读起来专业性很强，但很生硬，需要相当的专业知识；而 `Spring` 的文档读起来则可能轻松很多，因为其语言表达更直白。
+
+虽然不是所有文档都完全覆盖或遵循上述结构，但都是按这个思路在编写，让阅读这能够快速有效的摄取信息。我们的结构也需要遵循类似 `套路`。
+
+关于文档编写，我们可能会根据文档的使用场景进行分类整理，常见的分类术语有如下这些，明确意义及划分边界，形成编写规范。
+`命名规范`
+
+- Getting Started 入门指南；准备开始
+- What is XX? XX是什么
+// - Resources
+// - About
+- Overview 综述；概览
+- Introduction 介绍；入门
+- Tutorial 辅导材料，使用说明书；软件教程
+- Fundamentals 基本面；基本原理
+- Features 产品特点；特征；特性
+- Guides n. 指南；参考线；辅助线；v.指导
+- Setup n. 设置；机构；组织；调整；计划；装备
+- Techniques 技术；方法；技巧
+- (Quick) Reference n. 参考，参照；涉及，提及；参考书目；介绍信；证明书
+- API
+- (User) Manual n. 手册，指南
+
+其中从中文意思看来比较有歧义的是： `Tutorial`, `Guides`, `Reference`, `Manual`。
+为了方便统一，便于梳理和文档规整，暂时做如下约定。
+
+
+- `Tutorial`，理解为教程，一般用来引导新手快速使用（写 `Hello World!`），一般情况是带步骤的。例如： https://nx.dev/tutorial/01-create-application[Tutorial of Nx], https://angular.io/tutorial[Tour of Heroes App and Tutorial] 。
+- `Guides`，指南，一般用于基础文档介绍，文档内容多为简单的，不用面面俱到。但要把握整个内容的大局，有点类似 `纲要` 和 `阅读指南`, 但比这要细一些，易懂一些， 如 https://spring.io/guides[Spring Guides]。是整个文档的灵魂。也可以写得很细，如 http://asciidoc.org/userguide.html[AsciiDoc User Guide] ，有点像 `手册` 了，但又缺失一些细节。
+- `Reference` 手册，可以将上述内容都概括其内，也可以将 `Tutorial`, `Guides` 单独抽出来组织。
+- `Manual` 暂时不用，意思有点像 Guide，但是内容有点像 Reference。如 https://asciidoctor.org/docs/user-manual/[Asciidoctor User Manual]
+
+
+== 编写工具
+
+== 项目如何生成文档的
+
+
