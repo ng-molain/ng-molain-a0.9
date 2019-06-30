@@ -1,0 +1,25 @@
+<div class="page-banner">
+  <div class="container page-banner__container">
+    <div class="page-banner__slogan">
+      <h1>NG-MOLAIN</h1>
+      <P>
+        中后台前端解决方案
+      </P>
+      <div class="page-banner__slogan-btn">
+        <a routerLink="/docs/getting-started">
+          <button nz-button nzType="primary" nzSize="large" nzShape="round">开始使用</button>
+        </a>
+        <a routerLink="/docs/getting-started">
+          <button nz-button nzType="primary" nzSize="large" nzShape="round" nzGhost>演 示</button>
+        </a>
+      </div>
+    </div>
+    <nz-carousel class="page-banner__carousel" nzEffect="fade" nzDots="false" nzAutoPlay>
+      <div *ngFor="let item of banners" nz-carousel-content>
+        <a [href]="item.link" target="_blank">
+          <img [src]="item.image" [attr.alt]="item.title">
+        </a>
+      </div>
+    </nz-carousel>
+  </div>
+</div>

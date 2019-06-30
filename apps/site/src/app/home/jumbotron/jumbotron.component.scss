@@ -1,0 +1,68 @@
+
+.page-banner {
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 520px;
+        width: 100%;
+        margin: auto;
+        position: relative;
+        padding: 0 24px;
+    }
+
+    &__slogan {
+        width: 54%;
+        max-width: 560px;
+        min-width: 420px;
+        min-height: 336px;
+        color: #0d1a26;
+
+        h1 {
+            font-family: 'Futura', 'Helvetica Neue For Number', -apple-system, BlinkMacSystemFont,
+                'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue',
+                Helvetica, Arial, sans-serif;
+            font-size: 54px;
+            margin: 12px 0;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .ant-btn {
+            min-width: 110px;
+            height: 40px;
+            border-radius: 20px;
+            font-size: 16px;
+            margin-right: 16px;
+        }
+
+        &-btn {
+            margin-top: 64px;
+            line-height: 40px;
+            align-items: center;
+            display: flex;
+
+            .github {
+                display: flex;
+            }
+        }
+    }
+
+    &__carousel {
+        width: 46%;
+        max-width: 482px;
+        height: 420px;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        img {
+            height: 100%;
+            border-radius: 8px;
+        }
+    }
+}

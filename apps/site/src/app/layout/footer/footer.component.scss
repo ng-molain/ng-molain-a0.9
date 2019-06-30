@@ -1,0 +1,64 @@
+$text-color: #fafafa;
+$link-text-color: rgba(240, 240, 240, 0.9);
+$link-text-color-hover: #40a9ff;
+
+:host {
+    display: block;
+    position: relative;
+    padding: 48px;
+    z-index: 0;
+    // background-color: #1976d2;
+    background-color: rgba(0, 0, 0, 0.98);
+    color: $text-color;
+
+    a {
+        color: $link-text-color;
+        translate: color 0.3s;
+
+        &:hover {
+            color: $link-text-color-hover;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: url(https://angular.cn/assets/images/logos/angular/angular_whiteTransparent_withMargin.png) top 0 left 0/320px auto, url(https://angular.cn/assets/images/logos/angular/angular_whiteTransparent_withMargin.png) top 80px left 160px/320px auto;
+        opacity: .05;
+    }
+}
+
+.footer {
+
+    &__container {
+        margin-bottom: 40px;
+
+        h2 {
+            font-size: 1rem; // 6px
+            color: $text-color;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    &__copyright {
+
+
+        p {
+            margin: 10px 0 5px;
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+
+
+}
