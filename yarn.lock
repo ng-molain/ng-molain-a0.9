@@ -256,6 +256,21 @@
     "@ant-design/colors" "^3.1.0"
     tslib "^1.9.0"
 
+"@asciidoctor/cli@2.0.1":
+  version "2.0.1"
+  resolved "http://npm.parim.net/@asciidoctor%2fcli/-/cli-2.0.1.tgz#5e0154ff06da21aedb1840bff5d49ca6ee7d520d"
+  integrity sha1-XgFU/wbaIa7bGEC/9dScpu59Ug0=
+  dependencies:
+    yargs "13.2.2"
+
+"@asciidoctor/core@2.0.3":
+  version "2.0.3"
+  resolved "http://npm.parim.net/@asciidoctor%2fcore/-/core-2.0.3.tgz#95630424eb2e346acc51dede1e6599159fbd5d44"
+  integrity sha1-lWMEJOsuNGrMUd7eHmWZFZ+9XUQ=
+  dependencies:
+    asciidoctor-opal-runtime "0.3.0"
+    unxhr "1.0.1"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.0.0-beta.35":
   version "7.0.0"
   resolved "http://npm.parim.net/@babel%2fcode-frame/-/code-frame-7.0.0.tgz#06e2ab19bdb535385559aabb5ba59729482800f8"
@@ -1215,6 +1230,22 @@ asap@^2.0.0, asap@~2.0.3:
   version "2.0.6"
   resolved "http://npm.parim.net/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
   integrity sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY=
+
+asciidoctor-opal-runtime@0.3.0:
+  version "0.3.0"
+  resolved "http://npm.parim.net/asciidoctor-opal-runtime/-/asciidoctor-opal-runtime-0.3.0.tgz#df327a870ddd3cd5eb0e162d64ed4dcdd3fe3fee"
+  integrity sha1-3zJ6hw3dPNXrDhYtZO1NzdP+P+4=
+  dependencies:
+    glob "7.1.3"
+    unxhr "1.0.1"
+
+asciidoctor@^2.0.3:
+  version "2.0.3"
+  resolved "http://npm.parim.net/asciidoctor/-/asciidoctor-2.0.3.tgz#350a41d051c5f99d1d8fa4abdc7a9c80da48f90a"
+  integrity sha1-NQpB0FHF+Z0dj6Sr3HqcgNpI+Qo=
+  dependencies:
+    "@asciidoctor/cli" "2.0.1"
+    "@asciidoctor/core" "2.0.3"
 
 asn1.js@^4.0.0:
   version "4.10.1"
@@ -8153,6 +8184,11 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
+unxhr@1.0.1:
+  version "1.0.1"
+  resolved "http://npm.parim.net/unxhr/-/unxhr-1.0.1.tgz#92200322d66c728993de771f9e01eeb21f41bc7b"
+  integrity sha1-kiADItZscomT3ncfngHush9BvHs=
+
 upath@^1.1.1:
   version "1.1.2"
   resolved "http://npm.parim.net/upath/-/upath-1.1.2.tgz#3db658600edaeeccbe6db5e684d67ee8c2acd068"
@@ -8657,6 +8693,23 @@ yargs@13.1.0:
   version "13.1.0"
   resolved "http://npm.parim.net/yargs/-/yargs-13.1.0.tgz#b2729ce4bfc0c584939719514099d8a916ad2301"
   integrity sha512-1UhJbXfzHiPqkfXNHYhiz79qM/kZqjTE8yGlEjZa85Q+3+OwcV6NRkV7XOV1W2Eom2bzILeUn55pQYffjVOLAg==
+  dependencies:
+    cliui "^4.0.0"
+    find-up "^3.0.0"
+    get-caller-file "^2.0.1"
+    os-locale "^3.1.0"
+    require-directory "^2.1.1"
+    require-main-filename "^2.0.0"
+    set-blocking "^2.0.0"
+    string-width "^3.0.0"
+    which-module "^2.0.0"
+    y18n "^4.0.0"
+    yargs-parser "^13.0.0"
+
+yargs@13.2.2:
+  version "13.2.2"
+  resolved "http://npm.parim.net/yargs/-/yargs-13.2.2.tgz#0c101f580ae95cea7f39d927e7770e3fdc97f993"
+  integrity sha512-WyEoxgyTD3w5XRpAQNYUB9ycVH/PQrToaTXdYXRdOXvEy1l19br+VJsc0vcO8PTGg5ro/l/GY7F/JMEBmI0BxA==
   dependencies:
     cliui "^4.0.0"
     find-up "^3.0.0"

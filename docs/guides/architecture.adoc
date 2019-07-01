@@ -1,0 +1,2 @@
+[architecture]
+=  体系结构

@@ -1,6 +1,26 @@
 <nz-affix>
   <div class="sidenav__wrapper">
-    <ul nz-menu [nzMode]="'inline'">
+    <ul nz-menu nzMode="inline">
+      <li nz-submenu *ngFor="let cate of categories" nzOpen>
+        <span title>{{cate.title}}</span>
+        <ul>
+          <li nz-menu-item *ngFor="let art of cate.articles">
+            {{art.title}}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nz-affix>
+
+
+
+
+
+
+
+
+<!-- <ul nz-menu [nzMode]="'inline'">
       <li nz-submenu>
         <span title><i nz-icon type="mail"></i> Navigation One</span>
         <ul>
@@ -49,7 +69,4 @@
           <li nz-menu-item>Option 13</li>
         </ul>
       </li>
-    </ul>
-
-  </div>
-</nz-affix>
+    </ul> -->

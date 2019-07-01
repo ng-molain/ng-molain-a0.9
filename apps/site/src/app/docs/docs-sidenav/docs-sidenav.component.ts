@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'nms-docs-sidenav',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocsSidenavComponent implements OnInit {
 
-  constructor() { }
+  categories;
+
+  constructor(
+    private _http: HttpClient
+  ) { }
 
   ngOnInit() {
+    this._fetchDocList();
+  }
+
+  private _fetchDocList() {
+    this._http.get("/assets/json/docs-list.json").subscribe(outline => {
+      // console.log(outline);
+      const { categories } = outline as any;
+      this.categories = categories;
+    })
   }
 
 }

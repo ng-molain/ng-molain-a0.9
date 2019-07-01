@@ -9,6 +9,9 @@ import { NZ_I18N, zh_CN } from 'ng-zorro-antd';
 registerLocaleData(zh);
 
 
+/**
+ * 仅能在 AppModule 中导入，其他功能模块不可重复导入
+ */
 @NgModule({
   imports: [
     CommonModule,
