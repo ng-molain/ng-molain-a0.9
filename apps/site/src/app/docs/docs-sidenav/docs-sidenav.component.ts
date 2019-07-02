@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'nms-docs-sidenav',
+  selector: 'mls-docs-sidenav',
   templateUrl: './docs-sidenav.component.html',
   styleUrls: ['./docs-sidenav.component.scss']
 })

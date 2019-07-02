@@ -2,7 +2,7 @@
   <div class="container feature__container">
     <h2>特性</h2>
     <div nz-row nzGutter="24" nzType="flex">
-      <div *ngFor="let item of features" nz-col nzXs="24" nzMd="8" class="feature__box" nmsFratureItem #itembox="nmsFratureItem">
+      <div *ngFor="let item of features" nz-col nzXs="24" nzMd="8" class="feature__box" mlsFratureItem #itembox="mlsFratureItem">
         <div class="feature__image" [ngStyle]="{'box-shadow': !itembox.hover ? item.shadowColor + ' 0 6px 12px' : item.shadowColor + ' 0 12px 24px'}">
           <img [src]="item.src" [attr.alt]="item.title">
         </div>

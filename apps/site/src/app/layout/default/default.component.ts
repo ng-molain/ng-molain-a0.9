@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'nms-layout-default',
+  selector: 'mls-layout-default',
   templateUrl: './default.component.html',
   styleUrls: ['./default.component.scss']
 })

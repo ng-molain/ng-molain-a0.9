@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import Asciidoctor from 'asciidoctor';
 
 @Component({
-  selector: 'nms-doc-viewer',
+  selector: 'mls-doc-viewer',
   templateUrl: './doc-viewer.component.html',
   styleUrls: ['./doc-viewer.component.scss']
 })

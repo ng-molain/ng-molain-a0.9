@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChildren } from '@angular/core';
 import { featuresCN } from './features.data';
 
 @Component({
-  selector: 'nms-home-feature',
+  selector: 'mls-home-feature',
   templateUrl: './feature.component.html',
   styleUrls: ['./feature.component.scss']
 })

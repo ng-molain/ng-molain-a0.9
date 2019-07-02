@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'nms-layout-footer',
+  selector: 'mls-layout-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })

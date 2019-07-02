@@ -128,7 +128,7 @@
       },
       "root": "apps/site",
       "sourceRoot": "apps/site/src",
-      "prefix": "nms",
+      "prefix": "mls",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

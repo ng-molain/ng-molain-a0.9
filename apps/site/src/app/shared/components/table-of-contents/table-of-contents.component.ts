@@ -23,7 +23,7 @@ interface Link {
 }
 
 @Component({
-  selector: 'nms-table-of-contents',
+  selector: 'mls-table-of-contents',
   templateUrl: './table-of-contents.component.html',
   styleUrls: ['./table-of-contents.component.scss']
 })

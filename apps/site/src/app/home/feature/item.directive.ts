@@ -3,8 +3,8 @@ import { Directive, HostBinding, HostListener, NgZone } from '@angular/core';
 let a = 0;
 
 @Directive({
-    selector: '[nmsFratureItem]',
-    exportAs: 'nmsFratureItem'
+    selector: '[mlsFratureItem]',
+    exportAs: 'mlsFratureItem'
 })
 export class FeatureItemDirective {
     hover = false;
@@ -17,7 +17,7 @@ export class FeatureItemDirective {
 
     }
 
-    value = 'nmsFratureItem aha' + (this.hover) + `${this.id}`;
+    value = 'mlsFratureItem aha' + (this.hover) + `${this.id}`;
 
     @HostListener('mouseenter', ['$event'])
     onMouseEnter($event) {

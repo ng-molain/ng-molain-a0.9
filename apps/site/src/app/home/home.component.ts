@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'nms-home',
+  selector: 'mls-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
