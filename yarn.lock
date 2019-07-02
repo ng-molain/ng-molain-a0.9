@@ -147,6 +147,15 @@
   optionalDependencies:
     parse5 "^5.0.0"
 
+"@angular/cdk@^8.0.1":
+  version "8.0.1"
+  resolved "http://npm.parim.net/@angular%2fcdk/-/cdk-8.0.1.tgz#106872aa7fac0c55144ed5dd60df9af7e24b436a"
+  integrity sha512-Ul7rVU/rr4qGHs1w24P/6MHEosYp8AHRxBHrp/yJ50eHbHVS31FyfO8gKfNqPc1bnL1YoYYCs0hIBwNDaz8uDg==
+  dependencies:
+    tslib "^1.7.1"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@8.0.6":
   version "8.0.6"
   resolved "http://npm.parim.net/@angular%2fcli/-/cli-8.0.6.tgz#151147040d46d3a20618a7b494e440268e39b899"
