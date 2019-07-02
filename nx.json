@@ -13,6 +13,18 @@
     },
     "site": {
       "tags": []
+    },
+    "demo-e2e": {
+      "tags": []
+    },
+    "demo": {
+      "tags": []
+    },
+    "examples": {
+      "tags": []
+    },
+    "ng-molain": {
+      "tags": []
     }
   }
 }
