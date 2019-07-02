@@ -47,8 +47,11 @@ export class DocViewerComponent implements OnInit {
     // console.log(content);
     const asciidoctor = Asciidoctor();
     // @see https://asciidoctor.org/docs/user-manual/#attribute-catalog
-    const rawContent = asciidoctor.convert(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font', 'toc': 'preamble', 'toc-title': '目录' } });
     // const rawContent = asciidoctor.convert(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font' } });
+    // const rawContent = asciidoctor.convert(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font', 'toc': 'auto', 'toc-title': '目录' } });
+    const doc = asciidoctor.load(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font', 'toc': 'auto', 'toc-title': '目录' } });
+    window['adoc'] = doc;
+    const rawContent = doc.convert();
     // this._elementRef.nativeElement.innerHTML = rawContent;
     this._setArticleHtml(rawContent);
   }

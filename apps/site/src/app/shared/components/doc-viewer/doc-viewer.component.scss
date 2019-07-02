@@ -2,4 +2,18 @@
 section.article {
   padding-left: 16px;
   padding-right: 240px;
+
+  .asciidoctor ::ng-deep {
+
+    h1 {
+      margin-top: 0;
+    }
+    
+    #toc {
+      position: absolute;
+      top: 40px;
+      right: 48px;
+      width: 200px;
+    }
+  }
 }
