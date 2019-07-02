@@ -138,16 +138,7 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cdk@^7.0.0":
-  version "7.3.7"
-  resolved "http://npm.parim.net/@angular%2fcdk/-/cdk-7.3.7.tgz#ce1ad53ba04beb9c8e950acc5691ea0143753764"
-  integrity sha512-xbXxhHHKGkVuW6K7pzPmvpJXIwpl0ykBnvA2g+/7Sgy5Pd35wCC+UtHD9RYczDM/mkygNxMQtagyCErwFnDtQA==
-  dependencies:
-    tslib "^1.7.1"
-  optionalDependencies:
-    parse5 "^5.0.0"
-
-"@angular/cdk@^8.0.1":
+"@angular/cdk@^8.0.1", "@angular/cdk@~8.0.0":
   version "8.0.1"
   resolved "http://npm.parim.net/@angular%2fcdk/-/cdk-8.0.1.tgz#106872aa7fac0c55144ed5dd60df9af7e24b436a"
   integrity sha512-Ul7rVU/rr4qGHs1w24P/6MHEosYp8AHRxBHrp/yJ50eHbHVS31FyfO8gKfNqPc1bnL1YoYYCs0hIBwNDaz8uDg==
@@ -257,10 +248,10 @@
   dependencies:
     tinycolor2 "^1.4.1"
 
-"@ant-design/icons-angular@^2.1.0":
-  version "2.1.0"
-  resolved "http://npm.parim.net/@ant-design%2ficons-angular/-/icons-angular-2.1.0.tgz#12b0d02877b533a8271d561e71f1bab51dfbf1d1"
-  integrity sha1-ErDQKHe1M6gnHVYecfG6tR378dE=
+"@ant-design/icons-angular@^8.0.0":
+  version "8.0.0"
+  resolved "http://npm.parim.net/@ant-design%2ficons-angular/-/icons-angular-8.0.0.tgz#5668cfc1bdcd1f35497b9c4f6e5569a0162b5550"
+  integrity sha1-VmjPwb3NHzVJe5xPblVpoBYrVVA=
   dependencies:
     "@ant-design/colors" "^3.1.0"
     tslib "^1.9.0"
@@ -2428,7 +2419,7 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
-date-fns@^1.27.2, date-fns@^1.29.0:
+date-fns@^1.27.2, date-fns@^1.30.1:
   version "1.30.1"
   resolved "http://npm.parim.net/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
@@ -5630,14 +5621,14 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "http://npm.parim.net/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-ng-zorro-antd@^7.5.1:
-  version "7.5.1"
-  resolved "http://npm.parim.net/ng-zorro-antd/-/ng-zorro-antd-7.5.1.tgz#c3facac6a1ecd105c2de2ee6bb8e1296d42cdac7"
-  integrity sha512-0V/LoARoluFjiPUX4Q7x+G7hVA+k+x4g4OyYaLLUAoPpK3o1kriR3VzjdKsuKl73gBoRHHq4SNDRSiqzfOWDeA==
+ng-zorro-antd@^8.0.1:
+  version "8.0.1"
+  resolved "http://npm.parim.net/ng-zorro-antd/-/ng-zorro-antd-8.0.1.tgz#fba27d3c1b746f04f373ec97c89c21d2944b4e55"
+  integrity sha1-+6J9PBt0bwTzc+yXyJwh0pRLTlU=
   dependencies:
-    "@angular/cdk" "^7.0.0"
-    "@ant-design/icons-angular" "^2.1.0"
-    date-fns "^1.29.0"
+    "@angular/cdk" "~8.0.0"
+    "@ant-design/icons-angular" "^8.0.0"
+    date-fns "^1.30.1"
     tslib "^1.9.0"
 
 nice-try@^1.0.4:

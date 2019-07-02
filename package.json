@@ -43,7 +43,7 @@
     "@nrwl/angular": "^8.1.2",
     "asciidoctor": "^2.0.3",
     "core-js": "^2.5.4",
-    "ng-zorro-antd": "^7.5.1",
+    "ng-zorro-antd": "^8.0.1",
     "rxjs": "~6.5.2",
     "zone.js": "^0.9.1"
   },
