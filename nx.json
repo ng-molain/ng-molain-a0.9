@@ -28,6 +28,9 @@
     },
     "examples": {
       "tags": []
+    },
+    "common": {
+      "tags": []
     }
   }
 }
