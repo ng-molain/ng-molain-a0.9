@@ -1,7 +1,7 @@
 module.exports = {
-  name: 'ng-molain',
+  name: 'dev-app',
   preset: '../../jest.config.js',
-  coverageDirectory: '../../coverage/libs/ng-molain',
+  coverageDirectory: '../../coverage/apps/dev-app',
   snapshotSerializers: [
     'jest-preset-angular/AngularSnapshotSerializer.js',
     'jest-preset-angular/HTMLCommentSerializer.js'

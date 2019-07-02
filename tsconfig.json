@@ -17,7 +17,6 @@
     "baseUrl": ".",
     "paths": {
       "@ng-molain/examples": ["libs/examples/src/index.ts"],
-      "@ng-molain/ng-molain": ["libs/ng-molain/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

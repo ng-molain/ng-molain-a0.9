@@ -8,6 +8,12 @@
     "nx.json": "*"
   },
   "projects": {
+    "dev-app-e2e": {
+      "tags": []
+    },
+    "dev-app": {
+      "tags": []
+    },
     "site-e2e": {
       "tags": []
     },
@@ -21,9 +27,6 @@
       "tags": []
     },
     "examples": {
-      "tags": []
-    },
-    "ng-molain": {
       "tags": []
     }
   }
