@@ -25,7 +25,9 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "site": "ng serve site --open"
+    "site": "ng serve site --open",
+    "dev-app": "ng serve dev-app --open",
+    "demo": "ng serve demo --open"
   },
   "private": true,
   "dependencies": {
