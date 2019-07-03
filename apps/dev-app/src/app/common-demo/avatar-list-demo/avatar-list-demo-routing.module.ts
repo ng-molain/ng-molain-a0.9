@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AvatarListDemoComponent } from './avatar-list-demo/avatar-list-demo.component';
 
 const routes: Routes = [
-  { path: 'avatar-list', loadChildren: () => import('./avatar-list-demo/avatar-list-demo.module').then(m => m.AvatarListDemoModule) }
+  { path: '', component: AvatarListDemoComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CommonDemoRoutingModule { }
+export class AvatarListDemoRoutingModule { }

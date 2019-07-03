@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '', component: DemosLayoutComponent, children: [
       { path: '', component: DemosHomeComponent },
-      
+      { path: 'common', loadChildren: () => import('../common-demo/common-demo.module').then(m => m.CommonDemoModule) },
       { path: '**', component: NotFoundComponent },
     ]
   }

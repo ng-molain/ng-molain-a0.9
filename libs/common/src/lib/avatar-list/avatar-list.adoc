@@ -1,0 +1,54 @@
+[[avatar-list]]
+= Avatar List 用户头像列表
+
+一组用户头像，常用在项目/团队成员列表。可通过设置 size 属性来指定头像大小。
+
++++<!-- eg(avatar-list-overview) -->+++
+
+每一个用户头像用 `avatar-list-item` 指定。
+
+== 尺寸
+
+设置 `ml-avatar-list` 的 `size` 属性，可以调整头像的大小， 可接受的值，参考 <<'api', API>>。
+
+== 形状
+
+设置 `shape` 属性
+
+== 显示内容
+
+src, text 等
+
+== 优化
+
+.优化
+- 列表项只能通过 `ml-avatar-list-item` 指定，对于较多用户情况，会有很多垃圾节点的。
+- 头像形状使用方形 `square` 时，项之间不能有很好的视觉区分，两种可选解决办法。
+    . 去掉 `square` 选项，头像形状只能采用圆形 `circle` 显示
+    . 给每个头像加上阴影效果，和鼠标经过放大效果（类似于 mac 系统的 dock 栏）
+- 头像 `Tooltip` 只能显示文字，内容样式不能自定义
+- 不能添加链接或事件
+
+
+== API
+
+=== ml-avatar-list
+
+|===
+| 参数 | 说明 | 类型 | 默认值 
+| `[size]` | 头像大小 | `'large','small','mini','default'` | `'default'` 
+| `[maxLength]` | 要显示的最大项目 | `number` | -           
+| `[excessItemsStyle]` | 多余的项目风格   | `{ [key: string]: string }` | - 
+
+|===
+
+=== ml-avatar-list-item
+
+|===
+| 参数 | 说明 | 类型 | 默认值 
+| `[tips]` | 头像展示文案 | `string` | -
+| `[src]`  | 头像图片连接 | `string` | -
+| `[text]` | 文本类头像   | `string` | -
+| `[icon]` | 图标类型     | `string` | -
+
+|===

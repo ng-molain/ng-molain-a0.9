@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AvatarListModule } from './avatar-list';
 
 @NgModule({
-  imports: [CommonModule]
+  exports: [
+    AvatarListModule,
+  ]
 })
-export class CommonModule {}
+export class NgMolainCommonModule {}
