@@ -1,0 +1,13 @@
+<h1>Count Down Demos</h1>
+
+<h2>Simple Demo</h2>
+<hr>
+<p class="mb-sm">10s: <ml-count-down [target]="10" (finished)="onEnd()" style="font-size: 20px;"></ml-count-down>
+</p>
+<p>10m: <ml-count-down [target]="target"></ml-count-down>
+</p>
+
+
+<h2>Accuracy（精度） Demo</h2>
+<hr>
+<ml-count-down [config]="accuracyConfig"></ml-count-down>

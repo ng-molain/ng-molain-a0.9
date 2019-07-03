@@ -46,6 +46,7 @@
     "core-js": "^2.5.4",
     "lodash": "^4.17.11",
     "ng-zorro-antd": "^8.0.1",
+    "ngx-countdown": "^3.2.0",
     "rxjs": "~6.5.2",
     "zone.js": "^0.9.1"
   },
