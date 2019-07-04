@@ -17,6 +17,7 @@ const __DEMOS_NAV_ITEMS: NavItem[] = [
         name: 'Basic', route: '', type: 'group', children: [
           { name: 'AvatarList', route: 'avatar-list' },
           { name: 'CountDown', route: 'count-down' },
+          { name: 'DownFile', route: 'down-file' },
         ]
       }
     ]

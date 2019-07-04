@@ -1,0 +1,6 @@
+<h1>Down File</h1>
+
+<h2>Simple Demo</h2>
+<hr>
+<button nz-button *ngFor="let i of fileTypes" class="mr-sm"
+    mlDownFile [httpData]="data" httpUrl="./assets/files/demo{{i}}" fileName="demo中文">{{i}}</button>
