@@ -9,6 +9,11 @@ export const __COMMON_DEMOS_NAV_ITEMS: NavItem = {
         { name: 'DownFile', route: 'down-file' },
         { name: 'Ellipsis', route: 'ellipsis' },
       ]
-    }
+    },
+    {
+      name: 'Layout', route: '', type: 'group', children: [
+        { name: 'Exception', route: 'exception' },
+      ]
+    },
   ]
 };

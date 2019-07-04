@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'count-down', loadChildren: () => import('./count-down-demo/count-down-demo.module').then(m => m.CountDownDemoModule) },
   { path: 'down-file', loadChildren: () => import('./down-file-demo/down-file-demo.module').then(m => m.DownFileDemoModule) },
   { path: 'ellipsis', loadChildren: () => import('./ellipsis-demo/ellipsis-demo.module').then(m => m.EllipsisDemoModule) },
+  { path: 'exception', loadChildren: () => import('./exception-demo/exception-demo.module').then(m => m.ExceptionDemoModule) },
   // { path: '', loadChildren: () => import('.').then(m => m) },
 ];
 
