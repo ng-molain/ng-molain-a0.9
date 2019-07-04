@@ -1,27 +1,10 @@
 import * as _ from 'lodash';
+import { NavItem } from '../shared';
+import { __COMMON_DEMOS_NAV_ITEMS } from '../common-demo/common-demo-nav-item';
 
-export interface NavItem {
-  name: string;
-  route: string | string[];
-  type?: 'submenu' | 'group' | 'item';
-  children?: NavItem[];
-
-  // transent, 显示时用， ng-zorro的bug
-  level?: number;
-}
 
 const __DEMOS_NAV_ITEMS: NavItem[] = [
-  {
-    name: 'Common', route: 'common', type: 'submenu', children: [
-      {
-        name: 'Basic', route: '', type: 'group', children: [
-          { name: 'AvatarList', route: 'avatar-list' },
-          { name: 'CountDown', route: 'count-down' },
-          { name: 'DownFile', route: 'down-file' },
-        ]
-      }
-    ]
-  }
+  __COMMON_DEMOS_NAV_ITEMS
 ];
 
 function _fetchNavItems(navItems) {
