@@ -15,8 +15,8 @@ yarn add file-saver
 
 ### [down-file]
 
-参数 | 说明 | 类型 | 默认值
 |===
+|参数 | 说明 | 类型 | 默认值
 |`[http-data]` | URL请求参数 | `any` | -
 |`[http-method]` | 请求类型 | `'POST','GET','HEAD','PUT','PATCH','DELETE'` | `'GET'`
 |`[http-url]` | 下载地址 | `string` | -
