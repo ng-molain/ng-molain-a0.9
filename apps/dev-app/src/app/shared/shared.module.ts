@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { SharedComponentsModule } from './components';
 import { NgMolainCommonModule } from '@ng-molain/common';
+import { NgMolainComponentsModule } from '@ng-molain/components';
 
 @NgModule({
   declarations: [],
@@ -14,6 +15,7 @@ import { NgMolainCommonModule } from '@ng-molain/common';
     NgZorroAntdModule,
     SharedComponentsModule,
     NgMolainCommonModule,
+    NgMolainComponentsModule,
   ],
   exports: [
     CommonModule,
@@ -22,6 +24,7 @@ import { NgMolainCommonModule } from '@ng-molain/common';
     NgZorroAntdModule,
     SharedComponentsModule,
     NgMolainCommonModule,
+    NgMolainComponentsModule,
   ]
 })
 export class SharedModule { }
