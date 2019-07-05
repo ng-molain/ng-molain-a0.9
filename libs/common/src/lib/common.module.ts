@@ -5,6 +5,7 @@ import { DownFileModule } from './down-file';
 import { EllipsisModule } from './ellipsis';
 import { ExceptionModule } from './exception';
 import { ToolbarModule } from './toolbar';
+import { FullContentModule } from './full-content';
 
 @NgModule({
   exports: [
@@ -14,6 +15,7 @@ import { ToolbarModule } from './toolbar';
     EllipsisModule,
     ExceptionModule,
     ToolbarModule,
+    FullContentModule,
   ]
 })
 export class NgMolainCommonModule {}

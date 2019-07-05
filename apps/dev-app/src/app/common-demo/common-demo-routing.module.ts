@@ -9,7 +9,7 @@ const routes: Routes = [
 
   { path: 'exception', loadChildren: () => import('./exception-demo/exception-demo.module').then(m => m.ExceptionDemoModule) },
   { path: 'toolbar', loadChildren: () => import('./toolbar-demo/toolbar-demo.module').then(m => m.ToolbarDemoModule) },
-
+  { path: 'full-content', loadChildren: () => import('./full-content-demo/full-content-demo.module').then(m => m.FullContentDemoModule) },
   // { path: '', loadChildren: () => import('.').then(m => m) },
 ];
 
