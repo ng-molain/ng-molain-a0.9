@@ -13,6 +13,7 @@ export const __COMMON_DEMOS_NAV_ITEMS: NavItem = {
     {
       name: 'Layout', route: '', type: 'group', children: [
         { name: 'Exception', route: 'exception' },
+        { name: 'Toolbar', route: 'toolbar' },
       ]
     },
   ]

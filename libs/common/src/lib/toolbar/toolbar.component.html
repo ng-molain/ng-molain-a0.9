@@ -1,0 +1,7 @@
+<div class="ml-toolbar__left">
+  <ng-container *ngTemplateOutlet="_extraTpl || defaultExtraTpl"></ng-container>
+  <ng-template #defaultExtraTpl>{{_extraStr}}</ng-template>
+</div>
+<div class="ml-toolbar__right">
+  <ng-content></ng-content>
+</div>

@@ -4,6 +4,7 @@ import { CountDownModule } from './count-down';
 import { DownFileModule } from './down-file';
 import { EllipsisModule } from './ellipsis';
 import { ExceptionModule } from './exception';
+import { ToolbarModule } from './toolbar';
 
 @NgModule({
   exports: [
@@ -12,6 +13,7 @@ import { ExceptionModule } from './exception';
     DownFileModule,
     EllipsisModule,
     ExceptionModule,
+    ToolbarModule,
   ]
 })
 export class NgMolainCommonModule {}

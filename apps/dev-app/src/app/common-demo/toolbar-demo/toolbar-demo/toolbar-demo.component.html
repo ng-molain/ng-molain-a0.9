@@ -1,0 +1,17 @@
+<h1>Footer Toolbar</h1>
+
+<h2>Basic</h2>
+
+<hr>
+
+<p>看浏览器底部！！！</p>
+
+
+<form nz-form [formGroup]="form">
+  <nz-form-control [nzValidateStatus]="name">
+    <input nz-input formControlName="name" placeholder="required">
+  </nz-form-control>
+  <ml-toolbar errorCollect extra="This is extra area">
+    <button nz-button nzType="primary">Submit</button>
+  </ml-toolbar>
+</form>
