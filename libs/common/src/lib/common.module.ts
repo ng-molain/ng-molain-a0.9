@@ -6,6 +6,7 @@ import { EllipsisModule } from './ellipsis';
 import { ExceptionModule } from './exception';
 import { ToolbarModule } from './toolbar';
 import { FullContentModule } from './full-content';
+import { GlobalFooterModule } from './global-footer';
 
 @NgModule({
   exports: [
@@ -16,6 +17,7 @@ import { FullContentModule } from './full-content';
     ExceptionModule,
     ToolbarModule,
     FullContentModule,
+    GlobalFooterModule,
   ]
 })
 export class NgMolainCommonModule {}
