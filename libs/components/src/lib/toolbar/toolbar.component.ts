@@ -31,8 +31,8 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     }
   }
 
-  private _extraStr: string;
-  private _extraTpl: TemplateRef<void>;
+  _extraStr: string;
+  _extraTpl: TemplateRef<void>;
 
   constructor(private el: ElementRef, private renderer: Renderer2, @Inject(DOCUMENT) private doc: any) {}
 
