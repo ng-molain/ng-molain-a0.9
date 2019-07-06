@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Input, HostBinding, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { EXCEPTION_TYPES } from './exception-type';
+import { isEmptyElement } from '@ng-molain/common';
 
 export type ExceptionType = 403 | 404 | 500;
 
@@ -54,7 +55,7 @@ export class ExceptionComponent implements OnInit, OnDestroy {
   @HostBinding('class.ml-exception') _bindStyleClass = true;
 
   checkContent() {
-    this.hasCon = !isEmpty(this.conTpl.nativeElement);
+    this.hasCon = !isEmptyElement(this.conTpl.nativeElement);
   }
 
   constructor(
@@ -69,19 +70,4 @@ export class ExceptionComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     // this.i18n$.unsubscribe();
   }
-}
-
-// TODO: 提取到公共的 Util 中
-// export
-function isEmpty(element: HTMLElement): boolean {
-  const nodes = element.childNodes;
-  for (let i = 0; i < nodes.length; i++) {
-    const node = nodes.item(i);
-    if (node.nodeType === 1 && (node as HTMLElement).outerHTML.toString().trim().length !== 0) {
-      return false;
-    } else if (node.nodeType === 3 && node.textContent!.toString().trim().length !== 0) {
-      return false;
-    }
-  }
-  return true;
 }
