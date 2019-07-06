@@ -16,6 +16,7 @@ export const __COMPONENTS_DEMO_NAV_ITEMS: NavItem = {
         { name: 'Toolbar', route: 'toolbar' },
         { name: 'FullContent', route: 'full-content' },
         { name: 'GlobalFooter', route: 'global-footer' },
+        { name: 'PageHeader', route: 'page-header' },
       ]
     },
   ]

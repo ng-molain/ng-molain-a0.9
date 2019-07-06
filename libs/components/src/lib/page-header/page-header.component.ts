@@ -120,7 +120,7 @@ export class PageHeaderComponent implements OnInit, OnChanges, AfterViewInit, On
   }
 
   private genBreadcrumb() {
-    if (this.breadcrumb || !this.autoBreadcrumb || this.menus.length <= 0) {
+    if (this.breadcrumb || !this.autoBreadcrumb || !this.menus || this.menus.length <= 0) {
       this.paths = [];
       return;
     }
@@ -145,7 +145,7 @@ export class PageHeaderComponent implements OnInit, OnChanges, AfterViewInit, On
   }
 
   private setTitle() {
-    if (this._title == null && this._titleTpl == null && this.autoTitle && this.menus.length > 0) {
+    if (this._title == null && this._titleTpl == null && this.autoTitle && !!this.menus && this.menus.length > 0) {
       const item = this.menus[this.menus.length - 1];
       // let title = item.text;
       const title = item.text;

@@ -7,6 +7,7 @@ import { ExceptionModule } from './exception';
 import { ToolbarModule } from './toolbar';
 import { FullContentModule } from './full-content';
 import { GlobalFooterModule } from './global-footer';
+import { PageHeaderModule } from './page-header';
 
 @NgModule({
   exports: [
@@ -18,6 +19,7 @@ import { GlobalFooterModule } from './global-footer';
     ToolbarModule,
     FullContentModule,
     GlobalFooterModule,
+    PageHeaderModule
   ]
 })
 export class NgMolainComponentsModule {}
