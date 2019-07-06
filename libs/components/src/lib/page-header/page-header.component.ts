@@ -4,6 +4,7 @@ import { NzAffixComponent, InputBoolean, InputNumber } from 'ng-zorro-antd';
 import { Router, NavigationEnd } from '@angular/router';
 import { takeUntil, filter } from 'rxjs/operators';
 import { PageHeaderConfig } from './page-header.config';
+import { isEmptyElement } from '@ng-molain/common';
 
 type Menu = any;
 interface PageHeaderPath {
@@ -32,7 +33,7 @@ export class PageHeaderComponent implements OnInit, OnChanges, AfterViewInit, On
     if (this._menus) {
       return this._menus;
     }
-    this._menus = this.menuSrv.getPathByUrl(this.router.url.split('?')[0], this.recursiveBreadcrumb);
+    // this._menus = this.menuSrv.getPathByUrl(this.router.url.split('?')[0], this.recursiveBreadcrumb);
 
     return this._menus;
   }
@@ -78,33 +79,33 @@ export class PageHeaderComponent implements OnInit, OnChanges, AfterViewInit, On
 
   constructor(
     cog: PageHeaderConfig,
-    settings: SettingsService,
+    // settings: SettingsService,
     private renderer: Renderer2,
     private router: Router,
-    private menuSrv: MenuService,
-    @Optional()
-    @Inject(ALAIN_I18N_TOKEN)
-    private i18nSrv: AlainI18NService,
-    @Optional()
-    @Inject(TitleService)
-    private titleSrv: TitleService,
-    @Optional()
-    @Inject(ReuseTabService)
-    private reuseSrv: ReuseTabService,
+    // private menuSrv: MenuService,
+    // @Optional()
+    // @Inject(ALAIN_I18N_TOKEN)
+    // private i18nSrv: AlainI18NService,
+    // @Optional()
+    // @Inject(TitleService)
+    // private titleSrv: TitleService,
+    // @Optional()
+    // @Inject(ReuseTabService)
+    // private reuseSrv: ReuseTabService,
     private cdr: ChangeDetectorRef,
   ) {
     Object.assign(this, { ...new PageHeaderConfig(), ...cog });
-    settings.notify
-      .pipe(
-        takeUntil(this.unsubscribe$),
-        filter(w => this.affix && w.type === 'layout' && w.name === 'collapsed'),
-      )
-      .subscribe(() => this.affix.updatePosition({} as any));
+    // settings.notify
+    //   .pipe(
+    //     takeUntil(this.unsubscribe$),
+    //     filter(w => this.affix && w.type === 'layout' && w.name === 'collapsed'),
+    //   )
+    //   .subscribe(() => this.affix.updatePosition({} as any));
 
     merge(
-      menuSrv.change.pipe(filter(() => this.inited)),
+      // menuSrv.change.pipe(filter(() => this.inited)),
       router.events.pipe(filter(e => e instanceof NavigationEnd)),
-      i18nSrv.change,
+      // i18nSrv.change,
     )
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(() => {
@@ -126,14 +127,16 @@ export class PageHeaderComponent implements OnInit, OnChanges, AfterViewInit, On
     const paths: PageHeaderPath[] = [];
     this.menus.forEach(item => {
       if (typeof item.hideInBreadcrumb !== 'undefined' && item.hideInBreadcrumb) return;
-      let title = item.text;
-      if (item.i18n && this.i18nSrv) title = this.i18nSrv.fanyi(item.i18n);
+      // let title = item.text;
+      const title = item.text;
+      // if (item.i18n && this.i18nSrv) title = this.i18nSrv.fanyi(item.i18n);
       paths.push({ title, link: (item.link && [item.link]) as string[] });
     });
     // add home
     if (this.home) {
       paths.splice(0, 0, {
-        title: (this.homeI18n && this.i18nSrv && this.i18nSrv.fanyi(this.homeI18n)) || this.home,
+        // title: (this.homeI18n && this.i18nSrv && this.i18nSrv.fanyi(this.homeI18n)) || this.home,
+        title: this.home,
         link: [this.homeLink],
       });
     }
@@ -144,25 +147,26 @@ export class PageHeaderComponent implements OnInit, OnChanges, AfterViewInit, On
   private setTitle() {
     if (this._title == null && this._titleTpl == null && this.autoTitle && this.menus.length > 0) {
       const item = this.menus[this.menus.length - 1];
-      let title = item.text;
-      if (item.i18n && this.i18nSrv) title = this.i18nSrv.fanyi(item.i18n);
+      // let title = item.text;
+      const title = item.text;
+      // if (item.i18n && this.i18nSrv) title = this.i18nSrv.fanyi(item.i18n);
       this._titleVal = title;
     }
 
     if (this._titleVal && this.syncTitle) {
-      if (this.titleSrv) {
-        this.titleSrv.setTitle(this._titleVal);
-      }
-      if (this.reuseSrv) {
-        this.reuseSrv.title = this._titleVal;
-      }
+      // if (this.titleSrv) {
+      //   this.titleSrv.setTitle(this._titleVal);
+      // }
+      // if (this.reuseSrv) {
+      //   this.reuseSrv.title = this._titleVal;
+      // }
     }
 
     return this;
   }
 
   checkContent() {
-    if (isEmpty(this.conTpl.nativeElement)) {
+    if (isEmptyElement(this.conTpl.nativeElement)) {
       this.renderer.setAttribute(this.conTpl.nativeElement, 'hidden', '');
     } else {
       this.renderer.removeAttribute(this.conTpl.nativeElement, 'hidden');
