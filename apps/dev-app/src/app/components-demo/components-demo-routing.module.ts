@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'full-content', loadChildren: () => import('./full-content-demo/full-content-demo.module').then(m => m.FullContentDemoModule) },
   { path: 'global-footer', loadChildren: () => import('./global-footer-demo/global-footer-demo.module').then(m => m.GlobalFooterDemoModule) },
   { path: 'page-header', loadChildren: () => import('./page-header-demo/page-header-demo.module').then(m => m.PageHeaderDemoModule) },
+  { path: 'result', loadChildren: () => import('./result-demo/result-demo.module').then(m => m.ResultDemoModule) },
   // { path: '', loadChildren: () => import('.').then(m => m) },
 ];
 

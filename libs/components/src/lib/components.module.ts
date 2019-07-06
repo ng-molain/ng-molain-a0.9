@@ -8,6 +8,7 @@ import { ToolbarModule } from './toolbar';
 import { FullContentModule } from './full-content';
 import { GlobalFooterModule } from './global-footer';
 import { PageHeaderModule } from './page-header';
+import { ResultModule } from './result';
 
 @NgModule({
   exports: [
@@ -19,7 +20,8 @@ import { PageHeaderModule } from './page-header';
     ToolbarModule,
     FullContentModule,
     GlobalFooterModule,
-    PageHeaderModule
+    PageHeaderModule,
+    ResultModule,
   ]
 })
 export class NgMolainComponentsModule {}

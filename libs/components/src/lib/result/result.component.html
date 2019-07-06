@@ -1,0 +1,22 @@
+<div class="ml-result__icon">
+  <i nz-icon
+     [nzType]="_icon"
+     class="ml-result__icon-{{_type}}"></i>
+</div>
+<div class="ml-result__title">
+  <ng-container *ngTemplateOutlet="titleTpl || titleDefaultTpl"></ng-container>
+  <ng-template #titleDefaultTpl>{{titleStr}}</ng-template>
+</div>
+<div *ngIf="description"
+     class="ml-result__desc">
+  <ng-container *ngTemplateOutlet="descriptionTpl || descDefaultTpl"></ng-container>
+  <ng-template #descDefaultTpl>{{descriptionStr}}</ng-template>
+</div>
+<div *ngIf="extra"
+     class="ml-result__extra">
+  <ng-container *ngTemplateOutlet="extraTpl || extraDefaultTpl"></ng-container>
+  <ng-template #extraDefaultTpl>{{extraStr}}</ng-template>
+</div>
+<div class="ml-result__actions">
+  <ng-content></ng-content>
+</div>
