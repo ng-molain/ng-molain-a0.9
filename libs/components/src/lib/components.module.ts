@@ -9,6 +9,7 @@ import { FullContentModule } from './full-content';
 import { GlobalFooterModule } from './global-footer';
 import { PageHeaderModule } from './page-header';
 import { ResultModule } from './result';
+import { DetailsModule } from './details';
 
 @NgModule({
   exports: [
@@ -22,6 +23,7 @@ import { ResultModule } from './result';
     GlobalFooterModule,
     PageHeaderModule,
     ResultModule,
+    DetailsModule,
   ]
 })
 export class NgMolainComponentsModule {}

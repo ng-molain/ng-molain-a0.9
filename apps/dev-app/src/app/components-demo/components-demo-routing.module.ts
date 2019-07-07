@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'global-footer', loadChildren: () => import('./global-footer-demo/global-footer-demo.module').then(m => m.GlobalFooterDemoModule) },
   { path: 'page-header', loadChildren: () => import('./page-header-demo/page-header-demo.module').then(m => m.PageHeaderDemoModule) },
   { path: 'result', loadChildren: () => import('./result-demo/result-demo.module').then(m => m.ResultDemoModule) },
+  { path: 'details', loadChildren: () => import('./details-demo/details-demo.module').then(m => m.DetailsDemoModule) },
   // { path: '', loadChildren: () => import('.').then(m => m) },
 ];
 

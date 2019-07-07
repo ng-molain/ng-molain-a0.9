@@ -18,6 +18,7 @@ export const __COMPONENTS_DEMO_NAV_ITEMS: NavItem = {
         { name: 'GlobalFooter', route: 'global-footer' },
         { name: 'PageHeader', route: 'page-header' },
         { name: 'Result', route: 'result' },
+        { name: 'Details', route: 'details' },
       ]
     },
   ]
