@@ -3,17 +3,33 @@ import { registerLocaleData as ngRegisterLocaleData } from '@angular/common';
 import { default as ngZh } from '@angular/common/locales/zh';
 import { default as ngEn } from '@angular/common/locales/en';
 import { zh_CN as zorroZh, en_US as zorroEn, NZ_I18N } from 'ng-zorro-antd';
+import * as dfEn from 'date-fns/locale/en';
+import * as dfZh from 'date-fns/locale/zh_cn';
 import * as _ from 'lodash';
 import { I18N_CONFIG } from './i18n.config';
 
-const __zh = {
-  ng: ngZh,
-  zorro: zorroZh
+export interface LangData {
+  text: string;
+  abbr: string;
+  ng: any;
+  zorro: any;
+  dateFns: any;
 }
 
-const __en = {
+const __zh: LangData = {
+  text: '简体中文',
+  abbr: 'zh',
+  ng: ngZh,
+  zorro: zorroZh,
+  dateFns: dfZh,
+}
+
+const __en: LangData = {
+  text: 'English',
+  abbr: 'en',
   ng: ngEn,
-  zorro: zorroEn
+  zorro: zorroEn,
+  dateFns: dfEn,
 }
 
 export const LOCALE_DATA = {

@@ -6,16 +6,6 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'demo';
-
-  constructor(private http: HttpClient) {
-    
-  }
-
-  ngOnInit() {
-    this.http.get('http://www.baidu.com', {responseType: 'text'}).subscribe(body => {
-      console.log(body);
-    })
-  }
 }
