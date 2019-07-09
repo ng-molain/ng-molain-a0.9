@@ -1,17 +1,20 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
 import { CoreModule } from '@ng-molain/demo/core';
 import { SharedModule } from '@ng-molain/demo/shared';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
     SharedModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' })
+    AppRoutingModule
   ],
   declarations: [AppComponent],
   providers: [],

@@ -824,15 +824,10 @@
   dependencies:
     "@types/lodash" "*"
 
-"@types/lodash@*":
+"@types/lodash@*", "@types/lodash@^4.14.136":
   version "4.14.136"
   resolved "http://npm.parim.net/@types%2flodash/-/lodash-4.14.136.tgz#413e85089046b865d960c9ff1d400e04c31ab60f"
   integrity sha1-QT6FCJBGuGXZYMn/HUAOBMMatg8=
-
-"@types/lodash@^4.14.135":
-  version "4.14.135"
-  resolved "http://npm.parim.net/@types%2flodash/-/lodash-4.14.135.tgz#d2607c35dd68f70c2b35ba020c667493dedd8447"
-  integrity sha1-0mB8Nd1o9wwrNboCDGZ0k97dhEc=
 
 "@types/minimatch@*":
   version "3.0.3"
