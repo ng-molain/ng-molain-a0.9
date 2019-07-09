@@ -16,34 +16,38 @@ import { log } from '../utils';
 const workspaceRoot = path.resolve(__dirname, '../../');
 console.log("Working sass bundle in workspace: ", workspaceRoot)
 
-const projectSrcPath = `${workspaceRoot}/libs/components/src/lib`;
-const projectDistPath = `${workspaceRoot}/dist/libs/components/lib`;
+const projectSrcPath = `${workspaceRoot}/libs/common/src/style`;
+const projectDistPath = `${workspaceRoot}/dist/libs/common/style`;
 
-const projectDistRootPath = `${workspaceRoot}/dist/libs/components`;
+const projectDistRootPath = `${workspaceRoot}/dist/libs/common`;
 
 
-globby([`${projectSrcPath}/**/*.scss`, '!index.html', '!js/lib.js']).then(paths => {
+globby([`${projectSrcPath}/*.scss`]).then(paths => {
     // console.log(paths);
     paths.forEach(it => {
         const file = path.relative(projectSrcPath, it);
         // console.log(path.join(projectDistPath, file))
         // copySync(it, path.join(projectDistPath, file));
-        new Bundler().Bundle(it).then(result => {
+        new Bundler().Bundle(it, [
+            path.join(projectSrcPath, '_functions.scss'),
+            path.join(projectSrcPath, '_variables.scss'),
+            path.join(projectSrcPath, '_mixins.scss'),
+        ]).then(result => {
             writeFileSync(path.join(projectDistPath, file), result.bundledContent);
         })
     });
 
     const imports = paths.map(it => {
         const file = path.relative(projectSrcPath, it);
-        return `@import './lib/${file}';`;
+        return `@import './style/${file}';`;
     });
 
     const importsFileContent = imports.join('\n');
-    writeFileSync(path.join(projectDistRootPath, '_components.scss'), importsFileContent);
+    writeFileSync(path.join(projectDistRootPath, '_common.scss'), importsFileContent);
 
-    new Bundler().Bundle(path.join(projectDistRootPath, '_components.scss')).then(result => {
+    new Bundler().Bundle(path.join(projectDistRootPath, 'style/index.scss')).then(result => {
         // console.log(result.imports)
-        writeFileSync(path.join(projectDistRootPath, 'components.scss'), result.bundledContent);
+        writeFileSync(path.join(projectDistRootPath, 'common.scss'), result.bundledContent);
 
         compileSass();
 
@@ -75,7 +79,7 @@ const NodeModulesImporter: SyncImporter = (url: string, prev: string): ImporterR
 function compileSass() {
     // compile sass file
     render({
-        file: path.join(projectDistRootPath, 'components.scss'),
+        file: path.join(projectDistRootPath, 'common.scss'),
         outFile: path.join(projectDistRootPath, 'style'),
         importer: NodeModulesImporter,
         outputStyle: 'expanded',
@@ -88,7 +92,7 @@ function compileSass() {
             return;
         }
 
-        writeFileSync(path.join(projectDistRootPath, 'components.css'), result.css)
+        writeFileSync(path.join(projectDistRootPath, 'common.css'), result.css)
         log.success(`Compiled saas file ${result.stats.entry} in ${result.stats.duration / 1000}s.`)
     });
 }

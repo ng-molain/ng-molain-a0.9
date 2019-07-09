@@ -1,0 +1,8 @@
+// Variables
+//
+// Variables 必须按照以下规则命名 `$component-state-property-size`。
+// 例如: $nav-link-disabled-color and $modal-content-box-shadow-xs。
+
+@import './variables/color';
+@import './variables/options';
+@import './variables/others';

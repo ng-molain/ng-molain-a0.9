@@ -27,7 +27,10 @@
     "help": "nx help",
     "site": "ng serve site --open",
     "dev-app": "ng serve dev-app --open",
-    "demo": "ng serve demo --open"
+    "demo": "ng serve demo --open",
+    "common:build": "ng build common",
+    "components:build": "ng build components && ts-node -P ./scripts/build/tsconfig.json ./scripts/build/sass-bundle",
+    "libs:build": "npm run common:build && npm run components:build"
   },
   "private": true,
   "dependencies": {
@@ -66,6 +69,7 @@
     "@types/globby": "^9.1.0",
     "@types/jest": "24.0.9",
     "@types/node": "^12.0.12",
+    "@types/node-sass": "^4.11.0",
     "codelyzer": "~5.0.1",
     "cypress": "~3.3.1",
     "dotenv": "6.2.0",
@@ -74,6 +78,7 @@
     "jest-preset-angular": "7.0.0",
     "ng-packagr": "^5.1.0",
     "prettier": "1.16.4",
+    "scss-bundle": "^2.5.1",
     "ts-jest": "24.0.0",
     "ts-node": "~7.0.0",
     "tsickle": "^0.35.0",
