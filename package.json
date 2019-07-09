@@ -28,7 +28,7 @@
     "site": "ng serve site --open",
     "dev-app": "ng serve dev-app --open",
     "demo": "ng serve demo --open",
-    "common:build": "ng build common",
+    "common:build": "ng build common && ts-node -P ./scripts/build/tsconfig.json ./scripts/build/gen-common-sass",
     "components:build": "ng build components && ts-node -P ./scripts/build/tsconfig.json ./scripts/build/sass-bundle",
     "libs:build": "npm run common:build && npm run components:build"
   },
