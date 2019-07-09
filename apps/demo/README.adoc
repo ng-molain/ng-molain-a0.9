@@ -1,0 +1,5 @@
+= NG-MOLAIN DEMO
+
+基于 http://www.ng-molain.com[`NG-MOLAIN`] 解决方案的一个完整演示项目, http://demo.ng-molain.com[查看演示] 。
+
+https://github.com/ng-molain/ng-molain-demo[独立的演示项目] ，实际的示例代码完全从 https://github.com/ng-molain/ng-molain/tree/master/apps/demo[本 `Demo`] 拷贝。

@@ -277,8 +277,20 @@
             "main": "apps/demo/src/main.ts",
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
-            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.scss"],
+            "assets": [
+              "apps/demo/src/favicon.ico",
+              "apps/demo/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "apps/demo/src/styles/ng-zorro-antd/ng-zorro-antd.less",
+              "apps/demo/src/styles/ng-molain/ng-molain.scss",
+              "apps/demo/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {

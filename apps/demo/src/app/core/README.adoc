@@ -1,0 +1,32 @@
+= CoreModule
+
+== 规约
+
+**应** 仅只留 `providers` 属性。
+
+**作用：**  一些通用服务，例如：用户消息、HTTP数据访问。
+
+== 使用方式
+
+1. core module 中的文件在 index.ts 中导出;
+2. 其他地方引入 core 模块， 用魔法路径 `@{groupId}/{appId}/core` 或 `@{groupId}/{artifactId}/core`; （其他 feature Module也应该遵循此规则，用 `public_api.ts` 或者 `index.ts` 导出外部可用的类 ）
+3. 为保持代码的可迁移和可重构性，拒绝跨（feature）模块使用相对路径;
+
+.使上述第二点生效需要在项目的 `tsconfig.json` 文件中做如下配置
+----
+"paths": {
+      "@ng-molain/demo/core": ["apps/demo/src/app/core/index.ts"],
+      ...
+}
+----
+
+
+== CoreModule 的前世今生
+
+在 Angular 5 之前的代码框架中，所有的服务提供还需要在一个模块中显式声明。为了简化代码，往往需要将=一些需要在全局提供的服务，抽取到 `CoreModule` 中提供（Angular 规约， `CoreModule` 只能在 `AppModule` 中导入，且整个应用只能导入一次。 因此，通常情况下， `CoreModule` 仅只有 `provides` 属性声明）。
+
+在 Angular 6 之后，Angular 框架本身对 `Injectable` 装饰器做了优化，对 `provideIn` 属性进行了实现，对于全局服务不再需要在某个模块中显示声明。因此， `CoreModule` 已经失去了提供服务的特性，对于 `NgModule` 来讲是没有价值的声明。
+
+不过，我们还是将一些需要在全局或（框架）底层做的事情，组织到 `CoreModule` 中，比如：全局 `Http Intercepter` （http 拦截器，框架）, 用户消息（全局底层业务）, `i18n` （国际化，框架服务）, `startup service`（应用启动服务，仅在应用启动时加载） 等。
+
+

@@ -19,7 +19,10 @@
       "@ng-molain/examples": ["libs/examples/src/index.ts"],
       "@ng-molain/common": ["libs/common/src/index.ts"],
       "@ng-molain/components": ["libs/components/src/index.ts"],
-      "@ng-molain/drag-drop": ["libs/drag-drop/src/index.ts"]
+      "@ng-molain/drag-drop": ["libs/drag-drop/src/index.ts"],
+
+      "@ng-molain/demo/core": ["apps/demo/src/app/core/index.ts"],
+      "@ng-molain/demo/shared": ["apps/demo/src/app/shared/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

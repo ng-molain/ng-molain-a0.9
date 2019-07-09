@@ -1,0 +1,52 @@
+= SharedModule
+
+== 规约
+
+**应** 包含定义：
+
+- 应用通用自定义业务组件
+
+**应** 导出所有包含的模块。
+
+**不应** 有 `providers` 属性。
+
+== 作用
+
+1. 定义全局组件（含指令）
+2. 包装导出全局使用到的框架级别的包模块（如：(Angular)CommonModule, (Angular)FormsModule, NgZorroAntdModule, NgMolain[FeatureName]Module 等）, 这一特性给业务模块的整洁性保持有着极大的便利。
+3. 提供全局工具方法（utils, functions）。
+
+== 使用方式
+
+1. core module 中的文件在 index.ts 中导出
+2. 其他地方引入 core 模块， 用魔法路径 `@{groupId}/{appId}/shared` 或 `@{groupId}/{artifactId}/shared`; 
+3. 为保持代码的可迁移和可重构性，拒绝跨（feature）模块使用相对路径
+
+.使上述第二点生效需要在项目的 `tsconfig.json` 文件中做如下配置
+----
+"paths": {
+      "@ng-molain/demo/shared": ["apps/demo/src/app/shared/index.ts"],
+      ...
+}
+----
+
+== 自定义全局组件或指令
+
+每一个组件或指令应该有一个完整的说明文件，**建议**一个合理的目录结构应该是：
+
+```
+├── components
+│   ├── comp1
+│   │   ├── index.ts
+│   │   ├── README.md
+│   ├── comp2
+│   │   ├── index.ts
+│   │   ├── README.md
+├── directives
+│   ├── dire1
+│   │   ├── index.ts
+│   │   ├── README.md
+│   ├── dire2
+│   │   ├── index.ts
+│   │   ├── README.md
+```
