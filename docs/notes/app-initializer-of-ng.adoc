@@ -1,0 +1,9 @@
+= `APP_INITIALIZER` of Angular(ng)
+
+`APP_INITIALIZER` 是 Angular 的 https://angular.cn/guide/dependency-injection-providers#predefined-tokens-and-multiple-providers[预定义令牌] 。
+
+> https://angular.cn/api/core/APP_INITIALIZER[APP_INITIALIZER]：应用初始化之前调用的回调函数。注册的所有初始化器都可以（可选地）返回一个 Promise。所有返回 Promise 的初始化函数都必须在应用启动之前解析完。如果任何一个初始化器失败了，该应用就不会继续启动。
+
+== 使用惯例
+
+APP_INITIALIZER 的目的不是终止应用的启动，而是为应用的运行保驾护航，即执行相关的应用运行准备。因此，在应用启动过程中遇到了不可挽回的灾难时，我们应该**保证应用正常启动**， 而将不能处理的局面（状态）保留到一个中间服务中。等应用启动起来之后，根据应用加载状态，决定是处理灾难状态（例如，显示断网提示，版本兼容提示等），还是正常进入应用。否则就只有停留在启动页面，如果没有提供应用加载前 `动作` （一般是加载动画） 的话，可能用户看到的就是白页。
