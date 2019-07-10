@@ -14,6 +14,14 @@ import { NgMolainComponentsModule } from '@ng-molain/components';
     NgZorroAntdModule,
     NgMolainCommonModule,
     NgMolainComponentsModule,
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgZorroAntdModule,
+    NgMolainCommonModule,
+    NgMolainComponentsModule,
   ]
 })
 export class SharedModule { }
