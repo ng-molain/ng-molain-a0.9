@@ -1,0 +1,50 @@
+.sign-in-header {
+    display: flex;
+    margin: 16px 0;
+
+    .sign-in-title {
+        h1 {
+            font-size: 24px;
+            display: inline;
+        }
+
+        span {
+            margin-left: 16px;
+        }
+    }
+}
+
+.sign-in-main {
+    padding: 16px 0;
+
+    .sign-in-wrapper {
+        max-width: 368px;
+    }
+
+    .error-placeholder {
+        // min-height: 32px;
+        min-height: 4px;
+        margin-bottom: 20px;
+    }
+}
+
+.login-banner {
+    width: 546px;
+    height: 357px;
+    background-image: url('/assets/images/login-bg.png');
+    margin-top: 16px;
+}
+
+.other {
+    text-align: left;
+    margin-top: 24px;
+    line-height: 22px;
+
+    nz-tooltip {
+        vertical-align: middle;
+    }
+
+    .register {
+        float: right;
+    }
+}

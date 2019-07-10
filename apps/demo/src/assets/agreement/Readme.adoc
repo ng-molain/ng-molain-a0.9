@@ -1,0 +1,9 @@
+参考：
+
+云朵课堂::
+- http://manage.yunduoketang.com/register/registerService/ser[用户协议]
+- http://manage.yunduoketang.com/register/registerService/piva[法律声明]
+
+阿里云::
+- http://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201712130944_39600.html[阿里云网站服务条款]
+- http://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud201710161525_98396.html[法律声明及隐私权政策]

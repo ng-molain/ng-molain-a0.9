@@ -1,0 +1,147 @@
+<section class="sign-up-header">
+  <div class="sign-up-title">
+    <h1>欢迎注册</h1>
+    <span>是谁，给了你一双明眸慧眼！</span>
+  </div>
+
+  <div class="ml-auto">
+    <span>已有账号？</span>
+    <a [routerLink]="['/account/signIn']">登录系统</a>
+  </div>
+</section>
+
+<section class="sign-up-main">
+  <div class="row">
+    <div class="col-7">
+      <div class="sign-up-banner mx-auto">
+        <nz-carousel nzAutoPlay [nzEffect]="'fade'">
+          <div nz-carousel-content *ngFor="let banner of banners">
+            <div class="sign-up-banner-img">
+              <img [src]="banner.img" alt="{{banner.title}}">
+            </div>
+            <h4>{{ banner.title }}</h4>
+            <p>{{ banner.intro }}</p>
+          </div>
+        </nz-carousel>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="sign-up-wrapper mx-auto">
+
+        <form nz-form [formGroup]="form" (ngSubmit)="submit()" role="form">
+          <nz-alert *ngIf="error" [nzType]="'error'" [nzMessage]="error" [nzShowIcon]="true" class="mb-lg"></nz-alert>
+          <nz-form-item>
+            <nz-form-control>
+              <nz-input-group nzSize="large" nzAddonBeforeIcon="anticon anticon-user">
+                <input nz-input formControlName="mail" placeholder="Email">
+              </nz-input-group>
+              <ng-container *ngIf="mail.dirty && mail.errors">
+                <nz-form-explain *ngIf="mail.errors?.required">{{ 'validation.email.required' }}
+                </nz-form-explain>
+                <nz-form-explain *ngIf="mail.errors?.email">{{ 'validation.email.wrong-format' }}
+                </nz-form-explain>
+              </ng-container>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <nz-popover [nzPlacement]="'right'" [nzTrigger]="'focus'" [(nzVisible)]="visible"
+                nzOverlayClassName="register-password-cdk" [nzOverlayStyle]="{'width.px': 240}">
+                <nz-input-group nzSize="large" nz-popover nzAddonBeforeIcon="anticon anticon-lock">
+                  <input nz-input type="password" formControlName="password" placeholder="Password">
+                </nz-input-group>
+                <nz-form-explain *ngIf="password.dirty && password.errors">
+                  {{ 'validation.password.required' }}</nz-form-explain>
+                <ng-template #nzTemplate>
+                  <div style="padding: 4px 0;">
+                    <ng-container [ngSwitch]="status">
+                      <div *ngSwitchCase="'ok'" class="success">{{ 'validation.password.strength.strong' }}
+                      </div>
+                      <div *ngSwitchCase="'pass'" class="warning">
+                        {{ 'validation.password.strength.medium' }}</div>
+                      <div *ngSwitchDefault class="error">{{ 'validation.password.strength.short' }}</div>
+                    </ng-container>
+                    <div class="progress-{{status}}">
+                      <nz-progress [nzPercent]="progress" [nzStatus]="passwordProgressMap[status]" [nzStrokeWidth]="6"
+                        [nzShowInfo]="false"></nz-progress>
+                    </div>
+                    <p class="mt-sm">{{ 'validation.password.strength.msg' }}</p>
+                  </div>
+                </ng-template>
+              </nz-popover>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <nz-input-group nzSize="large" nzAddonBeforeIcon="anticon anticon-lock">
+                <input nz-input type="password" formControlName="confirm" placeholder="Confirm Password">
+              </nz-input-group>
+              <nz-form-explain *ngIf="confirm.dirty && confirm.errors">
+                <ng-container *ngIf="confirm.errors.required">
+                  {{ 'validation.confirm-password.required' }}
+                </ng-container>
+                <ng-container *ngIf="confirm.errors.equar">
+                  {{ 'validation.password.twice' }}
+                </ng-container>
+              </nz-form-explain>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <nz-input-group nzSize="large" [nzAddOnBefore]="addOnBeforeTemplate">
+                <ng-template #addOnBeforeTemplate>
+                  <nz-select formControlName="mobilePrefix" style="width: 100px;">
+                    <nz-option [nzLabel]="'+86'" [nzValue]="'+86'"></nz-option>
+                    <nz-option [nzLabel]="'+87'" [nzValue]="'+87'"></nz-option>
+                  </nz-select>
+                </ng-template>
+                <input formControlName="mobile" nz-input placeholder="Phone number">
+              </nz-input-group>
+              <nz-form-explain *ngIf="mobile.dirty && mobile.errors">
+                <ng-container *ngIf="mobile.errors.required">
+                  {{ 'validation.phone-number.required' }}
+                </ng-container>
+                <ng-container *ngIf="mobile.errors.pattern">
+                  {{ 'validation.phone-number.wrong-format' }}
+                </ng-container>
+              </nz-form-explain>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control>
+              <nz-row [nzGutter]="8">
+                <nz-col [nzSpan]="16">
+                  <nz-input-group nzSize="large" nzAddonBeforeIcon="anticon anticon-mail">
+                    <input nz-input formControlName="captcha" placeholder="Captcha">
+                  </nz-input-group>
+                  <nz-form-explain *ngIf="captcha.dirty && captcha.errors">
+                    {{ 'validation.verification-code.required' }}
+                  </nz-form-explain>
+                </nz-col>
+                <nz-col [nzSpan]="8">
+                  <button type="button" nz-button nzSize="large" (click)="getCaptcha()" [disabled]="count" nzBlock
+                    [nzLoading]="http?.loading">
+                    {{ count ? count + 's' : '获取验证码' }}</button>
+                </nz-col>
+              </nz-row>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <button nz-button nzType="primary" nzSize="large" type="submit" [nzLoading]="http?.loading" class="submit">
+              {{ '同意条款并注册' }}
+            </button>
+            <a class="login" routerLink="/passport/login">{{ '使用已有账户登录' }}</a>
+          </nz-form-item>
+
+          <nz-form-item>
+            <label nz-checkbox>同意</label>
+            <a href="./assets/agreement/user-agreement.html" target="_blank">《网站服务协议》</a>
+            <span> | </span>
+            <a href="./assets/agreement/legal-agreement.html" target="_blank">《法律声明及隐私权政策》</a>
+          </nz-form-item>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>

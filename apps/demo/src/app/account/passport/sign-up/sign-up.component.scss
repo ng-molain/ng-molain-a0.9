@@ -1,0 +1,95 @@
+$btn-height-lg: 40px;
+$success-color: #52c41a;
+$warning-color: #faad14;
+$error-color: #f5222d;
+
+.sign-up-header {
+    display: flex;
+    margin: 16px 0;
+
+    .sign-up-title {
+        h1 {
+            font-size: 24px;
+            display: inline;
+        }
+
+        span {
+            margin-left: 16px;
+        }
+    }
+}
+
+.sign-up-main {
+    padding: 16px 0;
+
+    .sign-up-wrapper {
+        max-width: 368px;
+
+        .submit {
+            width: 50%;
+          }
+          .login {
+            float: right;
+            line-height: $btn-height-lg;
+          }
+    }
+
+    .error-placeholder {
+        // min-height: 32px;
+        min-height: 4px;
+        margin-bottom: 20px;
+    }
+
+    .sign-up-banner {
+        width: 412px;
+
+        [nz-carousel-content] {
+            text-align: center;
+            padding-bottom: 16px;
+            
+            .sign-up-banner-img {
+                width: 412px;
+                height: 285px;
+                overflow: hidden;
+
+                img {
+                    margin: 0 auto;
+                    max-width: 412px;
+                    max-height: 285px;
+                }
+            }
+            h4 {
+                line-height: 1.5;
+            }
+
+            p {
+                color: #999999;
+                margin-top: 0px;
+            }
+        }
+    }
+}
+
+::ng-deep {
+    .register-password-cdk {
+      .success,
+      .warning,
+      .error {
+        transition: color 0.3s;
+      }
+      .success {
+        color: $success-color;
+      }
+      .warning {
+        color: $warning-color;
+      }
+      .error {
+        color: $error-color;
+      }
+      .progress-pass > .progress {
+        .ant-progress-bg {
+          background-color: $warning-color;
+        }
+      }
+    }
+  }
