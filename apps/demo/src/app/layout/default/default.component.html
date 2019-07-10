@@ -1,6 +1,16 @@
 
-<demo-layout-header class="layout-default-header"></demo-layout-header>
-<demo-layout-sidebar class="layout-default-sidebar"></demo-layout-sidebar>
-<section class="layout-default-content">
-  <router-outlet></router-outlet>
-</section>
+<nz-layout class="h-100">
+  <nz-header class="bg-primary text-white">
+    <demo-layout-header class="layout-default-header"></demo-layout-header>
+  </nz-header>
+  <nz-layout>
+    <nz-sider class="bg-white">
+      <demo-layout-sidebar class="layout-default-sidebar"></demo-layout-sidebar>
+    </nz-sider>
+    <nz-content>
+      <section class="layout-default-content">
+        <router-outlet></router-outlet>
+      </section>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
