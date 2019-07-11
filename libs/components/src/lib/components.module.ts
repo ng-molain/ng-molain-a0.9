@@ -10,6 +10,7 @@ import { GlobalFooterModule } from './global-footer';
 import { PageHeaderModule } from './page-header';
 import { ResultModule } from './result';
 import { DetailsModule } from './details';
+import { SidenavModule } from './sidenav';
 
 @NgModule({
   exports: [
@@ -24,6 +25,7 @@ import { DetailsModule } from './details';
     PageHeaderModule,
     ResultModule,
     DetailsModule,
+    SidenavModule
   ]
 })
 export class NgMolainComponentsModule {}
