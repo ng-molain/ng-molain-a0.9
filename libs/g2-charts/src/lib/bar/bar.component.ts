@@ -39,7 +39,7 @@ export interface G2BarData {
 export class G2BarComponent implements OnInit, OnChanges, OnDestroy {
   private resize$: Subscription;
   private chart: any;
-  @ViewChild('container', {static: true}) private node: ElementRef;
+  @ViewChild('container', {static: false}) private node: ElementRef;
 
   // #region fields
 

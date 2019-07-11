@@ -295,7 +295,11 @@
               "apps/demo/src/styles/ng-molain/ng-molain.scss",
               "apps/demo/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@antv/g2/build/g2.js",
+              "node_modules/@antv/data-set/dist/data-set.min.js",
+              "node_modules/@antv/g2-plugin-slider/dist/g2-plugin-slider.min.js"
+            ]
           },
           "configurations": {
             "production": {

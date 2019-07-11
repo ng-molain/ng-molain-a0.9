@@ -1,0 +1,14 @@
+nz-card {
+    margin-bottom: 16px;
+
+    &.ant-card__body-nopadding ::ng-deep {
+        .ant-card-body {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.rotate-90 {
+    transform: rotate(90deg);
+}

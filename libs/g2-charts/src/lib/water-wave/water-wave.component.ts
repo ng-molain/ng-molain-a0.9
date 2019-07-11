@@ -29,7 +29,7 @@ import { InputNumber } from 'ng-zorro-antd';
 })
 export class G2WaterWaveComponent implements OnDestroy, OnChanges, OnInit {
   private resize$: Subscription | null = null;
-  @ViewChild('container', {static: true}) private node: ElementRef;
+  @ViewChild('container', {static: false}) private node: ElementRef;
   private timer: number;
 
   // #region fields

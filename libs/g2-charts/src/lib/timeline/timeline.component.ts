@@ -36,8 +36,8 @@ export class G2TimelineData {
   encapsulation: ViewEncapsulation.None,
 })
 export class G2TimelineComponent implements OnInit, OnDestroy, OnChanges {
-  @ViewChild('container', {static: true}) private node: ElementRef;
-  @ViewChild('sliderContainer', {static: true}) private sliderNode: ElementRef;
+  @ViewChild('container', {static: false}) private node: ElementRef;
+  @ViewChild('sliderContainer', {static: false}) private sliderNode: ElementRef;
   private chart: any;
   private _slider: any;
 

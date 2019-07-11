@@ -7,10 +7,10 @@ import { StringTemplateOutletDirective } from './string-template-outlet';
         CommonModule
     ],
     declarations: [
-        StringTemplateOutletDirective
+        StringTemplateOutletDirective,
     ],
     exports: [
-        StringTemplateOutletDirective
+        StringTemplateOutletDirective,
     ],
 })
 export class NgMolainDirectivesModule { }

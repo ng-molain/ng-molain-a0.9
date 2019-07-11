@@ -14,32 +14,42 @@
             "i18n": "menu.main",
             "sortNo": 1,
             "type": "group",
+            "level": 0,
             "children": [
                 {
                     "name": "仪表盘",
                     "i18n": "menu.dashboard",
                     "icon": "anticon-dashboard",
                     "type": "submenu",
+                    "level": 1,
                     "children": [
                         {
                             "name": "仪表盘V1",
                             "i18n": "menu.dashboard.v1",
-                            "link": "/dashboard/v1"
+                            "link": "/dashboard/v1",
+                            "route": "/dashboard/v1",
+                            "level": 2
                         },
                         {
                             "name": "分析页",
-                            "i18n": "menu.dashboard.v1",
-                            "link": "/dashboard/v1"
+                            "i18n": "menu.dashboard.analysis",
+                            "link": "/dashboard/analysis",
+                            "route": "/dashboard/analysis",
+                            "level": 2
                         },
                         {
                             "name": "监控页",
-                            "i18n": "menu.dashboard.v1",
-                            "link": "/dashboard/v1"
+                            "i18n": "menu.dashboard.monitor",
+                            "link": "/dashboard/monitor",
+                            "route": "/dashboard/monitor",
+                            "level": 2
                         },
                         {
                             "name": "工作台",
-                            "i18n": "menu.dashboard.v1",
-                            "link": "/dashboard/v1"
+                            "i18n": "menu.dashboard.workplace",
+                            "link": "/dashboard/workplace",
+                            "route": "/dashboard/workplace",
+                            "level": 2
                         }
                     ]
                 },

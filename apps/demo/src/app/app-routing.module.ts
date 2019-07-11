@@ -5,7 +5,8 @@ import { LayoutDefaultComponent } from '@ng-molain/demo/layout';
 const routes: Routes = [
   {
     path: '', component: LayoutDefaultComponent, children: [
-      { path: '', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) }
     ]
   },
 

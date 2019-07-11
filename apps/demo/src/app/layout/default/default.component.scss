@@ -1,0 +1,13 @@
+
+.layout-default-content {
+    padding: 24px;
+
+    &::ng-deep {
+        nz-page-header, .nz-page-header {
+            margin-top: -24px;
+            margin-left: -24px;
+            margin-right: -24px;
+            margin-bottom: 24px;
+        }
+    }
+}
