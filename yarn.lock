@@ -139,10 +139,10 @@
     "@angular-devkit/core" "8.0.6"
     rxjs "6.4.0"
 
-"@angular/animations@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2fanimations/-/animations-8.1.0.tgz#acc6716df47599e48c715c7ec24dfc1e340256e2"
-  integrity sha1-rMZxbfR1meSMcVx+wk38HjQCVuI=
+"@angular/animations@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2fanimations/-/animations-8.1.1.tgz#ee8222d700db5d56e78dfd2b9d26efc70102964d"
+  integrity sha1-7oIi1wDbXVbnjf0rnSbvxwEClk0=
   dependencies:
     tslib "^1.9.0"
 
@@ -178,17 +178,17 @@
     universal-analytics "^0.4.20"
     uuid "^3.3.2"
 
-"@angular/common@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2fcommon/-/common-8.1.0.tgz#aeb34e52e7f808e49d045eee36b97c802152c8fb"
-  integrity sha1-rrNOUuf4COSdBF7uNrl8gCFSyPs=
+"@angular/common@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2fcommon/-/common-8.1.1.tgz#8094ed2cd4f2cdeb5d074ab7e67fb2411138251b"
+  integrity sha1-gJTtLNTyzetdB0q35n+yQRE4JRs=
   dependencies:
     tslib "^1.9.0"
 
-"@angular/compiler-cli@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2fcompiler-cli/-/compiler-cli-8.1.0.tgz#a42376cc42d34d04a9d7f1238b5d7ef535a218f6"
-  integrity sha1-pCN2zELTTQSp1/Eji11+9TWiGPY=
+"@angular/compiler-cli@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2fcompiler-cli/-/compiler-cli-8.1.1.tgz#46fc72a0e62632ba56626ca8e093fb29dc796c4f"
+  integrity sha1-RvxyoOYmMrpWYmyo4JP7Kdx5bE8=
   dependencies:
     canonical-path "1.0.0"
     chokidar "^2.1.1"
@@ -202,50 +202,50 @@
     tslib "^1.9.0"
     yargs "13.1.0"
 
-"@angular/compiler@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2fcompiler/-/compiler-8.1.0.tgz#8d94ad49d5388b2f2f0e369233a224f649619be9"
-  integrity sha1-jZStSdU4iy8vDjaSM6Ik9klhm+k=
+"@angular/compiler@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2fcompiler/-/compiler-8.1.1.tgz#0006ff26f69246b811418ed08a71ff6d5b9c6fbc"
+  integrity sha1-AAb/JvaSRrgRQY7QinH/bVucb7w=
   dependencies:
     tslib "^1.9.0"
 
-"@angular/core@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2fcore/-/core-8.1.0.tgz#68bc170b4c041e3c19b9a17c0fff74b88fb37aae"
-  integrity sha1-aLwXC0wEHjwZuaF8D/90uI+zeq4=
+"@angular/core@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2fcore/-/core-8.1.1.tgz#888fb879906a46429ddac7163fe25915ce5a7f8f"
+  integrity sha1-iI+4eZBqRkKd2scWP+JZFc5af48=
   dependencies:
     tslib "^1.9.0"
 
-"@angular/forms@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2fforms/-/forms-8.1.0.tgz#730d5a7b053de8961ea974cb51f72077cc5349b9"
-  integrity sha1-cw1aewU96JYeqXTLUfcgd8xTSbk=
+"@angular/forms@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2fforms/-/forms-8.1.1.tgz#e71d8967b4b9bf0e67a21bcf953bf1bf4eecd1e5"
+  integrity sha1-5x2JZ7S5vw5nohvPlTvxv07s0eU=
   dependencies:
     tslib "^1.9.0"
 
-"@angular/language-service@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2flanguage-service/-/language-service-8.1.0.tgz#6f7701ac81cfd51f7f9678d9952af0672c8f7d7d"
-  integrity sha1-b3cBrIHP1R9/lnjZlSrwZyyPfX0=
+"@angular/language-service@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2flanguage-service/-/language-service-8.1.1.tgz#5940b764fa395b75acd50777721c0aa2914e58c9"
+  integrity sha1-WUC3ZPo5W3Ws1Qd3chwKopFOWMk=
 
-"@angular/platform-browser-dynamic@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2fplatform-browser-dynamic/-/platform-browser-dynamic-8.1.0.tgz#407fae89fc7294783b8d27c19c1f96e36a3fdabd"
-  integrity sha1-QH+uifxylHg7jSfBnB+W42o/2r0=
+"@angular/platform-browser-dynamic@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2fplatform-browser-dynamic/-/platform-browser-dynamic-8.1.1.tgz#f3a932e7f0cd0cdce1522ede5651d57ba324c78a"
+  integrity sha1-86ky5/DNDNzhUi7eVlHVe6Mkx4o=
   dependencies:
     tslib "^1.9.0"
 
-"@angular/platform-browser@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2fplatform-browser/-/platform-browser-8.1.0.tgz#186ce714304d2f72c4a3bf50a1607e03c8de6abd"
-  integrity sha1-GGznFDBNL3LEo79QoWB+A8jear0=
+"@angular/platform-browser@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2fplatform-browser/-/platform-browser-8.1.1.tgz#36526e524ba3d125c0508beef3a3290d85f7d515"
+  integrity sha1-NlJuUkuj0SXAUIvu86MpDYX31RU=
   dependencies:
     tslib "^1.9.0"
 
-"@angular/router@^8.0.3":
-  version "8.1.0"
-  resolved "http://npm.parim.net/@angular%2frouter/-/router-8.1.0.tgz#e8e0d146a489abcc7b8aed0f9efe10922e467db6"
-  integrity sha1-6ODRRqSJq8x7iu0Pnv4Qki5GfbY=
+"@angular/router@^8.1.1":
+  version "8.1.1"
+  resolved "http://npm.parim.net/@angular%2frouter/-/router-8.1.1.tgz#05edb0f49dab0bbf896a823cc52fd35de9ea8b85"
+  integrity sha1-Be2w9J2rC7+JaoI8xS/TXenqi4U=
   dependencies:
     tslib "^1.9.0"
 
