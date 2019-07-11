@@ -528,6 +528,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "g2-charts": {
+      "projectType": "library",
+      "root": "libs/g2-charts",
+      "sourceRoot": "libs/g2-charts/src",
+      "prefix": "g2",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/g2-charts/tsconfig.lib.json",
+              "libs/g2-charts/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/g2-charts/jest.config.js",
+            "tsConfig": "libs/g2-charts/tsconfig.spec.json",
+            "setupFile": "libs/g2-charts/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

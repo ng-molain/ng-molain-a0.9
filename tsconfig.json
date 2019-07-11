@@ -20,9 +20,10 @@
       "@ng-molain/common": ["libs/common/src/index.ts"],
       "@ng-molain/components": ["libs/components/src/index.ts"],
       "@ng-molain/drag-drop": ["libs/drag-drop/src/index.ts"],
+      "@ng-molain/g2-charts": ["libs/g2-charts/src/index.ts"],
       "@ng-molain/demo/core": ["apps/demo/src/app/core/index.ts"],
       "@ng-molain/demo/shared": ["apps/demo/src/app/shared/index.ts"],
-      "@ng-molain/demo/layout": ["apps/demo/src/app/layout/index.ts"],
+      "@ng-molain/demo/layout": ["apps/demo/src/app/layout/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
