@@ -89,7 +89,9 @@
               "apps/dev-app/tsconfig.app.json",
               "apps/dev-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -219,7 +221,9 @@
               "apps/site/tsconfig.app.json",
               "apps/site/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -324,7 +328,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "demo:build",
-            "port": 4702
+            "port": 4702,
+            "proxyConfig": "apps/demo/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -345,7 +350,9 @@
               "apps/demo/tsconfig.app.json",
               "apps/demo/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -397,7 +404,9 @@
               "libs/examples/tsconfig.lib.json",
               "libs/examples/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -435,7 +444,9 @@
               "libs/common/tsconfig.lib.json",
               "libs/common/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -473,7 +484,9 @@
               "libs/components/tsconfig.lib.json",
               "libs/components/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -511,7 +524,9 @@
               "libs/drag-drop/tsconfig.lib.json",
               "libs/drag-drop/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -542,7 +557,9 @@
               "libs/g2-charts/tsconfig.lib.json",
               "libs/g2-charts/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -557,6 +574,64 @@
       "schematics": {
         "@nrwl/angular:component": {
           "styleext": "scss"
+        }
+      }
+    },
+    "mock-api": {
+      "root": "apps/mock-api",
+      "sourceRoot": "apps/mock-api/src",
+      "projectType": "application",
+      "prefix": "mock-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/mock-api",
+            "main": "apps/mock-api/src/main.ts",
+            "tsConfig": "apps/mock-api/tsconfig.app.json",
+            "assets": [
+              "apps/mock-api/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/mock-api/src/environments/environment.ts",
+                  "with": "apps/mock-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "mock-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mock-api/tsconfig.app.json",
+              "apps/mock-api/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/mock-api/jest.config.js",
+            "tsConfig": "apps/mock-api/tsconfig.spec.json"
+          }
         }
       }
     }
@@ -579,5 +654,6 @@
     "@nrwl/angular:component": {
       "style": "scss"
     }
-  }
+  },
+  "defaultProject": "mock-api"
 }

@@ -40,6 +40,9 @@
     },
     "g2-charts": {
       "tags": []
+    },
+    "mock-api": {
+      "tags": []
     }
   }
 }
