@@ -8,15 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(
-    @Inject(LOCALE_ID) public localeId: string,
-    private http: HttpClient
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.http.get('http://sparkdev.qimooc.net/api/open/siteInfo5').subscribe(it => {
-      console.log(it);
-    }, err => console.log('welcome err'));
-  }
+  ngOnInit() { }
 
 }

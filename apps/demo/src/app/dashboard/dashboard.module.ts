@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { SharedModule } from '@ng-molain/demo/shared';
 
 @NgModule({
-  declarations: [WelcomeComponent],
   imports: [
-    CommonModule,
+    SharedModule,
     DashboardRoutingModule
-  ]
+  ],
+  declarations: [WelcomeComponent],
 })
 export class DashboardModule { }
