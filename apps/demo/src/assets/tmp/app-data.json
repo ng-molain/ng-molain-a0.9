@@ -1,0 +1,69 @@
+{
+    "app": {
+        "name": "Molain",
+        "desc": "Admin panel front-end framework based on ng-zorro-antd."
+    },
+    "user": {
+        "name": "Tony Een",
+        "avatar": "/assets/tmp/img/avatar.jpg",
+        "email": "tonyeen@github.com"
+    },
+    "system": {
+        "menu": [{
+            "name": "主导航",
+            "i18n": "menu.main",
+            "sortNo": 1,
+            "type": "group",
+            "children": [
+                {
+                    "name": "仪表盘",
+                    "i18n": "menu.dashboard",
+                    "icon": "anticon-dashboard",
+                    "type": "submenu",
+                    "children": [
+                        {
+                            "name": "仪表盘V1",
+                            "i18n": "menu.dashboard.v1",
+                            "link": "/dashboard/v1"
+                        },
+                        {
+                            "name": "分析页",
+                            "i18n": "menu.dashboard.v1",
+                            "link": "/dashboard/v1"
+                        },
+                        {
+                            "name": "监控页",
+                            "i18n": "menu.dashboard.v1",
+                            "link": "/dashboard/v1"
+                        },
+                        {
+                            "name": "工作台",
+                            "i18n": "menu.dashboard.v1",
+                            "link": "/dashboard/v1"
+                        }
+                    ]
+                },
+                {
+                    "name": "快捷菜单",
+                    "i18n": "menu.dashboard",
+                    "icon": "anticon-dashboard",
+                    "type": "submenu",
+                    "children": [
+                        {
+                            "name": "文字排版",
+                            "i18n": "menu.dashboard.v1",
+                            "link": "/dashboard/v1"
+                        }
+                    ]
+                },
+                {
+                    "name": "小部件",
+                    "i18n": "menu.dashboard",
+                    "icon": "anticon-dashboard",
+                    "type": "menuitem",
+                    "badge": 2
+                }
+            ]
+        }]
+    }
+}
