@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { NgMolainCommonModule } from '@ng-molain/common';
 import { NgMolainComponentsModule } from '@ng-molain/components';
+import { G2ChartsModule } from '@ng-molain/g2-charts';
 
 @NgModule({
   declarations: [],
@@ -22,6 +23,7 @@ import { NgMolainComponentsModule } from '@ng-molain/components';
     NgZorroAntdModule,
     NgMolainCommonModule,
     NgMolainComponentsModule,
+    G2ChartsModule
   ]
 })
 export class SharedModule { }

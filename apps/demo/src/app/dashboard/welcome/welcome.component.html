@@ -2,6 +2,18 @@
   <nz-page-header-content>Welcome</nz-page-header-content>
 </nz-page-header>
 
-<p>
-  welcome works!
-</p>
+
+<div nz-row nzGutter="16">
+  <div nz-col nzXs="24" nzSm="12" nzMd="6" class="mb-md">
+    <div nz-row nzType="flex" nzAlign="middle" class="bg-primary rounded-md">
+      <div nz-col nzSpan="12" class="p-md text-white">
+        <div class="h2 mt0">123,456</div>
+        <p class="text-nowrap mb0">Website Traffics</p>
+      </div>
+      <div nz-col nzSpan="12">
+        <g2-mini-bar *ngIf="webSite" height="35" color="#fff" borderWidth="3" [padding]="[36, 30, 30, 30]"
+          [data]="webSite" tooltipType="mini"></g2-mini-bar>
+      </div>
+    </div>
+  </div>
+</div>
