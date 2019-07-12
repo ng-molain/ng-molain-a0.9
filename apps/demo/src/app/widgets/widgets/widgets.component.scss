@@ -1,0 +1,15 @@
+@import '../../../../../../libs/common/src/style/theming.scss';
+
+:host ::ng-deep {
+  .ant-carousel {
+    .slick-dots {
+      bottom: -10px;
+      button {
+        background: $gray-100;
+      }
+      .slick-active button {
+        background: $primary;
+      }
+    }
+  }
+}
