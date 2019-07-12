@@ -8,6 +8,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
       { path: 'widgets', loadChildren: () => import('./widgets/widgets.module').then(m => m.WidgetsModule) },
+      { path: 'style', loadChildren: () => import('./content/content.module').then(m => m.ContentModule) },
       // { path: '', loadChildren: () => import('.').then(m => m) },
     ]
   },
