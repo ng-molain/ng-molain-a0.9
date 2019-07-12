@@ -12,7 +12,7 @@
       <ng-container [ngSwitch]="menu.type">
         <ng-template ngSwitchCase="submenu">
           <ng-container *ngIf="!!menu.children && menu.children.length > 0">
-            <li nz-submenu [nzTitle]="menu.name" nzOpen [nzPaddingLeft]="menu.level * 24">
+            <li nz-submenu [nzTitle]="menu.name" [nzOpen]="menu.open" [nzPaddingLeft]="menu.level * 24">
               <ul>
                 <ng-container *ngTemplateOutlet="menuTpl; context: {$implicit: menu.children}"></ng-container>
               </ul>

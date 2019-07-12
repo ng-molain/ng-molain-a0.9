@@ -11,4 +11,6 @@ export * from './lib/result';
 export * from './lib/details';
 export * from './lib/sidenav';
 
+export * from './lib/edit';
+
 export * from './lib/components.module';
