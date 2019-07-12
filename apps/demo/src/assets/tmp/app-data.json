@@ -91,7 +91,7 @@
                     "text": "Delon",
                     "i18n": "menu.delon",
                     "icon": "anticon-bulb",
-                    "children": [
+                    "children1": [
                         {
                             "text": "Dynamic Form",
                             "link": "/delon/form",

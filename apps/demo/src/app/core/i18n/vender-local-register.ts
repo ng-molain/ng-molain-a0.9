@@ -47,7 +47,7 @@ export const DEFAULT_LOCALE_ID = I18N_CONFIG.defaultLocaleId;
 // TODO: 改为用 factory 的方式，这样可以动态修改语言
 export const LOCALE_PROVIDERS: Provider[] = [
   { provide: LOCALE_ID, useValue: DEFAULT_LOCALE_ID },
-  { provide: NZ_I18N, useValue: LOCALE_DATA[DEFAULT_LOCALE_ID] }
+  { provide: NZ_I18N, useValue: LOCALE_DATA[DEFAULT_LOCALE_ID].zorro }
 ];
 
 function __registerAngularLocalData() {
