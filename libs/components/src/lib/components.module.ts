@@ -11,6 +11,7 @@ import { PageHeaderModule } from './page-header';
 import { ResultModule } from './result';
 import { DetailsModule } from './details';
 import { SidenavModule } from './sidenav';
+import { TableModule } from './table';
 import { SEModule } from './edit';
 import { SVModule } from './view';
 
@@ -28,6 +29,7 @@ import { SVModule } from './view';
     ResultModule,
     DetailsModule,
     SidenavModule,
+    TableModule,
 
     SEModule,
     SVModule
