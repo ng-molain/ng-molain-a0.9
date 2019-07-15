@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef, TemplateRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
-import { map, tap } from 'lodash';
+import { tap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'demo-pro-table-list',
@@ -9,7 +9,6 @@ import { map, tap } from 'lodash';
   styleUrls: ['./table-list.component.scss']
 })
 export class TableListComponent implements OnInit {
-  /**
     q: any = {
       pi: 1,
       ps: 10,
@@ -31,7 +30,7 @@ export class TableListComponent implements OnInit {
       { index: 2, text: '已上线', value: false, type: 'success', checked: false },
       { index: 3, text: '异常', value: false, type: 'error', checked: false },
     ];
-    @ViewChild('st', { static: true })
+    /* @ViewChild('st', { static: true })
     st: STComponent;
     columns: STColumn[] = [
       { title: '', index: 'key', type: 'checkbox' },
@@ -74,7 +73,7 @@ export class TableListComponent implements OnInit {
           },
         ],
       },
-    ];
+    ];*/
     // selectedRows: STData[] = [];
     selectedRows: any[] = [];
     description = '';
@@ -99,7 +98,7 @@ export class TableListComponent implements OnInit {
         this.q.statusList.push(this.q.status);
       }
       this.http
-        .get('/rule', this.q)
+        .get('/api/rule', {params: this.q})
         .pipe(
           map((list: any[]) =>
             list.map(i => {
@@ -117,24 +116,24 @@ export class TableListComponent implements OnInit {
         });
     }
   
-    stChange(e: STChange) {
-      switch (e.type) {
-        case 'checkbox':
-          this.selectedRows = e.checkbox!;
-          this.totalCallNo = this.selectedRows.reduce((total, cv) => total + cv.callNo, 0);
-          this.cdr.detectChanges();
-          break;
-        case 'filter':
-          this.getData();
-          break;
-      }
-    }
+    // stChange(e: STChange) {
+    //   switch (e.type) {
+    //     case 'checkbox':
+    //       this.selectedRows = e.checkbox!;
+    //       this.totalCallNo = this.selectedRows.reduce((total, cv) => total + cv.callNo, 0);
+    //       this.cdr.detectChanges();
+    //       break;
+    //     case 'filter':
+    //       this.getData();
+    //       break;
+    //   }
+    // }
   
     remove() {
-      this.http.delete('/rule', { nos: this.selectedRows.map(i => i.no).join(',') }).subscribe(() => {
-        this.getData();
-        this.st.clearCheck();
-      });
+      // this.http.delete('/rule', { nos: this.selectedRows.map(i => i.no).join(',') }).subscribe(() => {
+      //   this.getData();
+      //   this.st.clearCheck();
+      // });
     }
   
     approval() {
@@ -147,7 +146,7 @@ export class TableListComponent implements OnInit {
         nzContent: tpl,
         nzOnOk: () => {
           this.loading = true;
-          this.http.post('/rule', { description: this.description }).subscribe(() => this.getData());
+          this.http.post('/api/rule', { description: this.description }).subscribe(() => this.getData());
         },
       });
     }
@@ -156,8 +155,5 @@ export class TableListComponent implements OnInit {
       // wait form reset updated finished
       setTimeout(() => this.getData());
     }
-  */
-
-  ngOnInit() { }
 
 }

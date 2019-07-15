@@ -1,5 +1,6 @@
 <nz-page-header [nzTitle]="'查询表格'"></nz-page-header>
-<!-- <nz-card [nzBordered]="false">
+
+<nz-card [nzBordered]="false">
   <form nz-form [nzLayout]="'inline'" (ngSubmit)="getData()" class="search__form">
     <div nz-row [nzGutter]="{ xs: 8, sm: 8, md: 8, lg: 24, xl: 48, xxl: 48 }">
       <div nz-col nzMd="8" nzSm="24">
@@ -20,6 +21,7 @@
               id="status"
               [nzPlaceHolder]="'请选择'"
               [nzShowSearch]="true"
+              style="width: 100px;"
             >
               <nz-option *ngFor="let i of status; let idx = index" [nzLabel]="i.text" [nzValue]="idx"></nz-option>
             </nz-select>
@@ -97,12 +99,46 @@
       </ng-template>
     </nz-alert>
   </div>
-  <st #st [columns]="columns" [data]="data" [loading]="loading" (change)="stChange($event)">
+  <!-- <st #st [columns]="columns" [data]="data" [loading]="loading" (change)="stChange($event)">
     <ng-template st-row="status" let-i>
       <nz-badge [nzStatus]="i.statusType" [nzText]="i.statusText"></nz-badge>
     </ng-template>
-  </st>
+  </st> -->
+
+  <nz-table #nzTable [nzData]="data" [nzPageSize]="10">
+    <thead>
+      <tr>
+        <th nzShowCheckbox="true"></th>
+        
+        <th>规则编号</th>
+        <th>描述</th>
+        <th>服务调用次数</th>
+        <th>状态</th>
+        <th>更新时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of nzTable.data">
+        <td nzShowCheckbox="true"></td>
+        <td>{{i.no}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.callNo}}</td>
+        <td>
+          <nz-badge [nzStatus]="i.statusType" [nzText]="i.statusText"></nz-badge>
+        </td>
+        <td>{{i.updatedAt}}</td>
+        
+        <td>
+          <a (click)="msg.success('配置成功' + i.no)">配置</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="msg.success('订阅报警成功' + i.no)">订阅报警</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
 </nz-card>
+
 <ng-template #modalContent>
   <nz-form-item>
     <nz-form-label nzFor="no">描述</nz-form-label>
@@ -110,4 +146,4 @@
       <input nz-input [(ngModel)]="description" name="description" placeholder="请输入" id="no" />
     </nz-form-control>
   </nz-form-item>
-</ng-template> -->
+</ng-template>
