@@ -1,12 +1,1 @@
-
-@import 'functions';
-@import 'variables';
-@import 'mixins';
-
-@import 'root';
-
-@import "type";
-@import "grid";
-@import 'navbar';
-
-@import 'utilities';
+@import './_bootstrap/index.scss';
