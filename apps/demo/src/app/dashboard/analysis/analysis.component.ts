@@ -2,7 +2,6 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NzMessageService } from 'ng-zorro-antd';
 import { deepCopy, yuan, getTimeDistance } from '@ng-molain/common';
-import { I18nService } from '../../core/i18n/i18n-registor';
 
 @Component({
   selector: 'demo-dashboard-analysis',

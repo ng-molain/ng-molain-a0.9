@@ -22,7 +22,7 @@ export class StartupService {
   ) { }
 
   load(): Promise<any> {
-    // return this.http.get('http://sparkdev.qimooc.net/api/open/siteInfo4').toPromise();
+    // return this.http.get('http://sparkdev.qimooc.net/api/open/siteInfo').toPromise();
     // return of(false).toPromise();
     const appCtx = this.applicationContext;
 
