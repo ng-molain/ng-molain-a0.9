@@ -7,4 +7,6 @@ export * from "./translate.directive";
 export * from "./translate.pipe";
 export * from "./translate.store";
 
+export * from './loader/http-loader';
+
 export * from './translate.module';

@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NzMessageService } from 'ng-zorro-antd';
 import { deepCopy, yuan, getTimeDistance } from '@ng-molain/common';
+import { I18nService } from '../../core/i18n/i18n-registor';
 
 @Component({
   selector: 'demo-dashboard-analysis',
@@ -13,7 +14,6 @@ export class AnalysisComponent implements OnInit {
   constructor(
     private http: HttpClient,
     public msg: NzMessageService,
-    // private i18n: I18NService,
     private cdr: ChangeDetectorRef,
   ) {}
   data: any = {};
