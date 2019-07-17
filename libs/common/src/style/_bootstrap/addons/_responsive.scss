@@ -1,12 +1,12 @@
 // 已过时， 用 .d{x}-none 样式替代
 
-$screen-xs-max: map-get($map: $grid-breakpoints, $key: "sm") - 1px;
-$screen-sm-max: map-get($map: $grid-breakpoints, $key: "md") - 1px;
-$screen-md-max: map-get($map: $grid-breakpoints, $key: "lg") - 1px;
-$screen-lg-max: map-get($map: $grid-breakpoints, $key: "xl") - 1px;
+// $screen-xs-max: map-get($map: $grid-breakpoints, $key: "sm") - 1px;
+// $screen-sm-max: map-get($map: $grid-breakpoints, $key: "md") - 1px;
+// $screen-md-max: map-get($map: $grid-breakpoints, $key: "lg") - 1px;
+// $screen-lg-max: map-get($map: $grid-breakpoints, $key: "xl") - 1px;
 
-$mobile-min: map-get($map: $grid-breakpoints, $key: "md");
-$mobile-max: map-get($map: $grid-breakpoints, $key: "md") - 1px;
+// $mobile-min: map-get($map: $grid-breakpoints, $key: "md");
+// $mobile-max: map-get($map: $grid-breakpoints, $key: "md") - 1px;
 
 @media (max-width: $screen-xs-max) {
     .hidden-xs {
