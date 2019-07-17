@@ -1,3 +1,6 @@
+// Toggles
+//
+// Used in conjunction with global variables to enable certain theme features.
 
 // Utilities
 @import "mixins/breakpoints";
@@ -13,15 +16,25 @@
 @import "mixins/text-truncate";
 @import "mixins/visibility";
 
-// Components
-@import "mixins/nav-divider";
+// // Components
+// @import "mixins/alert";
+// @import "mixins/buttons";
+// @import "mixins/caret";
+// @import "mixins/pagination";
 @import "mixins/lists";
+// @import "mixins/list-group";
+@import "mixins/nav-divider";
+// @import "mixins/forms";
+// @import "mixins/table-row";
 
-// Skins
+// // Skins
 @import "mixins/background-variant";
 @import "mixins/border-radius";
+@import "mixins/box-shadow";
+// @import "mixins/gradients";
+// @import "mixins/transition";
 
-// Layout
+// // Layout
 @import "mixins/clearfix";
 @import "mixins/grid-framework";
 @import "mixins/grid";
