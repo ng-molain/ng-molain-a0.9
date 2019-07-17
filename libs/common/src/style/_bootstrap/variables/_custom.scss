@@ -1,7 +1,19 @@
 
 // All addon form ng-alain
+$ant-prefix: ant;
 
 $background-color-base: $white !default;
+
+$enable-pretty-scrollbar: true !default;
+$enable-table-pretty-scrollbar: false !default;
+
+$scrollbar-track-color: rgba(0, 0, 0, 0.3);
+$scrollbar-thumb-color: #6e6e6e;
+$scrollbar-height: 6px;
+$scrollbar-width: 6px;
+
+
+// Spacing
 
 // $layout-gutter: 1rem / 2;
 // $xs: $layout-gutter / 2;
@@ -9,7 +21,6 @@ $background-color-base: $white !default;
 // $md: $layout-gutter * 2;
 // $lg: $layout-gutter * 3;
 
-// Spacing
 $spacers: (
     0: 0,
     1: ($spacer * .25),
@@ -17,7 +28,7 @@ $spacers: (
     3: $spacer,
     4: ($spacer * 1.5),
     5: ($spacer * 3),
-    
+
     xs: ($spacer * .25),
     sm: ($spacer * .5),
     md: $spacer,

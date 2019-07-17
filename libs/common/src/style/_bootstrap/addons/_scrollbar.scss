@@ -1,0 +1,50 @@
+@mixin scrollbar($selector) {
+    %pretty-scrollbar {
+        // FireFox
+        scrollbar-color: $scrollbar-track-color $scrollbar-thumb-color;
+        scrollbar-width: thin;
+
+        // Other
+        &::-webkit-scrollbar {
+            width: $scrollbar-height;
+            height: $scrollbar-width;
+        }
+
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 $scrollbar-width $scrollbar-track-color;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $scrollbar-thumb-color;
+            outline: 1px solid #333;
+        }
+    }
+
+    @if $enable-pretty-scrollbar {
+        #{$selector} {
+            @extend %pretty-scrollbar;
+        }
+    }
+}
+
+.scrollbar {
+    overflow: auto;
+
+    &-x {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    &-y {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+// scrollbar
+// TODO: (.nz-measure-scrollbar-placeholder) https://github.com/NG-ZORRO/ng-zorro-antd/pull/2617
+@include scrollbar("body, .scrollbar, .#{$ant-prefix}-dialog-wrap, .#{$ant-prefix}-drawer-body, .#{$ant-prefix}-drawer-wrapper-body, .#{$ant-prefix}-anchor-wrapper, textarea.#{$ant-prefix}-input, .#{$ant-prefix}-layout-content");
+
+@if $enable-table-pretty-scrollbar {
+    @include scrollbar(".#{$ant-prefix}-table-header, .#{$ant-prefix}-table-body")
+}
