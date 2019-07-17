@@ -24,7 +24,7 @@ $enable-all-colors: true !default;
 
 // Spacing
 
-$layout-gutter: 1rem / 2;
+$layout-gutter: 8px; // 1rem / 2; // 用 rem 有的（如 + 法不带单位）运算是有问题的，比如 $layout-gutter + 10， 会得出 10.5rem 的值，对于迁移的代码会有问题。
 // $xs: $layout-gutter / 2;
 // $sm: $layout-gutter;
 // $md: $layout-gutter * 2;
@@ -81,6 +81,8 @@ $icon-xxl:      $font-size-base-view * 10; // 14px * 10 = 140px
 
 
 // 
+$screen-xs: map-get($map: $grid-breakpoints, $key: "xs");
+
 $screen-xs-max: map-get($map: $grid-breakpoints, $key: "sm") - 1px;
 $screen-sm-max: map-get($map: $grid-breakpoints, $key: "md") - 1px;
 $screen-md-max: map-get($map: $grid-breakpoints, $key: "lg") - 1px;
@@ -88,3 +90,47 @@ $screen-lg-max: map-get($map: $grid-breakpoints, $key: "xl") - 1px;
 
 $mobile-min: map-get($map: $grid-breakpoints, $key: "md");
 $mobile-max: map-get($map: $grid-breakpoints, $key: "md") - 1px;
+
+
+// colors
+
+
+$blue-6: #1890ff;
+$purple-6: #722ed1;
+$cyan-6: #13c2c2;
+$green-6: #52c41a;
+$magenta-6: #eb2f96;
+$pink-6: #eb2f96;
+$red-6: #f5222d;
+$orange-6: #fa8c16;
+$yellow-6: #fadb14;
+$volcano-6: #fa541c;
+$geekblue-6: #2f54eb;
+$lime-6: #a0d911;
+$gold-6: #faad14;
+$grey-6:  #bfbfbf;
+
+$addon-colors: (
+    "red": $red-6,
+    "volcano": $volcano-6,
+    "orange": $orange-6,
+    "gold": $gold-6,
+    "yellow": $yellow-6,
+    "lime": $lime-6,
+    "green": $green-6,
+    "blue": $blue-6,
+    "cyan": $cyan-6,
+    "geekblue": $geekblue-6,
+    "purple": $purple-6,
+    "magenta": $magenta-6,
+    "grey": $grey-6,
+);
+
+$alias-color: (
+    primary: map-get($addon-colors, "blue"),
+    success: map-get($addon-colors, "green"),
+    error: map-get($addon-colors, "red"),
+    warning: map-get($addon-colors, "yellow")
+);
+
+$addon-and-alias-colors: map-merge($addon-colors, $alias-color);
