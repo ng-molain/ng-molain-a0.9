@@ -104,3 +104,11 @@ $border-radius-sizes: (
     border-bottom-right-radius: $value !important; 
   }
 }
+// 不建议使用， 用 `border` 代替即可
+$border-width-1: 1px;
+
+.border-1         { border: $border-width-1 solid $border-color !important; }
+.border-top-1     { border-top: $border-width-1 solid $border-color !important; }
+.border-right-1   { border-right: $border-width-1 solid $border-color !important; }
+.border-bottom-1  { border-bottom: $border-width-1 solid $border-color !important; }
+.border-left-1    { border-left: $border-width-1 solid $border-color !important; }
