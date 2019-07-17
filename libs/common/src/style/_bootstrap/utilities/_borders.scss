@@ -57,3 +57,50 @@
 .rounded-0 {
   border-radius: 0 !important;
 }
+
+
+// addon by ng-alain
+
+$border-radius-sizes: (
+  sm: $border-radius-sm,
+  md: $border-radius, // md 是普通大小，这里为了兼容 ng-alain相关代码而写
+  lg: $border-radius-lg
+) !default;
+
+@each $size, $value in $border-radius-sizes {
+  .rounded-#{$size} {
+    border-radius: $value !important;
+  }
+  .rounded-top-#{$size} {
+    border-top-left-radius: $value !important;
+    border-top-right-radius: $value !important;
+  }
+  .rounded-right-#{$size} {
+    border-top-right-radius: $value !important;
+    border-bottom-right-radius: $value !important;
+  }
+  .rounded-bottom-#{$size} {
+    border-bottom-right-radius: $value !important;
+    border-bottom-left-radius: $value !important;
+  }
+  .rounded-left-#{$size} {
+    border-top-left-radius: $value !important;
+    border-bottom-left-radius: $value !important;
+  }
+
+  .rounded-#{$size} { 
+    border-radius: $value !important; 
+  }
+  .rounded-top-left-#{$size} {
+    border-top-left-radius: $value !important; 
+  }
+  .rounded-top-right-#{$size} { 
+    border-top-right-radius: $value !important; 
+  }
+  .rounded-bottom-left-#{$size} { 
+    border-bottom-left-radius: $value !important; 
+  }
+  .rounded-bottom-right-#{$size} { 
+    border-bottom-right-radius: $value !important; 
+  }
+}

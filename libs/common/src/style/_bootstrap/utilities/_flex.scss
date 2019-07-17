@@ -47,5 +47,8 @@
     .align-self#{$infix}-center   { align-self: center !important; }
     .align-self#{$infix}-baseline { align-self: baseline !important; }
     .align-self#{$infix}-stretch  { align-self: stretch !important; }
+
+    // Addon by ng-alain
+    .flex#{$infix}-1 { flex: 1 !important; }
   }
 }

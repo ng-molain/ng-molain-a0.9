@@ -1,0 +1,26 @@
+
+// All addon form ng-alain
+
+// $layout-gutter: 1rem / 2;
+// $xs: $layout-gutter / 2;
+// $sm: $layout-gutter;
+// $md: $layout-gutter * 2;
+// $lg: $layout-gutter * 3;
+
+// Spacing
+$spacers: (
+    xs: ($spacer * .25),
+    sm: ($spacer * .5),
+    md: $spacer,
+    lg: ($spacer * 1.5)
+);
+
+// Font size
+// $font-size-base: 16px; but of antd is 14px
+
+$text-xs:       $font-size-base - 4;  // 12px
+$text-sm:       $font-size-base - 2;  // 14px
+$text-md:       $font-size-base + 0;  // 16px
+$text-lg:       $font-size-base + 2;  // 18px
+$text-xl:       $font-size-base + 6;  // 22px
+$text-xxl:      $font-size-base + 10; // 26px
