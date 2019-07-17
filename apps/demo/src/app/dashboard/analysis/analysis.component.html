@@ -127,7 +127,7 @@
               <li *ngFor="let i of rankingListData; let idx = index">
                 <span class="number" [ngClass]="{ active: idx < 3 }">{{ idx + 1 }}</span>
                 <span class="title">{{ i.title }}</span>
-                <!-- <span class="value">{{ i.total | number: '3.0' }}</span> -->
+                <span class="value">{{ i.total | number: '3.0' }}</span>
               </li>
             </ul>
           </div>
@@ -142,7 +142,7 @@
           <a (click)="setDate('month')">{{ 'app.analysis.all-month' | translate }}</a>
           <a (click)="setDate('year')">{{ 'app.analysis.all-year' | translate }}</a>
         </div>
-        <!-- <nz-range-picker [(ngModel)]="date_range" style="display:inline-block; width: 256px;"></nz-range-picker> -->
+        <nz-range-picker [(ngModel)]="date_range" style="display:inline-block; width: 256px;"></nz-range-picker>
       </div>
     </ng-template>
   </nz-tabset>
