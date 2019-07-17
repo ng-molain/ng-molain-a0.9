@@ -69,38 +69,40 @@ $addon-and-alias-colors: map-merge($addon-colors, $alias-color);
     .text-#{$name}-dark   { color: darken($value, 8%) !important; }
 
     @if ($name = "grey") {
-        .bg-#{$name}-lighter { background-color: lighten($value, 32%) !important; }
-        .bg-#{$name}-darker { background-color: darken($value, 32%) !important; }
+        .bg-#{$name}-lighter { background-color: lighten($value, 48%) !important; }
+        .bg-#{$name}-darker { background-color: darken($value, 48%) !important; }
 
         .bg-#{$name}-lighter-h {
             transition: background-color 300ms;
-            &:hover { background-color: lighten($value, 32%) !important; }
+            &:hover { background-color: lighten($value, 48%) !important; }
         }
         .bg-#{$name}-darker-h {
             transition: background-color 300ms;
-            &:hover { background-color: darken($value, 32%) !important; }
+            &:hover { background-color: darken($value, 48%) !important; }
         }
 
-        .text-#{$name}-lighter { color: lighten($value, 32%) !important; }
-        .text-#{$name}-darker { color: darken($value, 32%) !important; }
+        .text-#{$name}-lighter { color: lighten($value, 48%) !important; }
+        .text-#{$name}-darker { color: darken($value, 48%) !important; }
     }
 
 
     // All colors
     $color-deepth: 10;
     $middle-color-deepth: 6;
-    @for $i from 1 through $color-deepth {
-        $curr-color: if($i < $middle-color-deepth, 
-            lighten($value, (8% * ($middle-color-deepth - $i))), 
-            darken($value, (8% * ($i - $middle-color-deepth)))
-        );
+    @if $enable-all-colors {
+        @for $i from 1 through $color-deepth {
+            $curr-color: if($i < $middle-color-deepth, 
+                lighten($value, (8% * ($middle-color-deepth - $i))), 
+                darken($value, (8% * ($i - $middle-color-deepth)))
+            );
 
-        .bg-#{$name}-#{$i}      { background-color:  $curr-color !important; }
-        .bg-#{$name}-#{$i}-h {
-            transition: background-color 300ms;
-            &:hover { background-color: $curr-color !important; }
+            .bg-#{$name}-#{$i}      { background-color:  $curr-color !important; }
+            .bg-#{$name}-#{$i}-h {
+                transition: background-color 300ms;
+                &:hover { background-color: $curr-color !important; }
+            }
+            .text-#{$name}-#{$i}      { color:  $curr-color !important; }
         }
-        .text-#{$name}-#{$i}      { color:  $curr-color !important; }
     }
 }
 
