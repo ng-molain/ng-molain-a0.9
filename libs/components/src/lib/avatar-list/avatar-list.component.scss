@@ -1,18 +1,2 @@
-$avatar-list-prefix: '.ml-avatar-list';
-$avatar-list-mini-width: 20px;
 
-.ml-avatar-list {
-    &__wrap {
-        display: inline-block;
-        margin-left: 8px;
-        padding: 0;
-        margin: 0;
-    }
-
-    &__item {
-        display: inline-block;
-        margin-left: -8px;
-
-        // box-shadow: -4px 0 8px rgba(0, 0, 0, 0.25); 
-    }
-}
+@import './style/avatar-list';
