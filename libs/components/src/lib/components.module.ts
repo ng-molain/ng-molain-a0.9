@@ -12,7 +12,6 @@ import { ResultModule } from './result';
 import { DetailsModule } from './details';
 import { SidenavModule } from './sidenav';
 import { SEModule } from './edit';
-import { SVModule } from './view';
 
 @NgModule({
   exports: [
@@ -30,7 +29,6 @@ import { SVModule } from './view';
     SidenavModule,
 
     SEModule,
-    SVModule
   ]
 })
 export class NgMolainComponentsModule {}
