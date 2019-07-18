@@ -554,6 +554,13 @@
       "sourceRoot": "libs/g2-charts/src",
       "prefix": "g2",
       "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/g2-charts/tsconfig.lib.json",
+            "project": "libs/g2-charts/ng-package.json"
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
