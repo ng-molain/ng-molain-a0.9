@@ -1,4 +1,3 @@
-import { MockRequest } from '@delon/mock';
 
 const list: any[] = [];
 const total = 50;
@@ -45,9 +44,12 @@ function saveData(id: number, value: any) {
 }
 
 export const USERS = {
-  '/user': (req: MockRequest) => genData(req.queryString),
-  '/user/:id': (req: MockRequest) => list.find(w => w.id === +req.params.id),
-  'POST /user/:id': (req: MockRequest) => saveData(+req.params.id, req.body),
+  // '/user': (req: MockRequest) => genData(req.queryString),
+  // '/user/:id': (req: MockRequest) => list.find(w => w.id === +req.params.id),
+  // 'POST /user/:id': (req: MockRequest) => saveData(+req.params.id, req.body),
+  '/user': (query) => genData(query),
+  '/user/:id': (id) => list.find(w => w.id === id),
+  'POST /user/:id': (id, body) => saveData(+id, body),
   '/user/current': {
     name: 'Cipchk',
     avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
@@ -98,8 +100,10 @@ export const USERS = {
     phone: '你猜-你猜你猜猜猜',
   },
   'POST /user/avatar': 'ok',
-  'POST /login/account': (req: MockRequest) => {
-    const data = req.body;
+  // 'POST /login/account': (req: MockRequest) => {
+  'POST /login/account': (body) => {
+    // const data = req.body;
+    const data = body;
     if (!(data.userName === 'admin' || data.userName === 'user') || data.password !== 'ng-alain.com') {
       return { msg: `Invalid username or password（admin/ng-alain.com）` };
     }
