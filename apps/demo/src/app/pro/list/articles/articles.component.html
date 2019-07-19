@@ -1,6 +1,6 @@
 <nz-card [nzBordered]="false">
-    <form nz-form se-container="1" size="compact" gutter="32" [labelWidth]="null">
-      <se label="所属类目" line>
+    <form nz-form mlForm="1" size="compact" gutter="32" [labelWidth]="null">
+      <ml-form-item label="所属类目" line>
         <!-- <tag-select>
           <nz-tag
             *ngFor="let i of categories; let idx = index"
@@ -11,14 +11,14 @@
             {{ i.text }}
           </nz-tag>
         </tag-select> -->
-      </se>
-      <se label="owner" line>
+      </ml-form-item>
+      <ml-form-item label="owner" line>
         <nz-select [(ngModel)]="q.owners" name="owners" [nzMode]="'tags'" style="max-width: 286px;">
           <nz-option *ngFor="let i of owners" [nzLabel]="i.name" [nzValue]="i.id"></nz-option>
         </nz-select>
         <a class="ml-sm" (click)="setOwner()">只看自己的</a>
-      </se>
-      <se label="其它选项">
+      </ml-form-item>
+      <ml-form-item label="其它选项">
         <div class="ant-form ant-form-inline">
           <nz-form-item>
             <nz-form-label nzFor="rate">作者</nz-form-label>
@@ -49,7 +49,7 @@
             </nz-form-control>
           </nz-form-item>
         </div>
-      </se>
+      </ml-form-item>
     </form>
   </nz-card>
   <nz-card [nzBordered]="false">
