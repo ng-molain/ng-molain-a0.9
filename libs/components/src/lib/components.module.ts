@@ -12,6 +12,7 @@ import { ResultModule } from './result';
 import { DetailsModule } from './details';
 import { SidenavModule } from './sidenav';
 import { SEModule } from './edit';
+import { NgMolainFormsModule } from './forms/forms.module';
 
 @NgModule({
   exports: [
@@ -27,6 +28,7 @@ import { SEModule } from './edit';
     ResultModule,
     DetailsModule,
     SidenavModule,
+    NgMolainFormsModule,
 
     SEModule,
   ]

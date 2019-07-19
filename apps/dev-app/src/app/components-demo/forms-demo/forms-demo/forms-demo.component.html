@@ -1,0 +1,7 @@
+<h1>Forms Demo</h1>
+
+<ul nz-menu nzMode="horizontal">
+  <li nz-menu-item *ngFor="let item of demos" [routerLink]="item.routerLink">{{item.name}}</li>
+</ul>
+
+<router-outlet></router-outlet>

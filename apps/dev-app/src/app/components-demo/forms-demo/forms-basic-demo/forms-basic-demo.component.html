@@ -1,0 +1,17 @@
+
+<h2>Basic</h2>
+<hr>
+
+<p>一行两列表单。</p>
+
+<form nz-form #f="ngForm" mlForm gutter="32">
+    <ml-form-item label="App Key" error="请填写">
+      <input type="text" nz-input [(ngModel)]="i.ak" name="ak" required>
+    </ml-form-item>
+    <ml-form-item label="App Secret" error="请填写，最多32位">
+      <input type="text" nz-input [(ngModel)]="i.sk" name="sk" required maxlength="32">
+    </ml-form-item>
+    <ml-form-item>
+      <button nz-button nzType="primary" [disabled]="f.invalid">Save</button>
+    </ml-form-item>
+  </form>
