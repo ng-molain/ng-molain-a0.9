@@ -1,6 +1,12 @@
-<a class="nav-link" title="待办">
+<a class="nav-link" title="待办" nz-dropdown [nzDropdownMenu]="taskMenu" nzTrigger="click" nzPlacement="bottomRight">
     <!-- <nz-badge [nzCount]="5"> -->
     <nz-badge [nzDot]="true">
         <i nz-icon nzType="exception" nzTheme="outline"></i>
     </nz-badge>
-  </a>
+</a>
+
+<nz-dropdown-menu #taskMenu="nzDropdownMenu">
+    <nz-card nz-menu nzTitle="待办事项" style="width: 320px;">
+
+    </nz-card>
+</nz-dropdown-menu>

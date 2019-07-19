@@ -7,10 +7,14 @@
 </a>
 
 <nz-dropdown-menu #messagesMenu="nzDropdownMenu">
+  <!-- <div class="bg-white rounded-sm shadow" style="width: 320px;"> -->
+  <!-- TODO：【问题】shadow 和 menu 的大小有出入，明显不一致 -->
   <div nz-menu style="width: 320px;">
-    <!-- <a href="javascript: void(0)" class="link-to-notice-manage">接收消息管理</a> -->
-
-    <nz-tabset nzTabBarGutter="0">
+    <nz-tabset nzTabBarGutter="0" [nzTabBarExtraContent]="toMessageManageTpl">
+      <ng-template #toMessageManageTpl>
+        <a href="javascript: void(0)" class="link-to-notice-manage">接收消息管理</a>
+      </ng-template>
+      
       <nz-tab nzTitle="通知">
         <nz-list [nzDataSource]="notices" [nzRenderItem]="noticeListItem" style="margin-top: -8px;">
           <ng-template #noticeListItem let-i>
@@ -24,7 +28,10 @@
             </nz-list-item>
           </ng-template>
         </nz-list>
+        <nz-divider class="my-1"></nz-divider>
+        <button nz-button nzBlock="true" nzType="link" class="my-1">查看更多</button>
       </nz-tab>
+
       <nz-tab nzTitle="消息">
         <nz-list [nzDataSource]="messages" [nzRenderItem]="noticeListItem" style="margin-top: -8px;">
           <ng-template #noticeListItem let-i>
@@ -38,6 +45,8 @@
             </nz-list-item>
           </ng-template>
         </nz-list>
+        <nz-divider class="my-1"></nz-divider>
+        <button nz-button nzBlock="true" nzType="link" class="my-1">查看更多</button>
       </nz-tab>
     </nz-tabset>
   </div>
