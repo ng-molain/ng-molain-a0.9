@@ -42,13 +42,10 @@
 //  @import "print";
 
 // Addons
-@import "addons/icon";
-@import "addons/other";
-@import "addons/overflow";
-@import "addons/responsive";
-@import "addons/rotate";
-@import "addons/scrollbar";
-@import "addons/color";
+@import "addons/index";
+
+// Addons for ng useage
+@import "ng/index";
 
 // Widgets
-@import "widgets/index.scss";
+@import "widgets/index";
