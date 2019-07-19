@@ -11,7 +11,6 @@ import { PageHeaderModule } from './page-header';
 import { ResultModule } from './result';
 import { DetailsModule } from './details';
 import { SidenavModule } from './sidenav';
-import { SEModule } from './edit';
 import { NgMolainFormsModule } from './forms/forms.module';
 
 @NgModule({
@@ -29,8 +28,6 @@ import { NgMolainFormsModule } from './forms/forms.module';
     DetailsModule,
     SidenavModule,
     NgMolainFormsModule,
-
-    SEModule,
   ]
 })
 export class NgMolainComponentsModule {}
