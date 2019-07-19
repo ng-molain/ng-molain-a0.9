@@ -1,0 +1,29 @@
+<a class="nav-link nav-link-avatar" nz-dropdown [nzDropdownMenu]="avatarMenu" nzTrigger="hover" nzPlacement="bottomRight">
+  <nz-avatar [nzSize]="30" nzIcon="user"></nz-avatar>
+  <span class="ml-2">Tony</span>
+</a>
+
+<nz-dropdown-menu #avatarMenu="nzDropdownMenu">
+  <div nz-menu class="p-3" style="width: 280px;">
+    <div class="mb-3">
+      <nz-avatar [nzSize]="30" nzIcon="user"></nz-avatar>
+      <span class="ml-2">Tony</span>
+    </div>
+    <div class="d-flex justify-content-between text-center px-2 mb-3" style="line-height: 1;">
+      <a href="javascript: void(0);">基本信息</a>
+      <nz-divider nzType="vertical"></nz-divider>
+      <a href="javascript: void(0);">实名认证</a>
+      <nz-divider nzType="vertical"></nz-divider>
+      <a href="javascript: void(0);">安全设置</a>
+    </div>
+    <nz-divider class="my-3"></nz-divider>
+    <ul>
+      <li nz-menu-item><i nz-icon nzType="contacts" nzTheme="outline"></i> 账户许可</li>
+      <li nz-menu-item><i nz-icon nzType="control" nzTheme="outline"></i> 偏好设置</li>
+      <li nz-menu-item><i nz-icon nzType="lock" nzTheme="outline"></i> 安全管控</li>
+      <li nz-menu-item><i nz-icon nzType="hourglass" nzTheme="outline"></i> 访问控制</li>
+    </ul>
+    <nz-divider class="my-3"></nz-divider>
+    <button nz-button nzBlock><i nz-icon nzType="logout" nzTheme="outline"></i> 退出管理控制台</button>
+  </div>
+</nz-dropdown-menu>
