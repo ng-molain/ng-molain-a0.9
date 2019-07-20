@@ -11,6 +11,7 @@ import { LayoutSiteFooterComponent } from './site/site-footer/site-footer.compon
 import { TaskComponent } from './default/header/task/task.component';
 import { MessageComponent } from './default/header/message/message.component';
 import { AcountComponent } from './default/header/acount/acount.component';
+import { HelpComponent } from './default/header/help/help.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { AcountComponent } from './default/header/acount/acount.component';
     TaskComponent,
     MessageComponent,
     AcountComponent,
+    HelpComponent,
   ],
   exports: [
     LayoutDefaultComponent, 

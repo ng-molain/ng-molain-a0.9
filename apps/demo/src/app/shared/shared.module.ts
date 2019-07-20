@@ -5,6 +5,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { NgMolainCommonModule } from '@ng-molain/common';
 import { NgMolainComponentsModule } from '@ng-molain/components';
 import { G2ChartsModule } from '@ng-molain/g2-charts';
+import { DemoSharedComponentsModule } from './components';
 
 @NgModule({
   declarations: [],
@@ -23,7 +24,8 @@ import { G2ChartsModule } from '@ng-molain/g2-charts';
     NgZorroAntdModule,
     NgMolainCommonModule,
     NgMolainComponentsModule,
-    G2ChartsModule
+    G2ChartsModule,
+    DemoSharedComponentsModule,
   ]
 })
 export class SharedModule { }
