@@ -29,7 +29,7 @@
     "dev-app": "ng serve dev-app --open",
     "dev": "npm run dev-app",
     "demo": "ng serve demo --open",
-    "common:build": "ng build common && ts-node -P ./scripts/build/tsconfig.json ./scripts/build/gen-common-sass",
+    "common:build": "ng build common && ts-node -P ./scripts/build/tsconfig.json ./scripts/build/common.build",
     "components:build": "ng build components && ts-node -P ./scripts/build/tsconfig.json ./scripts/build/sass-bundle",
     "libs:build": "npm run common:build && npm run components:build",
     "mock": "ng serve mock-api"

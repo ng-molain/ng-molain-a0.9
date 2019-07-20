@@ -11,9 +11,9 @@ import * as path from 'path';
 import { copySync, writeFileSync, statSync, stat, mkdirpSync, pathExistsSync } from 'fs-extra';
 import { Bundler } from 'scss-bundle';
 import { render, SyncContext, ImporterReturnType, SyncImporter, } from 'node-sass';
-import { log } from '../utils';
+import { log } from '../../../utils';
 
-const workspaceRoot = path.resolve(__dirname, '../../');
+const workspaceRoot = path.resolve(__dirname, '../../../../');
 console.log("Working sass bundle in workspace: ", workspaceRoot)
 
 const projectSrcPath = `${workspaceRoot}/libs/common/src/style`;
@@ -21,16 +21,16 @@ const projectDistPath = `${workspaceRoot}/dist/libs/common/style`;
 
 const projectDistRootPath = `${workspaceRoot}/dist/libs/common`;
 
-
-globby([`${projectSrcPath}/*.scss`]).then(paths => {
-    // console.log(paths);
-    const bundles = []; // Promise.resolve();
-    // let x = 0;
-    paths.forEach(it => {
-        const file = path.relative(projectSrcPath, it);
-        // console.log(path.join(projectDistPath, file))
-        // copySync(it, path.join(projectDistPath, file));
-        bundles.push(new Bundler().Bundle(it, [
+export function genScss() {
+    globby([`${projectSrcPath}/*.scss`]).then(paths => {
+        // console.log(paths);
+        const bundles = []; // Promise.resolve();
+        // let x = 0;
+        paths.forEach(it => {
+            const file = path.relative(projectSrcPath, it);
+            // console.log(path.join(projectDistPath, file))
+            // copySync(it, path.join(projectDistPath, file));
+            bundles.push(new Bundler().Bundle(it, [
                 // path.join(projectSrcPath, '_functions.scss'),
                 // path.join(projectSrcPath, '_variables.scss'),
                 // path.join(projectSrcPath, '_mixins.scss'),
@@ -41,11 +41,12 @@ globby([`${projectSrcPath}/*.scss`]).then(paths => {
                 writeFileSync(outputFile, result.bundledContent);
                 // console.log("+++>>>", x++);
             })
-        );
-    });
+            );
+        });
 
-    Promise.all(bundles).then(() =>　afterBundle(paths));
-});
+        Promise.all(bundles).then(() => afterBundle(paths));
+    });
+}
 
 function afterBundle(paths: string[]) {
     const imports = paths.map(it => {
@@ -61,7 +62,7 @@ function afterBundle(paths: string[]) {
         // console.log(">>>", result)
         writeFileSync(path.join(projectDistRootPath, 'common.scss'), result.bundledContent);
 
-        // compileSass();
+        compileSass();
 
         return 0;
     }).catch(error => {
