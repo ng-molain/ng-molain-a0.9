@@ -175,10 +175,19 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cdk@^8.0.0", "@angular/cdk@^8.0.1":
+"@angular/cdk@^8.0.0":
   version "8.0.2"
   resolved "http://npm.parim.net/@angular%2fcdk/-/cdk-8.0.2.tgz#599b7fd06caed8cbea41f8f7874ddcea5dfc99ce"
   integrity sha1-WZt/0Gyu2MvqQfj3h03c6l38mc4=
+  dependencies:
+    tslib "^1.7.1"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
+"@angular/cdk@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-8.1.1.tgz#11b11bbab7316b3fa1f9eb380211bfde0a335cc7"
+  integrity sha512-5hBmhrHf9+WjGVIT8gbhT0Nh37BAjgI2TGRkt1o4qX8cG+1B6gU2MxM+CDJ7PhxSJi9lW93lq2AMuWwnRSllyg==
   dependencies:
     tslib "^1.7.1"
   optionalDependencies:
