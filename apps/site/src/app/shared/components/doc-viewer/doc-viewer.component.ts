@@ -12,7 +12,7 @@ export class DocViewerComponent implements OnInit {
 
   @Input()
   set documentUrl(url: string) {
-    this._fetchDocument(url);
+    // this._fetchDocument(url);
   }
 
   private _documentFetchSubscription: Subscription;

@@ -378,35 +378,40 @@
   .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
   .exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
   .print-only{display:none!important}
-  @media print{@page{margin:1.25cm .75cm}
-  *{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
-  a{color:inherit!important;text-decoration:underline!important}
-  a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
-  a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
-  abbr[title]:after{content:" (" attr(title) ")"}
-  pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
-  thead{display:table-header-group}
-  svg{max-width:100%}
-  p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
-  h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
-  #toc,.sidebarblock,.exampleblock>.content{background:none!important}
-  #toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
-  .sect1{padding-bottom:0!important}
-  .sect1+.sect1{border:0!important}
-  #header>h1:first-child{margin-top:1.25rem}
-  body.book #header{text-align:center}
-  body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
-  body.book #header .details{border:0!important;display:block;padding:0!important}
-  body.book #header .details span:first-child{margin-left:0!important}
-  body.book #header .details br{display:block}
-  body.book #header .details br+span:before{content:none!important}
-  body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
-  body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
-  .listingblock code[data-lang]:before{display:block}
-  #footer{background:none!important;padding:0 .9375em}
-  #footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
-  .hide-on-print{display:none!important}
-  .print-only{display:block!important}
-  .hide-for-print{display:none!important}
-  .show-for-print{display:inherit!important}}
+}
+
+@media print{
+  @page{margin:1.25cm .75cm}
+  .asciidoctor {
+    *{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+    a{color:inherit!important;text-decoration:underline!important}
+    a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+    a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+    abbr[title]:after{content:" (" attr(title) ")"}
+    pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+    thead{display:table-header-group}
+    svg{max-width:100%}
+    p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+    h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+    #toc,.sidebarblock,.exampleblock>.content{background:none!important}
+    #toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+    .sect1{padding-bottom:0!important}
+    .sect1+.sect1{border:0!important}
+    #header>h1:first-child{margin-top:1.25rem}
+    body.book #header{text-align:center}
+    body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
+    body.book #header .details{border:0!important;display:block;padding:0!important}
+    body.book #header .details span:first-child{margin-left:0!important}
+    body.book #header .details br{display:block}
+    body.book #header .details br+span:before{content:none!important}
+    body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+    body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+    .listingblock code[data-lang]:before{display:block}
+    #footer{background:none!important;padding:0 .9375em}
+    #footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
+    .hide-on-print{display:none!important}
+    .print-only{display:block!important}
+    .hide-for-print{display:none!important}
+    .show-for-print{display:inherit!important}
+  }
 }
