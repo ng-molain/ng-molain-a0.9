@@ -11,7 +11,7 @@ import * as path from 'path';
 import { copySync, writeFileSync } from 'fs-extra';
 import { Bundler } from 'scss-bundle';
 import { render, SyncContext, ImporterReturnType, SyncImporter, } from 'node-sass';
-import { log } from '../../../utils';
+import { log, existsOrCreateDir } from '../../../utils';
 
 const workspaceRoot = path.resolve(__dirname, '../../../../');
 console.log("Working sass bundle in workspace: ", workspaceRoot)
@@ -23,39 +23,44 @@ const projectDistRootPath = `${workspaceRoot}/dist/libs/components`;
 
 
 export function genScss() {
-    globby([`${projectSrcPath}/**/*.scss`, '!index.html', '!js/lib.js']).then(paths => {
+    globby([`${projectSrcPath}/**/style/*.scss`]).then(paths => {
         // console.log(paths);
+        const bundles = [];
         paths.forEach(it => {
             const file = path.relative(projectSrcPath, it);
             // console.log(path.join(projectDistPath, file))
             // copySync(it, path.join(projectDistPath, file));
-            new Bundler().Bundle(it).then(result => {
-                writeFileSync(path.join(projectDistPath, file), result.bundledContent);
-            })
+            bundles.push(new Bundler().Bundle(it).then(result => {
+                const outputFile = path.join(projectDistPath, file);
+                existsOrCreateDir(outputFile);
+                writeFileSync(outputFile, result.bundledContent);
+            }));
         });
     
-        const imports = paths.map(it => {
-            const file = path.relative(projectSrcPath, it);
-            return `@import './lib/${file}';`;
-        });
-    
-        const importsFileContent = imports.join('\n');
-        writeFileSync(path.join(projectDistRootPath, '_components.scss'), importsFileContent);
-    
-        new Bundler().Bundle(path.join(projectDistRootPath, '_components.scss')).then(result => {
-            // console.log(result.imports)
-            writeFileSync(path.join(projectDistRootPath, 'components.scss'), result.bundledContent);
-    
-            compileSass();
-    
-            return 0;
-        }).catch(error => {
-            console.error('Sass bundling failed');
-            console.dir(error);
-            return 1;
-        });
-    
-    
+        Promise.all(bundles).then(() => afterBundle(paths));
+    });
+}
+
+function afterBundle(paths: string[]) {
+    const imports = paths.map(it => {
+        const file = path.relative(projectSrcPath, it);
+        return `@import './lib/${file}';`;
+    });
+
+    const importsFileContent = imports.join('\n');
+    writeFileSync(path.join(projectDistRootPath, '_components.scss'), importsFileContent);
+
+    new Bundler().Bundle(path.join(projectDistRootPath, '_components.scss')).then(result => {
+        // console.log(result.imports)
+        writeFileSync(path.join(projectDistRootPath, 'components.scss'), result.bundledContent);
+
+        compileSass();
+
+        return 0;
+    }).catch(error => {
+        console.error('Sass bundling failed');
+        console.dir(error);
+        return 1;
     });
 }
 

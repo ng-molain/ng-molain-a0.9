@@ -11,7 +11,7 @@ import * as path from 'path';
 import { copySync, writeFileSync, statSync, stat, mkdirpSync, pathExistsSync } from 'fs-extra';
 import { Bundler } from 'scss-bundle';
 import { render, SyncContext, ImporterReturnType, SyncImporter, } from 'node-sass';
-import { log } from '../../../utils';
+import { log, existsOrCreateDir } from '../../../utils';
 
 const workspaceRoot = path.resolve(__dirname, '../../../../');
 console.log("Working sass bundle in workspace: ", workspaceRoot)
@@ -106,16 +106,4 @@ function compileSass() {
         writeFileSync(path.join(projectDistRootPath, 'common.css'), result.css)
         log.success(`Compiled saas file ${result.stats.entry} in ${result.stats.duration / 1000}s.`)
     });
-}
-
-function existsOrCreateDir(filePath: string) {
-    const dirname = path.dirname(filePath);
-    // console.log(path.dirname(outputFile))
-    if (!pathExistsSync(dirname)) {
-        try {
-            mkdirpSync(dirname);
-        } catch (e) {
-            // 创建目录失败
-        }
-    }
 }
