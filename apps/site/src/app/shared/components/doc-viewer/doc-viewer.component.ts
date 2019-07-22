@@ -1,7 +1,10 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
-import Asciidoctor from 'asciidoctor';
+
+// 直接导入的形式，webpack 打包后（Asciidoctor 中 转换语言不严谨的语法）会存在在问题，
+// import Asciidoctor from 'asciidoctor';
+declare var Asciidoctor: any;
 
 @Component({
   selector: 'mls-doc-viewer',
@@ -12,7 +15,7 @@ export class DocViewerComponent implements OnInit {
 
   @Input()
   set documentUrl(url: string) {
-    // this._fetchDocument(url);
+    this._fetchDocument(url);
   }
 
   private _documentFetchSubscription: Subscription;

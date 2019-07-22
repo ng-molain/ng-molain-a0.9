@@ -167,7 +167,9 @@
               "apps/site/src/styles/ng-zorro-antd/ng-zorro-antd.less",
               "apps/site/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@asciidoctor/core/dist/browser/asciidoctor.js"
+            ]
           },
           "configurations": {
             "production": {
