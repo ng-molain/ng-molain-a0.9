@@ -10,13 +10,10 @@ section.article {
     }
     
     #toc {
-      // position: absolute;
-      // top: 40px;
-      // right: 48px;
-      // width: 200px;
       position: sticky;
-      top: -40px;
+      top: 0px;
       float: right;
+      width: 200px;
       margin-right: -240px;
     }
   }
