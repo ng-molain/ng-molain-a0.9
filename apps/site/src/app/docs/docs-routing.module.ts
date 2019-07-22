@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 
 const routes: Routes = [
-  { path: '', component: DocsHomeComponent }
+  { path: '', redirectTo: 'guides', pathMatch: 'full' },
+  { path: ':type', component: DocsHomeComponent }
 ];
 
 @NgModule({

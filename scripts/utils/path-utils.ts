@@ -12,3 +12,10 @@ export function existsOrCreateDir(filePath: string) {
         }
     }
 }
+
+// export function toHump(str: string) {
+//     const re=/-(\w)/g;
+//     return str.replace(re,function ($0,$1){
+//         return $1.toUpperCase();
+//     });
+// }
