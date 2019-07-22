@@ -6,6 +6,7 @@ import { SharedModule } from '../shared';
 import { DocsRoutingModule } from './docs-routing.module';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsSidenavComponent } from './docs-sidenav/docs-sidenav.component';
+import { DocsViewComponent } from './docs-view/docs-view.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { DocsSidenavComponent } from './docs-sidenav/docs-sidenav.component';
   declarations: [
     DocsHomeComponent,
     DocsSidenavComponent,
+    DocsViewComponent,
   ],
 })
 export class DocsModule { }
