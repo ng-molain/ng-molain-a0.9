@@ -35,7 +35,7 @@ export class DocsHomeComponent implements OnInit {
   private fetchLib() {
     this.route.params.subscribe((params) => {
       const { type } = params;
-      const libInfo = docLibs[type];
+      const libInfo = docLibs[type || 'guides'];
       if (!libInfo) {
         return ;
       }
