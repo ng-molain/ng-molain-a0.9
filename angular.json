@@ -161,6 +161,11 @@
                 "glob": "**/*",
                 "input": "./docs",
                 "output": "/assets/docs/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./dist/apps/site/assets/docs/libs",
+                "output": "/assets/docs/libs/"
               }
             ],
             "styles": [

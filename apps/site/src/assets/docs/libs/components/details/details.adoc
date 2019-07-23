@@ -1,4 +1,0 @@
-[[details]]
-= Detail 明细
-
-== API
