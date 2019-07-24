@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { DocsHomeComponent } from './docs-home/docs-home.component';
 import { DocsViewComponent } from './docs-view/docs-view.component';
 import { ComponentViewComponent } from './component-view/component-view.component';
-import * as path from 'path';
 import { ComponentOverviewComponent } from './component-view/component-overview/component-overview.component';
 import { ComponentApiComponent } from './component-view/component-api/component-api.component';
 import { ComponentExamplesComponent } from './component-view/component-examples/component-examples.component';

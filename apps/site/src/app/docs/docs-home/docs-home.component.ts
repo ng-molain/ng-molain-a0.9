@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 const docLibs = {
   guides: {
     title: "向导",
-    uri: "/assets/json/docs-list.json"
+    uri: "/assets/docs/guides/outline.json"
   },
   components: {
     title: "组件",
