@@ -26,6 +26,8 @@ export class DocsViewComponent implements OnInit {
       if (type === 'components') {
         const url = `/assets/docs/libs/components/${slogan}/${slogan}.adoc`;
         this.articleUrl = url;
+      } else {
+        const url = `/assets/docs/guides/`
       }
     });
   }
