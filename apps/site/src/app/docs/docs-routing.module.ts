@@ -22,6 +22,7 @@ const routes: Routes = [
   },
   {
     path: ':type', component: DocsHomeComponent, children: [
+      { path: 'guides/:slogan', component: DocsViewComponent },
       {
         path: ':slogan', component: ComponentViewComponent, children: [
           { path: '', redirectTo: 'overview', pathMatch: 'full' },
