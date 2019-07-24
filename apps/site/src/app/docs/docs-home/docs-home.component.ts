@@ -42,11 +42,11 @@ export class DocsHomeComponent implements OnInit {
       
       this.http.get(libInfo.uri).subscribe(outline => {
         // this.outline = outline
-        if (_.isArray(outline)) {
+        if (type === 'components' && _.isArray(outline)) {
           this.outline = [{
             title: `${libInfo.title}`,
             cid: `${type}`,
-            articles: outline.map(it => {
+            children: outline.map(it => {
               const {name, uri} = it;
               return {
                 title: `${name}`,
@@ -56,7 +56,7 @@ export class DocsHomeComponent implements OnInit {
             })
           }];
         } else {
-          this.outline = outline['categories'];
+          this.outline = outline[0]['children'];
         }
       });
     })

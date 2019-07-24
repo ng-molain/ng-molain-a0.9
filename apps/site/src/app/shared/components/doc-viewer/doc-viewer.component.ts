@@ -60,7 +60,7 @@ export class DocViewerComponent implements OnInit {
     // const rawContent = asciidoctor.convert(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font' } });
     // const rawContent = asciidoctor.convert(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font', 'toc': 'auto', 'toc-title': '目录' } });
     const doc = asciidoctor.load(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font', 'toc': 'auto', 'toc-title': '目录' } });
-    window['adoc'] = doc;
+    // window['adoc'] = doc;
     let rawContent = doc.convert() as string;
     // replace example repx
     rawContent = rawContent.replace(/<!-- eg\(([^)]+)\) -->/g, '<div ng-molain-docs-example="$1"></div>');

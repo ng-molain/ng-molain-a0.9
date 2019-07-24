@@ -1,0 +1,4 @@
+[[upgrade]]
+= 升级脚手架
+:category: guide, develop
+:orderNum: 7

@@ -1,0 +1,5 @@
+[[charts]]
+= 图表
+:category: guide, advance
+:orderNum: 2
+:link: docs/charts/overview

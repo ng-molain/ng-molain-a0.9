@@ -1,0 +1,5 @@
+[[theme]]
+= 主题系统
+:category: guide, advance
+:orderNum: 1
+:link: docs/theming/overview

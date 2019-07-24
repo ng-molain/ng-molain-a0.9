@@ -25,9 +25,9 @@ function extraDocs(libName) {
     globby([`${projectLibPath}/**/*.adoc`]).then(paths => {
         // paths.forEach(it => console.log(it));
         log.info(`
-            Copying all resolved adoc to site assets. \n
-            From: ${projectLibPath} \n
-            To: ${destPath} \n
+            Copying all resolved adoc to site assets.
+            From: ${projectLibPath}
+            To: ${destPath}
         `);
         
         paths.forEach(sourceFile => {
