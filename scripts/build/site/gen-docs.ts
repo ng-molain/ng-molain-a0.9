@@ -46,13 +46,18 @@ function extraDocs(libName) {
             // return `/assets/docs/libs/${relativeTarget}`;
             const name = path.parse(sourceFile).name;
             return {
-                name: name,
-                uri: path.normalize(`/assets/docs/libs/${relativeTarget}`)
+                id: name,
+                title: name,
+                sourceUrl: path.normalize(`/assets/docs/libs/${relativeTarget}`)
             };
         });
 
         // writeFileSync(path.join(destPath, "outline.json"), JSON.stringify(outlines));
-        writeJSONSync(path.join(destPath, "outline.json"), outlines);
+        writeJSONSync(path.join(destPath, "outline.json"), [{
+            id: 'components',
+            title: '组件',
+            children: outlines
+        }]);
     });
 }
 

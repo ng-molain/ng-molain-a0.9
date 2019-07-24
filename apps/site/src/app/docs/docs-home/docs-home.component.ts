@@ -43,18 +43,7 @@ export class DocsHomeComponent implements OnInit {
       this.http.get(libInfo.uri).subscribe(outline => {
         // this.outline = outline
         if (type === 'components' && _.isArray(outline)) {
-          this.outline = [{
-            title: `${libInfo.title}`,
-            cid: `${type}`,
-            children: outline.map(it => {
-              const {name, uri} = it;
-              return {
-                title: `${name}`,
-                id: `${name}`,
-                articleUrl: `${uri}`
-              };
-            })
-          }];
+          this.outline = outline
         } else {
           this.outline = outline[0]['children'];
         }
