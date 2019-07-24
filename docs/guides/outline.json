@@ -9,7 +9,7 @@
                     "id": "getting-started",
                     "orderNum": 1,
                     "tags": [],
-                    "articleUrl": "/assets/docs/guides/getting-started.adoc",
+                    "articleUrl": "/assets/docs/guides/basic/getting-started.adoc",
                     "articleType": "asciidoc"
                 },
                 {
