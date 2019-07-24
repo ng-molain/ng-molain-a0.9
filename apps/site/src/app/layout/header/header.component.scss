@@ -29,6 +29,7 @@ $item-height: 24px;
     align-items: center;
   }
 
+  .btn-header,
   .sel-version,
   .btn-header-lang {
     margin-top: ($header-height - $item-height) / 2;
