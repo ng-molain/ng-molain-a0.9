@@ -1,6 +1,6 @@
 {
   "name": "@ng-molain/g2-charts",
-  "version": "0.0.1",
+  "version": "0.0.0-PLACEHOLDER",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
     "@angular/core": "^8.0.0"
