@@ -8,7 +8,7 @@
 
 import * as globby from 'globby';
 import * as path from 'path';
-import { copySync, writeFileSync } from 'fs-extra';
+import { copySync, writeFileSync, unlink } from 'fs-extra';
 import { Bundler } from 'scss-bundle';
 import { render, SyncContext, ImporterReturnType, SyncImporter, } from 'node-sass';
 import { log, existsOrCreateDir } from '../../../utils';
@@ -61,6 +61,14 @@ function afterBundle(paths: string[]) {
         console.error('Sass bundling failed');
         console.dir(error);
         return 1;
+    }).then(() => {
+        // remove _components.scss
+        unlink(path.join(projectDistRootPath, '_components.scss')).then(() =>　{
+            console.log("cleard temp '_components.scss' file.")
+        }).catch((error) => {
+            console.error("clear temp file failed, '_components.scss'");
+            console.dir(error);
+        })
     });
 }
 

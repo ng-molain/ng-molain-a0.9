@@ -56,7 +56,7 @@ function afterBundle(paths: string[]) {
 
     const importsFileContent = imports.join('\n');
     // existsOrCreateDir(path.join(projectDistRootPath, '_common.scss'));
-    writeFileSync(path.join(projectDistRootPath, '_common.scss'), importsFileContent);
+    // writeFileSync(path.join(projectDistRootPath, '_common.scss'), importsFileContent);
 
     new Bundler().Bundle(path.join(projectDistRootPath, 'style/index.scss')).then(result => {
         // console.log(">>>", result)
