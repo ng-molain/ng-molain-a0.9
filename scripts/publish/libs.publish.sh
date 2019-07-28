@@ -26,7 +26,7 @@ echo "Version ${VERSION}"
 # 2. git tag
 
 # 3. fix libs package versions
-VERSION=0.8.0-beta.02
+VERSION=0.8.0-beta.03
 fixLibsVersion() {
     (cd ${ROOT}; for p in `ls .`; do sed -i "s/0\.0\.0-PLACEHOLDER/${VERSION}/g" ${p}/package.json; done)
 }
