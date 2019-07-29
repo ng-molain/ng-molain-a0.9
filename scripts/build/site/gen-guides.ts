@@ -2,7 +2,7 @@ import * as _ from 'lodash';
 import * as globby from 'globby';
 import { resolve, relative, join, parse } from 'path';
 import * as Asciidoctor from 'asciidoctor';
-import { writeJsonSync } from 'fs-extra';
+import { writeJsonSync, readJsonSync, statSync, pathExistsSync } from 'fs-extra';
 import * as path from 'path';
 
 
@@ -12,18 +12,23 @@ export interface DocOutline {
     children?: DocOutline[];
 }
 
-export const DOC_CATEGORIES = [
-    {id: 'guide', title: '向导', children: [
-        {id: 'basic', title: '基础' },
-        {id: 'develop', title: '开发' },
-        {id: 'advance', title: '高级' },
-        {id: 'other', title: '其他' },
-    ]}
-];
+export const DOC_CATEGORIES = [];
 
 export function genGuides() {
     const workspaceRoot = resolve(__dirname, "../../../");
     const guidesDir = join(workspaceRoot, 'docs/guides');
+
+    // read categories of guide
+    const categoryFile = path.join(guidesDir, 'categories.json');
+    if (pathExistsSync(categoryFile) && statSync(categoryFile).isFile()) {
+        try {
+            const guideCategories = readJsonSync(categoryFile);
+            DOC_CATEGORIES.push(guideCategories);
+        } catch (e) {
+            console.error('Failed to read category meta file of guides.');
+        }
+    }
+
     genOutline(guidesDir);
 }
 

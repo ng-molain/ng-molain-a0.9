@@ -1,0 +1,21 @@
+{
+    "id": "guide",
+    "title": "向导", "children": [
+        {
+            "id": "basic",
+            "title": "基础"
+        },
+        {
+            "id": "develop",
+            "title": "开发"
+        },
+        {
+            "id": "advance",
+            "title": "高级"
+        },
+        {
+            "id": "other",
+            "title": "其他"
+        }
+    ]
+}
