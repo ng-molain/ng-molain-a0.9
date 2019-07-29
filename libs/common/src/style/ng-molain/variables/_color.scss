@@ -32,31 +32,57 @@ $grays: map-merge(
 );
 
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+// $blue:    #007bff !default;
+// $indigo:  #6610f2 !default;
+// $purple:  #6f42c1 !default;
+// $pink:    #e83e8c !default;
+// $red:     #dc3545 !default;
+// $orange:  #fd7e14 !default;
+// $yellow:  #ffc107 !default;
+// $green:   #28a745 !default;
+// $teal:    #20c997 !default;
+// $cyan:    #17a2b8 !default;
+
+$blue:      #1890ff !default;
+$purple:    #722ed1 !default;
+$cyan:      #13c2c2 !default;
+$green:     #52c41a !default;
+$magenta:   #eb2f96 !default;
+$pink:      #eb2f96 !default;
+$red:       #f5222d !default;
+$orange:    #fa8c16 !default;
+$yellow:    #fadb14 !default;
+$volcano:   #fa541c !default;
+$geekblue:  #2f54eb !default;
+$lime:      #a0d911 !default;
+$gold:      #faad14 !default;
+$grey:      #bfbfbf !default;
+
+$indigo:    #6610f2 !default;
+$teal:      #20c997 !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
   (
     "blue":       $blue,
-    "indigo":     $indigo,
     "purple":     $purple,
+    "cyan":       $cyan,
+    "green":      $green,
+    "magenta":    $magenta,
     "pink":       $pink,
     "red":        $red,
     "orange":     $orange,
     "yellow":     $yellow,
-    "green":      $green,
+    "volcano":    $volcano,
+    "geekblue":   $geekblue,
+    "lime":       $lime,
+    "gold":       $gold,
+    "grey":       $grey,
+
+    "indigo":     $indigo,
     "teal":       $teal,
-    "cyan":       $cyan,
+
     "white":      $white,
     "gray":       $gray-600,
     "gray-dark":  $gray-800
@@ -72,6 +98,7 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
+$error:         $red !default; // addon
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -85,6 +112,7 @@ $theme-colors: map-merge(
     "danger":     $danger,
     "light":      $light,
     "dark":       $dark,
+    "error"       $error,
 
     "orange":     $orange,
     "pink":       $pink
