@@ -68,7 +68,7 @@
     .text-#{$name}        { color: $value !important; }
     .text-#{$name}-dark   { color: darken($value, 8%) !important; }
 
-    @if ($name = "grey") {
+    @if ($name == "grey") {
         .bg-#{$name}-lighter { background-color: lighten($value, 48%) !important; }
         .bg-#{$name}-darker { background-color: darken($value, 48%) !important; }
 
