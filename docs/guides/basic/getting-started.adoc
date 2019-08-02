@@ -1,0 +1,63 @@
+[[getting-started]]
+= 开始使用
+Kismet Chameleon <kismet@asciidoctor.org>
+v1.0, October 2, 2018: First incarnation
+:category: guide, basic
+:orderNum: 1
+:tags: new, important, lib
+:icon: anticon-start
+
+
+**NG-MOLAIN** 是一个企业级中后台前端解决方案。
+
+技术栈基于 `Angular`、 `ng-zorro-antd`, 实现过程参考了 `NG-ALAIN` 及其 `@delon` 库。
+
+== 基础环境
+
+- node: ^10.16.0
+- git: any
+- @angular/cli: ^8.0.0
+- @nrwl/schematics: ^8.0.0  # 无需安装
+
+
+// include::architecture.adoc[leveloffset=+2]
+
+== 安装
+
+=== @angular/cli
+
+请先通过 `ng version` 命令确认全局 Angular Cli 版本为最新版本号（当前最新版本号：image:https://img.shields.io/npm/v/@angular/cli.svg?style=flat-square[npm, title="npm"]），有关如何升级请参考 https://angular.cn/cli[CLI 命令参考手册]。
+
+[source, bash]
+----
+# Install global @angular/cli
+# yarn global add @angular/cli@7.3.x
+ng new my-project --style less
+cd my-project
+ng add ng-alain@next
+npm start
+----
+
+NOTE: 请参考 link:/cli[命令行工具] 了解更多细节。
+
+
+=== @nrwl/schematics
+
+"Angular CLI power-ups for modern development"
+-- nx.dev, https://nx.dev/getting-started/what-is-nx[What is Nx？]
+
+=== 目录结构
+
+NG-MOLAIN 是一个标准的 Angular CLI 构建的项目，并提供了涵盖中后台开发的各类功能和坑位，下面是整个项目的目录结构。
+
+=== 本地开发
+
+=== 如何贡献
+
+在任何形式的参与前，请先阅读 link:/docs/contributing[贡献者文档]。如果你希望参与贡献，欢迎 https://github.com/ng-molain/ng-molain/pulls[Pull Request]，或给我们 https://github.com/ng-molain/ng-molain/issues[报告 Bug]。
+
+NOTE: 强烈推荐阅读 https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way[《提问的智慧》] (本指南不提供此项目的实际支持服务！)、 https://github.com/seajs/seajs/issues/545[《如何向开源社区提问题》] 和 http://www.chiark.greenend.org.uk/%7Esgtatham/bugs-cn.html[《如何有效地报告 Bug》] 、 https://zhuanlan.zhihu.com/p/25795393[《如何向开源项目提交无法解答的问题》] ，更好的问题更容易获得帮助。
+
+
+=== 社区互助
+

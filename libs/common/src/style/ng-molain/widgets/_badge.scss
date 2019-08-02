@@ -1,0 +1,75 @@
+// Badges
+$enable-widget-badge: true;
+$badge-color: $white;
+$badge-font-size: $font-size-base-view;
+$badge-padding: 0 8px;
+
+@mixin color-yiq($color) {
+    $r: red($color);
+    $g: green($color);
+    $b: blue($color);
+
+    $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+    @if ($yiq >=150) {
+        color: #111111;
+    }
+
+    @else {
+        color: #ffffff;
+    }
+}
+
+@mixin badge-variant($bg) {
+    @include color-yiq($bg);
+    background-color: $bg;
+}
+
+@mixin widget-badge {
+    .badge {
+        display: inline-block;
+        padding: $badge-padding;
+        font-size: $badge-font-size;
+        line-height: 20px;
+        color: $badge-color;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: $border-radius;
+
+        // Empty badges collapse automatically
+        &:empty {
+            display: none;
+        }
+
+        em {
+            font-style: normal;
+        }
+
+        &-dot {
+            display: inline-block;
+            width: $layout-gutter;
+            height: $layout-gutter;
+            padding: 0;
+            border-radius: 50%;
+
+            >* {
+                display: none;
+            }
+        }
+    }
+
+    // Colors
+
+
+    @each $name,
+    $value in $addon-and-alias-colors {
+        .badge-#{$name} {
+            @include badge-variant($value);
+        }
+    }
+}
+
+@if $enable-widget-badge {
+    @include widget-badge();
+}

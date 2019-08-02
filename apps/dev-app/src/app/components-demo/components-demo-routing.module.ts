@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'page-header', loadChildren: () => import('./page-header-demo/page-header-demo.module').then(m => m.PageHeaderDemoModule) },
   { path: 'result', loadChildren: () => import('./result-demo/result-demo.module').then(m => m.ResultDemoModule) },
   { path: 'details', loadChildren: () => import('./details-demo/details-demo.module').then(m => m.DetailsDemoModule) },
+  { path: 'forms', loadChildren: () => import('./forms-demo/forms-demo.module').then(m => m.FormsDemoModule) },
   // { path: '', loadChildren: () => import('.').then(m => m) },
 ];
 

@@ -1,0 +1,36 @@
+$enable-masonry: true !default;
+
+$masonry-column-gap: $layout-gutter * 2;
+
+@if $enable-masonry {
+    .row-masonry {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        column-gap: $masonry-column-gap;
+
+        >.col-masonry {
+            display: inline-block;
+            width: 100%;
+            min-height: 1em;
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    @each $size,
+    $value in $grid-breakpoints {
+        @media only screen and (min-width: $value) {
+            @for $pos from 1 to 10 {
+                .row-masonry-#{$size}-#{$pos} {
+                    column-count: $pos;
+                    columns: $pos;
+                }
+            }
+        }
+    }
+}

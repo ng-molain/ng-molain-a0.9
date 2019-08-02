@@ -4,7 +4,7 @@
       <li nz-submenu *ngFor="let cate of categories" nzOpen>
         <span title>{{cate.title}}</span>
         <ul>
-          <li nz-menu-item *ngFor="let art of cate.articles">
+          <li nz-menu-item *ngFor="let art of cate.children" [routerLink]="[art.id]" routerLinkActive="router-link-active" >
             {{art.title}}
           </li>
         </ul>

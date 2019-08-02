@@ -1,0 +1,9 @@
+$rotate-count: 24;
+
+@for $i from 1 through $rotate-count {
+    $num: $i * 15;
+
+    .rotate-#{$num} {
+        transform: rotate(#{$num}deg);
+    } 
+}

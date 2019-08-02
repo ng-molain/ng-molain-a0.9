@@ -1,0 +1,16 @@
+
+<h1>组件标题</h1>
+
+<nz-tabset nzLinkRouter>
+  <nz-tab>
+    <a nz-tab-link [routerLink]="['./overview']">Overview</a>
+  </nz-tab>
+  <nz-tab>
+    <a nz-tab-link [routerLink]="['./api']">API</a>
+  </nz-tab>
+  <nz-tab>
+    <a nz-tab-link [routerLink]="['./examples']">Examples</a>
+  </nz-tab>
+</nz-tabset>
+
+<router-outlet></router-outlet>

@@ -21,5 +21,10 @@ export const __COMPONENTS_DEMO_NAV_ITEMS: NavItem = {
         { name: 'Details', route: 'details' },
       ]
     },
+    {
+      name: 'Forms', route: '', type: 'group', children: [
+        { name: 'Simple Forms', route: 'forms' },
+      ]
+    }
   ]
 };

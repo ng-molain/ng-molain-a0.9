@@ -1,0 +1,148 @@
+
+// All addon form ng-alain
+$ant-prefix: ant;
+
+$background-color-base: $white !default;
+
+$enable-pretty-scrollbar: true !default;
+$enable-table-pretty-scrollbar: false !default;
+
+$scrollbar-track-color: rgba(0, 0, 0, 0.3);
+$scrollbar-thumb-color: #6e6e6e;
+$scrollbar-height: 6px;
+$scrollbar-width: 6px;
+
+// Fix _type.scss
+$display1-size:               2rem;    // 6 !default
+$display2-size:               1.5rem;  // 5.5 !default
+$display3-size:               1.25rem; // 4.5 !default
+$display4-size:               1rem;    // 3.5 !default
+
+// $font-size-base use browser default is 16px
+$h1-font-size:                $font-size-base * 2;    // 32px
+$h2-font-size:                $font-size-base * 1.5;      // 24px
+$h3-font-size:                $font-size-base * 1.25;   // 20px
+$h4-font-size:                $font-size-base;    // 16px
+$h5-font-size:                $font-size-base * 0.875;   // 14px
+$h6-font-size:                $font-size-base * 0.75;          // 12px
+
+// $headings-color: $dark;
+
+// colors
+$enable-all-colors: true !default;
+
+// Spacing
+
+$layout-gutter: 8px; // 1rem / 2; // 用 rem 有的（如 + 法不带单位）运算是有问题的，比如 $layout-gutter + 10， 会得出 10.5rem 的值，对于迁移的代码会有问题。
+// $xs: $layout-gutter / 2;
+// $sm: $layout-gutter;
+// $md: $layout-gutter * 2;
+// $lg: $layout-gutter * 3;
+
+$spacers: map-merge(
+    (
+        xs: ($spacer * .25),
+        sm: ($spacer * .5),
+        md: $spacer,
+        lg: ($spacer * 1.5)
+    ),
+    $spacers
+);
+
+// Sizes
+$sizes: map-merge(
+    (
+        xs: $layout-gutter * 10, // 80px
+        sm: $layout-gutter * 20, // 160px
+        md: $layout-gutter * 30, // 240px
+        lg: $layout-gutter * 40, // 320px
+        xl: $layout-gutter * 50, // 400px
+        xxl: $layout-gutter * 60, // 480px
+        10: 10%,
+        20: 20%,
+        30: 30%,
+        40: 40%,
+        60: 60%,
+        70: 70%,
+        80: 80%,
+        90: 90%
+    ),
+    $sizes
+);
+
+// Font size
+// $font-size-base: 16px; but of antd is 14px
+$font-size-base-view: 14px;
+
+$text-xs:       $font-size-base-view - 2;  // 12px
+$text-sm:       $font-size-base-view + 0;  // 14px
+$text-md:       $font-size-base-view + 2;  // 16px
+$text-lg:       $font-size-base-view + 4;  // 18px
+$text-xl:       $font-size-base-view + 8;  // 22px
+$text-xxl:      $font-size-base-view + 12; // 26px
+
+// icon
+$icon-sm:       $font-size-base-view * 2;  // 14px * 2 = 28px
+$icon-md:       $font-size-base-view * 4;  // 14px * 4 = 56px
+$icon-lg:       $font-size-base-view * 6;  // 14px * 6 = 84px
+$icon-xl:       $font-size-base-view * 8;  // 14px * 8 = 112px
+$icon-xxl:      $font-size-base-view * 10; // 14px * 10 = 140px
+
+
+// 
+$screen-xs: map-get($map: $grid-breakpoints, $key: "xs");
+
+$screen-xs-max: map-get($map: $grid-breakpoints, $key: "sm") - 1px;
+$screen-sm-max: map-get($map: $grid-breakpoints, $key: "md") - 1px;
+$screen-md-max: map-get($map: $grid-breakpoints, $key: "lg") - 1px;
+$screen-lg-max: map-get($map: $grid-breakpoints, $key: "xl") - 1px;
+
+$mobile-min: map-get($map: $grid-breakpoints, $key: "md");
+$mobile-max: map-get($map: $grid-breakpoints, $key: "md") - 1px;
+
+
+// colors
+
+
+// $blue-6: #1890ff;
+// $purple-6: #722ed1;
+// $cyan-6: #13c2c2;
+// $green-6: #52c41a;
+// $magenta-6: #eb2f96;
+// $pink-6: #eb2f96;
+// $red-6: #f5222d;
+// $orange-6: #fa8c16;
+// $yellow-6: #fadb14;
+// $volcano-6: #fa541c;
+// $geekblue-6: #2f54eb;
+// $lime-6: #a0d911;
+// $gold-6: #faad14;
+// $grey-6:  #bfbfbf;
+
+// $addon-colors: (
+//     "red": $red-6,
+//     "volcano": $volcano-6,
+//     "orange": $orange-6,
+//     "gold": $gold-6,
+//     "yellow": $yellow-6,
+//     "lime": $lime-6,
+//     "green": $green-6,
+//     "blue": $blue-6,
+//     "cyan": $cyan-6,
+//     "geekblue": $geekblue-6,
+//     "purple": $purple-6,
+//     "magenta": $magenta-6,
+//     "grey": $grey-6,
+// );
+
+// $alias-color: (
+//     primary: map-get($addon-colors, "blue"),
+//     success: map-get($addon-colors, "green"),
+//     error: map-get($addon-colors, "red"),
+//     warning: map-get($addon-colors, "yellow")
+// );
+
+$addon-colors: $colors;
+$alias-color: $theme-colors;
+
+$addon-and-alias-colors: map-merge($addon-colors, $alias-color);

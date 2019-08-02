@@ -1,14 +1,14 @@
 <nz-spin [nzSpinning]="userLoading">
     <div class="main" *ngIf="user">
       <div class="left">
-        <form nz-form nzLayout="vertical" #f="ngForm" (submit)="save()" se-container="1">
-          <se label="邮箱" error="请输入您的邮箱!">
+        <form nz-form nzLayout="vertical" #f="ngForm" (submit)="save()" mlForm="1">
+          <ml-form-item label="邮箱" error="请输入您的邮箱!">
             <input nz-input type="email" [(ngModel)]="user.email" name="email" required />
-          </se>
-          <se label="昵称" error="请输入您的昵称!">
+          </ml-form-item>
+          <ml-form-item label="昵称" error="请输入您的昵称!">
             <input nz-input [(ngModel)]="user.name" name="name" required />
-          </se>
-          <se label="个人简介">
+          </ml-form-item>
+          <ml-form-item label="个人简介">
             <textarea
               nz-input
               [(ngModel)]="user.profile"
@@ -16,13 +16,13 @@
               [nzAutosize]="{ minRows: 4, maxRows: 10 }"
               placeholder="个人简介"
             ></textarea>
-          </se>
-          <se label="国家/地区">
+          </ml-form-item>
+          <ml-form-item label="国家/地区">
             <nz-select [(ngModel)]="user.country" name="country" required>
               <nz-option nzLabel="中国" nzValue="China"></nz-option>
             </nz-select>
-          </se>
-          <se label="所在省市">
+          </ml-form-item>
+          <ml-form-item label="所在省市">
             <div class="d-flex justify-content-between">
               <nz-select
                 [(ngModel)]="user.geographic.province.key"
@@ -37,16 +37,16 @@
                 <nz-option *ngFor="let p of cities" [nzLabel]="p.name" [nzValue]="p.id"></nz-option>
               </nz-select>
             </div>
-          </se>
-          <se label="街道地址" error="请输入您的街道地址!">
+          </ml-form-item>
+          <ml-form-item label="街道地址" error="请输入您的街道地址!">
             <input nz-input [(ngModel)]="user.address" name="address" required />
-          </se>
-          <se label="联系电话" error="请输入您的联系电话!">
+          </ml-form-item>
+          <ml-form-item label="联系电话" error="请输入您的联系电话!">
             <input nz-input [(ngModel)]="user.phone" name="phone" required />
-          </se>
-          <se>
+          </ml-form-item>
+          <ml-form-item>
             <button nz-button nzType="primary" [disabled]="f.invalid">更新基本信息</button>
-          </se>
+          </ml-form-item>
         </form>
       </div>
       <div class="right">

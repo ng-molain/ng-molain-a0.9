@@ -52,7 +52,7 @@ export const LOCALE_PROVIDERS: Provider[] = [
 
 function __registerAngularLocalData() {
   AVAILABLE_LOCALE_IDS.forEach(localeId => {
-    const localeData = LOCALE_DATA[localeId];
+    const localeData = LOCALE_DATA[localeId].ng;
     ngRegisterLocaleData(localeData, localeId);
   });
 }

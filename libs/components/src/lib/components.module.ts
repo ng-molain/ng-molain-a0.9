@@ -13,8 +13,7 @@ import { DetailsModule } from './details';
 import { SidenavModule } from './sidenav';
 import { TableModule } from './table';
 
-import { SEModule } from './edit';
-import { SVModule } from './view';
+import { NgMolainFormsModule } from './forms/forms.module';
 
 @NgModule({
   exports: [
@@ -31,9 +30,7 @@ import { SVModule } from './view';
     DetailsModule,
     SidenavModule,
     TableModule,
-
-    SEModule,
-    SVModule
+    NgMolainFormsModule,
   ]
 })
 export class NgMolainComponentsModule {}

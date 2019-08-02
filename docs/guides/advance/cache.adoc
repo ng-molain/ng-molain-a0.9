@@ -1,0 +1,5 @@
+[[cache]]
+= 缓存
+:category: guide, advance
+:orderNum: 7
+:link: docs/cache/overview

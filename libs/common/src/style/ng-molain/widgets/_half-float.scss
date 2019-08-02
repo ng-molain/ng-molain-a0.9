@@ -1,0 +1,37 @@
+$enable-widget-half-float: true !default;
+
+$half-float-sizes: (sm: $layout-gutter * 8,
+md: $layout-gutter * 10,
+lg: $layout-gutter * 12);
+
+@if $enable-widget-half-float {
+    .half-float {
+        position: relative;
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .half-float-bottom {
+            position: absolute;
+            left: 50%;
+            z-index: 2;
+        }
+
+        @each $size,
+        $value in $half-float-sizes {
+            &.half-float-#{$size} {
+                margin-bottom: ($value / 2) + 10;
+
+                .half-float-bottom {
+                    bottom: -($value / 2);
+                    width: $value;
+                    height: $value;
+                    margin-left: -($value / 2);
+                }
+            }
+        }
+    }
+}

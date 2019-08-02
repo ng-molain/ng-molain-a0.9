@@ -1,0 +1,5 @@
+[[international]]
+= 国际化
+:category: guide, advance
+:orderNum: 3
+:link: docs/international/overview

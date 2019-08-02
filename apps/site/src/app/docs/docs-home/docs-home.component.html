@@ -2,13 +2,20 @@
 
 <div nz-row nzType="flex" style="margin-top: 40px;">
   <div nz-col nzMd="24" nzLg="6" nzXl="5" nzXXl="4">
-    <mls-docs-sidenav></mls-docs-sidenav>
+    <mls-docs-sidenav [outline]="outline"></mls-docs-sidenav>
   </div>
 
   <div nz-col nzMd="24" nzLg="18" nzXl="19" nzXXl="20">
     <!-- <router-outlet></router-outlet> -->
     <div class="document-wrapper">
-      <mls-doc-viewer documentUrl="/assets/docs/guides/getting-started.adoc"></mls-doc-viewer>
+      <!-- <mls-doc-viewer documentUrl="/assets/docs/guides/getting-started.adoc"></mls-doc-viewer> -->
+
+      <router-outlet></router-outlet>
+
     </div>
+
+    <section style="margin-top: 40px;">
+      <mls-layout-footer></mls-layout-footer>
+    </section>
   </div>
 </div>

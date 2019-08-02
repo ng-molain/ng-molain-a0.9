@@ -13,7 +13,6 @@ export class AnalysisComponent implements OnInit {
   constructor(
     private http: HttpClient,
     public msg: NzMessageService,
-    // private i18n: I18NService,
     private cdr: ChangeDetectorRef,
   ) {}
   data: any = {};

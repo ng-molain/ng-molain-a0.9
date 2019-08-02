@@ -1,5 +1,4 @@
 import { HttpRequest } from '@angular/common/http';
-import { MockRequest } from '@delon/mock';
 
 const list: any[] = [];
 
@@ -73,8 +72,13 @@ function saveRule(description: string) {
   });
 }
 
+// export const RULES = {
+//   '/rule': (req: MockRequest) => getRule(req.queryString),
+//   'DELETE /rule': (req: MockRequest) => removeRule(req.queryString.nos),
+//   'POST /rule': (req: MockRequest) => saveRule(req.body.description),
+// };
 export const RULES = {
-  '/rule': (req: MockRequest) => getRule(req.queryString),
-  'DELETE /rule': (req: MockRequest) => removeRule(req.queryString.nos),
-  'POST /rule': (req: MockRequest) => saveRule(req.body.description),
+  '/rule': (params) => getRule(params),
+  'DELETE /rule': (nos) => removeRule(nos),
+  'POST /rule': (description) => saveRule(description),
 };

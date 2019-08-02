@@ -5,6 +5,7 @@ import { catchError, tap } from 'rxjs/operators';
 
 import { SystemInfoApiService } from '../data';
 import { ApplicationContext } from '../services';
+import { I18nInitializer } from '../i18n';
 
 /**
  * 用于应用启动时
@@ -17,10 +18,11 @@ export class StartupService {
     private http: HttpClient,
     private systemInfoApi: SystemInfoApiService,
     private applicationContext: ApplicationContext,
+    private __i18n: I18nInitializer, // 仅仅是为了触发 TranslateService 的初始化
   ) { }
 
   load(): Promise<any> {
-    // return this.http.get('http://sparkdev.qimooc.net/api/open/siteInfo4').toPromise();
+    // return this.http.get('http://sparkdev.qimooc.net/api/open/siteInfo').toPromise();
     // return of(false).toPromise();
     const appCtx = this.applicationContext;
 

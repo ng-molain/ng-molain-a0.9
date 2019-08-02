@@ -8,6 +8,10 @@ import { LayoutSidebarComponent } from './default/sidebar/sidebar.component';
 import { LayoutSiteComponent } from './site/site.component';
 import { LayoutSiteHeaderComponent } from './site/site-header/site-header.component';
 import { LayoutSiteFooterComponent } from './site/site-footer/site-footer.component';
+import { TaskComponent } from './default/header/task/task.component';
+import { MessageComponent } from './default/header/message/message.component';
+import { AcountComponent } from './default/header/acount/acount.component';
+import { HelpComponent } from './default/header/help/help.component';
 
 @NgModule({
   imports: [
@@ -22,6 +26,10 @@ import { LayoutSiteFooterComponent } from './site/site-footer/site-footer.compon
     LayoutSiteComponent,
     LayoutSiteHeaderComponent,
     LayoutSiteFooterComponent,
+    TaskComponent,
+    MessageComponent,
+    AcountComponent,
+    HelpComponent,
   ],
   exports: [
     LayoutDefaultComponent, 

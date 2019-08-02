@@ -1,7 +1,12 @@
-import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, ComponentFactoryResolver, ApplicationRef, Injector, ViewContainerRef } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
-import Asciidoctor from 'asciidoctor';
+import { ExampleViewerComponent } from '../example-viewer/example-viewer.component';
+import { DomPortalHost, ComponentPortal } from '@angular/cdk/portal';
+
+// 直接导入的形式，webpack 打包后（Asciidoctor 中 转换语言不严谨的语法）会存在在问题，
+// import Asciidoctor from 'asciidoctor';
+declare var Asciidoctor: any;
 
 @Component({
   selector: 'mls-doc-viewer',
@@ -9,6 +14,7 @@ import Asciidoctor from 'asciidoctor';
   styleUrls: ['./doc-viewer.component.scss']
 })
 export class DocViewerComponent implements OnInit {
+  private _portalHosts: DomPortalHost[] = [];
 
   @Input()
   set documentUrl(url: string) {
@@ -22,6 +28,10 @@ export class DocViewerComponent implements OnInit {
   constructor(
     private _elementRef: ElementRef,
     private _http: HttpClient,
+    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _appRef: ApplicationRef,
+    private _injector: Injector,
+    private _viewContainerRef: ViewContainerRef
   ) { }
 
   ngOnInit() {
@@ -50,10 +60,16 @@ export class DocViewerComponent implements OnInit {
     // const rawContent = asciidoctor.convert(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font' } });
     // const rawContent = asciidoctor.convert(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font', 'toc': 'auto', 'toc-title': '目录' } });
     const doc = asciidoctor.load(content, { 'safe': 'server', 'attributes': { 'showtitle': true, 'icons': 'font', 'toc': 'auto', 'toc-title': '目录' } });
-    window['adoc'] = doc;
-    const rawContent = doc.convert();
+    // window['adoc'] = doc;
+    let rawContent = doc.convert() as string;
+    // replace example repx
+    rawContent = rawContent.replace(/<!-- eg\(([^)]+)\) -->/g, '<div ng-molain-docs-example="$1"></div>');
+    
     // this._elementRef.nativeElement.innerHTML = rawContent;
     this._setArticleHtml(rawContent);
+
+    // attach examples after set innerHTML
+    this._loadExamples();
   }
 
   /** Show an error that occurred when fetching a document. */
@@ -65,6 +81,23 @@ export class DocViewerComponent implements OnInit {
 
   private _setArticleHtml(rawContent: string) {
     this.articleElement.nativeElement.innerHTML = rawContent;
+  }
+
+  private _loadExamples() {
+    const componentName = 'ng-molain-docs-example';
+    const componentClass = ExampleViewerComponent;
+
+    const exampleElements = (this._elementRef.nativeElement as HTMLElement).querySelectorAll(`[${componentName}]`);
+
+    Array.prototype.slice.call(exampleElements).forEach((element: Element) => {
+      const example = element.getAttribute(componentName);
+      const portalHost = new DomPortalHost(element, this._componentFactoryResolver, this._appRef, this._injector);
+      const examplePortal = new ComponentPortal(componentClass, this._viewContainerRef);
+      const exampleViewer = portalHost.attach(examplePortal);
+      (exampleViewer.instance as ExampleViewerComponent).example = `eg-${example}`;
+
+      this._portalHosts.push(portalHost);
+    });
   }
 
 }

@@ -1,18 +1,14 @@
 
-.layout-default-content {
-    padding: 24px;
-
-    &::ng-deep {
-        nz-page-header, .nz-page-header {
-            margin-top: -24px;
-            margin-left: -24px;
-            margin-right: -24px;
-            margin-bottom: 24px;
-        }
-    }
-}
+// .ant-layout-header {
+//     height: 64px;
+//     padding: 0px;
+//     line-height: 64px;
+//     background: #001529;
+// }
 
 .demo-sider {
+    // transition: all 0.5s linear;
+
     &::ng-deep {
         .ant-layout-sider-children {
             overflow-x: hidden;
@@ -22,6 +18,19 @@
                 width: 0;
                 height: 0;
             }
+        }
+    }
+}
+
+.layout-default-content {
+    padding: 24px;
+
+    &::ng-deep {
+        nz-page-header, .nz-page-header {
+            margin-top: -24px;
+            margin-left: -24px;
+            margin-right: -24px;
+            margin-bottom: 24px;
         }
     }
 }

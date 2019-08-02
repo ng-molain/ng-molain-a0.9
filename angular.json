@@ -161,13 +161,20 @@
                 "glob": "**/*",
                 "input": "./docs",
                 "output": "/assets/docs/"
+              },
+              {
+                "glob": "**/*",
+                "input": "./dist/apps/site/assets/docs/libs",
+                "output": "/assets/docs/libs/"
               }
             ],
             "styles": [
               "apps/site/src/styles/ng-zorro-antd/ng-zorro-antd.less",
               "apps/site/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@asciidoctor/core/dist/browser/asciidoctor.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -554,6 +561,13 @@
       "sourceRoot": "libs/g2-charts/src",
       "prefix": "g2",
       "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/g2-charts/tsconfig.lib.json",
+            "project": "libs/g2-charts/ng-package.json"
+          }
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {

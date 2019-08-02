@@ -4,7 +4,8 @@
     <demo-layout-header class="layout-default-header"></demo-layout-header>
   </nz-header>
   <nz-layout>
-    <nz-sider class="bg-white demo-sider">
+    <!-- <nz-sider class="bg-white demo-sider" nzCollapsible [nzCollapsed]="layoutServcie.sidebarCollapsed" [nzTrigger]="null" nzCollapsedWidth="64"> -->
+    <nz-sider class="bg-white demo-sider" [class.d-none]="layoutServcie.sidebarCollapsed">
       <demo-layout-sidebar class="layout-default-sidebar"></demo-layout-sidebar>
     </nz-sider>
     <nz-content>

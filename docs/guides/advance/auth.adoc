@@ -1,0 +1,5 @@
+[[auth]]
+= 用户认证
+:category: guide, advance
+:orderNum: 4
+:link: docs/auth/overview

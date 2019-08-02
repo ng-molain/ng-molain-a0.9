@@ -37,7 +37,7 @@
         </nz-tabset>
   </nz-page-header-footer>
 <nz-page-header-content>
-    <sv-container size="small" col="2">
+    <!-- <sv-container size="small" col="2">
         <sv label="创建人">曲丽丽</sv>
         <sv label="订购产品">XX 服务</sv>
         <sv label="创建时间">2017-07-07</sv>
@@ -46,7 +46,17 @@
         </sv>
         <sv label="生效日期">2017-07-07 ~ 2017-08-08</sv>
         <sv label="备注">请于两个工作日内确认</sv>
-      </sv-container>
+      </sv-container> -->
+    <ml-details [nzGrid]="{gutter: 16, column: 12}">
+      <ml-detail term="创建人">曲丽丽</ml-detail>
+      <ml-detail term="订购产品">XX 服务</ml-detail>
+      <ml-detail term="创建时间">2017-07-07</ml-detail>
+      <ml-detail term="关联单据">
+        <a (click)="msg.success('yes')">12421</a>
+      </ml-detail>
+      <ml-detail term="生效日期">2017-07-07 ~ 2017-08-08</ml-detail>
+      <ml-detail term="备注">请于两个工作日内确认</ml-detail>
+    </ml-details>
 </nz-page-header-content>
 </nz-page-header>
 
@@ -80,19 +90,21 @@
   </nz-steps>
   <div class="steps-content"></div>
 </nz-card>
+
 <nz-card [nzBordered]="false" nzTitle="用户信息" class="mb-lg">
-  <sv-container class="mb-lg">
-    <sv label="用户姓名">付小小</sv>
-    <sv label="会员卡号">32943898021309809423</sv>
-    <sv label="身份证">3321944288191034921</sv>
-    <sv label="联系方式">18112345678</sv>
-    <sv label="联系地址">曲丽丽 18100000000 浙江省杭州市西湖区黄姑山路工专路交叉路口</sv>
-  </sv-container>
-  <sv-container class="mb-lg" title="信息组">
-    <sv label="某某数据">725</sv>
-    <sv label="该数据更新时间">2017-08-08</sv>
-    <sv>&nbsp;</sv>
-    <sv [label]="label">
+  <ml-details class="mb-lg" [nzGrid]="{gutter: 16, column: 8}">
+    <ml-detail term="用户姓名">付小小</ml-detail>
+    <ml-detail term="会员卡号">32943898021309809423</ml-detail>
+    <ml-detail term="身份证">3321944288191034921</ml-detail>
+    <ml-detail term="联系方式">18112345678</ml-detail>
+    <ml-detail term="联系地址">曲丽丽 18100000000 浙江省杭州市西湖区黄姑山路工专路交叉路口</ml-detail>
+  </ml-details>
+
+  <ml-details class="mb-lg" title="信息组" [nzGrid]="{gutter: 16, column: 8}">
+    <ml-detail term="某某数据">725</ml-detail>
+    <ml-detail term="该数据更新时间">2017-08-08</ml-detail>
+    <ml-detail>&nbsp;</ml-detail>
+    <ml-detail [term]="label">
       <ng-template #label>
         某某数据
         <nz-tooltip [nzTitle]="'数据说明'">
@@ -102,29 +114,29 @@
         </nz-tooltip>
       </ng-template>
       725
-    </sv>
-    <sv label="该数据更新时间">2017-08-08</sv>
-  </sv-container>
+    </ml-detail>
+    <ml-detail term="该数据更新时间">2017-08-08</ml-detail>
+  </ml-details>
   <h4 class="mb-md">信息组</h4>
   <nz-card nzType="inner" nzTitle="多层级信息组">
-    <sv-container size="small" title="组名称">
-      <sv label="负责人">林东东</sv>
-      <sv label="角色码">1234567</sv>
-      <sv label="所属部门">XX公司 - YY部</sv>
-      <sv label="过期时间">2017-08-08</sv>
-      <sv label="描述">这段描述很长很长很长很长很长很长很长很长很长很长很长很长很长很长...</sv>
-    </sv-container>
+    <ml-details title="组名称" [nzGrid]="{gutter: 16, column: 8}">
+      <ml-detail term="负责人">林东东</ml-detail>
+      <ml-detail term="角色码">1234567</ml-detail>
+      <ml-detail term="所属部门">XX公司 - YY部</ml-detail>
+      <ml-detail term="过期时间">2017-08-08</ml-detail>
+      <ml-detail term="描述">这段描述很长很长很长很长很长很长很长很长很长很长很长很长很长很长...</ml-detail>
+    </ml-details>
     <nz-divider></nz-divider>
-    <sv-container size="small" title="组名称" col="1">
-      <sv label="学名">
+    <ml-details title="组名称">
+      <ml-detail term="学名">
         Citrullus lanatus (Thunb.) Matsum. et Nakai一年生蔓生藤本；茎、枝粗壮，具明显的棱。卷须较粗..
-      </sv>
-    </sv-container>
+      </ml-detail>
+    </ml-details>
     <nz-divider></nz-divider>
-    <sv-container size="small" title="组名称">
-      <sv label="负责人">付小小</sv>
-      <sv label="角色码">1234568</sv>
-    </sv-container>
+    <ml-details title="组名称" [nzGrid]="{gutter: 16, column: 8}">
+      <ml-detail term="负责人">付小小</ml-detail>
+      <ml-detail term="角色码">1234568</ml-detail>
+    </ml-details>
   </nz-card>
 </nz-card>
 <nz-card [nzBordered]="false" nzTitle="用户近半年来电记录" class="mb-lg">

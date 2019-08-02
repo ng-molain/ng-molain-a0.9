@@ -3,7 +3,7 @@ import { NzListGrid } from 'ng-zorro-antd';
 import { DetailItemComponent } from './detail-item/detail-item.component';
 
 @Component({
-  selector: 'ml-details',
+  selector: 'ml-details, ml-detail-list, [mlDetails], [mlDetailList]',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
