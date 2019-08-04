@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'forms', loadChildren: () => import('./forms-demo/forms-demo.module').then(m => m.FormsDemoModule) },
 
   { path: 'pagination', loadChildren: () => import('./pagination-demo/pagination-demo.module').then(m => m.PaginationDemoModule) },
+  { path: 'table', loadChildren: () => import('./table-demo/table-demo.module').then(m => m.TableDemoModule) },
   // { path: '', loadChildren: () => import('.').then(m => m) },
 ];
 

@@ -1,3 +1,49 @@
-<p>
-  simple-table works!
-</p>
+
+<div class="ml-table-wrap">
+  <table class="ml-table">
+    <thead>
+      <tr>
+        <th *ngIf="showSerial"></th>
+        <th *ngIf="showSelect"></th>
+        <th *ngFor="let col of columnsVisible">
+          <div [class.ml-table-column-sortable]="col.showSort" (click)="updateSort(col)">
+            {{col.title || col.name || col.data | uppercase}}
+  
+            <div class="ml-table-column-sorter" *ngIf="col.showSort">
+              <i nz-icon nzType="caret-up" nzTheme="outline" [class.on]="col.sort === 'ASC'"></i>
+              <i nz-icon nzType="caret-down" nzTheme="outline" [class.on]="col.sort === 'DESC'"></i>
+            </div>
+          </div>
+        </th>
+        <th *ngIf="!!rowActions" class="text-right">{{ rowActionTitle || '操作' }}</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="hasData">
+      <tr *ngFor="let row of data; index as index">
+        <td *ngIf="showSerial"></td>
+        <td *ngIf="showSelect"></td>
+        <td *ngFor="let col of columnsVisible">
+          <div>Data Cell</div>
+        </td>
+        <td *ngIf="rowActions" class="text-right text-nowrap">
+          <div>Actions Cell</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="ml-table-after">
+    <div class="ml-table-pagination">
+      <ml-pagination [pagination]="{}"></ml-pagination>
+    </div>
+  </div>
+
+  <div class="ml-table-empty" *ngIf="!hasData && !loading">
+    <!-- <div class="ml-table-empty-placeholder py-4 my-4 text-center"></div> -->
+    <nz-empty></nz-empty>
+  </div>
+
+  <div class="ml-table-loading" *ngIf="loading">
+    <nz-spin nzSimple></nz-spin>
+  </div>
+</div>

@@ -28,7 +28,8 @@ export const __COMPONENTS_DEMO_NAV_ITEMS: NavItem = {
     },
     {
       name: 'Data', route: '', type: 'group', children: [
-        { name: 'Pagination', route: 'pagination' }
+        { name: 'Pagination', route: 'pagination' },
+        { name: 'Table', route: 'table' },
       ]
     }
   ]
