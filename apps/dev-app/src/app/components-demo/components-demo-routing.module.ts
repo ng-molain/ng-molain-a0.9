@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: 'result', loadChildren: () => import('./result-demo/result-demo.module').then(m => m.ResultDemoModule) },
   { path: 'details', loadChildren: () => import('./details-demo/details-demo.module').then(m => m.DetailsDemoModule) },
   { path: 'forms', loadChildren: () => import('./forms-demo/forms-demo.module').then(m => m.FormsDemoModule) },
+
+  { path: 'pagination', loadChildren: () => import('./pagination-demo/pagination-demo.module').then(m => m.PaginationDemoModule) },
   // { path: '', loadChildren: () => import('.').then(m => m) },
 ];
 

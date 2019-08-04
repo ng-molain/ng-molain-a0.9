@@ -11,9 +11,10 @@ import { PageHeaderModule } from './page-header';
 import { ResultModule } from './result';
 import { DetailsModule } from './details';
 import { SidenavModule } from './sidenav';
-import { TableModule } from './table';
+import { NgMolainFormsModule } from './forms';
 
-import { NgMolainFormsModule } from './forms/forms.module';
+import { PaginationModule } from './pagination';
+import { TableModule } from './table';
 
 @NgModule({
   exports: [
@@ -29,6 +30,7 @@ import { NgMolainFormsModule } from './forms/forms.module';
     ResultModule,
     DetailsModule,
     SidenavModule,
+    PaginationModule,
     TableModule,
     NgMolainFormsModule,
   ]

@@ -12,4 +12,6 @@ export * from './lib/details/index';
 export * from './lib/sidenav/index';
 export * from './lib/forms/index';
 
+export * from './lib/pagination/index';
+
 export * from './lib/components.module';
