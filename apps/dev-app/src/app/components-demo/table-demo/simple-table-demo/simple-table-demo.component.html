@@ -1,1 +1,7 @@
-<ml-simple-table></ml-simple-table>
+<ml-simple-table [columns]="columns" [data]="dataList" [rowActions]="rowActionsTpl">
+    <ng-template #rowActionsTpl>
+        <a href="">Edit</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a href="">Delete</a>
+    </ng-template>
+</ml-simple-table>

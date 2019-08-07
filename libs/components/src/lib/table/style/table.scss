@@ -1,22 +1,106 @@
 @import '../../../style/theming/theming.scss';
 
+$table-border-color: $gray-200;
+$table-header-bg-color: $gray-100;
+$table-footer-bg-color: $gray-100;
+$table-header-active-bg-color: $gray-200;
+$table-row-hover-bg-color: rgba(lighten($primary, 40%), 0.5);
+
 .ml-table {
-    border: 1px solid #eceeef;
+    border: 1px solid $table-border-color;
     background: $white;
     width: 100%;
 
     th {
-        background: #f8fbfd;
+        background: $table-header-bg-color;
+        position: relative;
+
+        .ml-table-column-sortable {
+            // margin: -0.75rem;
+            // padding: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: table;
+
+            > * {
+                display: table-cell;
+                position: relative;
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: 0 0;
+                transition: all .3s;
+                content: '';
+                z-index: 0;
+            }
+
+            &:hover::before {
+                background-color: $table-header-active-bg-color;
+            }
+
+            .ml-table-column-sorter {
+                // display: inline-block;
+                height: 1.25rem;
+                overflow: hidden;
+                vertical-align: middle;
+                padding-left: 0.25rem;
+    
+                .anticon {
+                    font-size: 0.75rem;
+                    height: 0.5rem;
+                    display: block;
+                    color: $gray-500;
+    
+                    &.on {
+                        color: $primary;
+                    }
+                }
+    
+                .anticon-caret-up {
+                    margin-top: -.125rem;
+                }
+    
+                .anticon-caret-down {
+                    // margin-top: 1px;
+                    margin-top: .25em;
+                }
+            }
+        }
     }
     th,
     td {
-        border-top: 1px solid #e9ecef;
-        padding: 0.5rem;
+        border-top: 1px solid $table-border-color;
+        padding: 0.75rem;
         vertical-align: top;
+
+        &.col-serial, &.col-select {
+            width: 3rem;
+            text-align: center;
+        }
+
+        &.col-serial {
+            border-right: 1px solid $table-border-color;
+            background: $table-header-bg-color;
+        }
+
+        // &.col-select {
+        // }
     }
     tbody tr {
-        &:hover {
-            background: #fbfbfd;
+        &:hover td {
+            background: $table-row-hover-bg-color;
         }
     }
+}
+
+.ml-table-after {
+    padding: 0.75rem;
+    background: $table-footer-bg-color;
+    border: 1px solid $table-border-color;
+    border-top: none;
 }

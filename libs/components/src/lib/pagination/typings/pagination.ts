@@ -16,10 +16,19 @@ export interface Pagination {
     totalElements: number;
     /** Number of total pages */
     totalPages: number;
+
+    content?: any[];
 }
 
-export interface PageRequest {
+
+export interface Pageable {
     page: number;
     size: number;
     sort?: string;
+}
+
+
+// tslint:disable-next-line:no-empty-interface
+export interface PageRequest extends Pageable {
+    
 }

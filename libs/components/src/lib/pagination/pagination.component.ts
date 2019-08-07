@@ -17,13 +17,24 @@ export class PaginationComponent implements OnInit {
   // @Output() sizeChange = new EventEmitter<number>();
   @Output() goto = new EventEmitter<PageRequest>();
 
-  gotoNumber: number;
   activePageSizeOptions: { value: number, label: string, disabled: boolean }[];
+
+  private gotoNumber: number;
 
   constructor() { }
 
   ngOnInit() {
     this.setActivePageSizeOptions();
+    this.updateGotoNumber();
+  }
+
+  get startPage() {
+    return this.oneIndexedParameter ? 1 : 0;
+  }
+
+  private updateGotoNumber() {
+    const { number } = this.pagination;
+    this.gotoNumber = this.oneIndexedParameter ? number : number + 1;
   }
 
   private setActivePageSizeOptions() {
@@ -42,18 +53,20 @@ export class PaginationComponent implements OnInit {
     this.pagination.size = size;
 
     this.goto.emit({ page, size });
+    
+    this.updateGotoNumber();
   }
 
   prev() {
     const { first, number, size } = this.pagination;
-    const page = (!first && number > 0) ? number - 1 : number;
+    const page = (!first && number > this.startPage) ? number - 1 : number;
 
     this.gotoPage(page, size);
   }
 
   next() {
     const { last, number, totalPages, size } = this.pagination;
-    const page = (!last && number + 1 < totalPages) ? number + 1 : number;
+    const page = (!last && number + 1 - this.startPage < totalPages) ? number + 1 : number;
 
     this.gotoPage(page, size);
   }
@@ -61,20 +74,20 @@ export class PaginationComponent implements OnInit {
   first() {
     const { size } = this.pagination;
 
-    this.gotoPage(0, size);
+    this.gotoPage(this.startPage, size);
   }
 
   last() {
     const { totalPages, size } = this.pagination;
 
-    this.gotoPage(totalPages - 1, size);
+    this.gotoPage(totalPages - 1 + this.startPage, size);
   }
 
   jumpToPage(page: number, $event: KeyboardEvent) {
     const { keyCode } = $event;
     const { totalPages, size } = this.pagination;
-    if (keyCode === 13 && !gotoInputValidator(page, 0, totalPages - 1)) {
-      this.gotoPage(page, size);
+    if (keyCode === 13 && !gotoInputValidator(page, 1, totalPages)) {
+      this.gotoPage(page - 1 + this.startPage, size);
     }
   }
 }

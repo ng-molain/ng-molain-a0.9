@@ -1,40 +1,51 @@
-
 <div class="ml-table-wrap">
   <table class="ml-table">
+    <!-- <colgroup>
+      <col span="5">
+      <col style="width: 90px; background: red;">
+    </colgroup> -->
     <thead>
       <tr>
-        <th *ngIf="showSerial"></th>
-        <th *ngIf="showSelect"></th>
+        <th *ngIf="showSerial" class="col-serial"></th>
+        <th *ngIf="showSelect" class="col-select">
+          <label nz-checkbox></label>
+        </th>
         <th *ngFor="let col of columnsVisible">
           <div [class.ml-table-column-sortable]="col.showSort" (click)="updateSort(col)">
-            {{col.title || col.name || col.data | uppercase}}
-  
+            <span class="ml-table-column-title">
+                {{col.title || col.name || col.data || col.field | uppercase}}
+            </span>
+
             <div class="ml-table-column-sorter" *ngIf="col.showSort">
               <i nz-icon nzType="caret-up" nzTheme="outline" [class.on]="col.sort === 'ASC'"></i>
               <i nz-icon nzType="caret-down" nzTheme="outline" [class.on]="col.sort === 'DESC'"></i>
             </div>
           </div>
         </th>
-        <th *ngIf="!!rowActions" class="text-right">{{ rowActionTitle || '操作' }}</th>
+        <th *ngIf="!!rowActions" class="text-right" style="width: 60px;">{{ rowActionTitle || '操作' }}</th>
       </tr>
     </thead>
     <tbody *ngIf="hasData">
-      <tr *ngFor="let row of data; index as index">
-        <td *ngIf="showSerial"></td>
-        <td *ngIf="showSelect"></td>
+      <tr *ngFor="let row of visibleData; index as index">
+        <td *ngIf="showSerial" class="col-serial">{{ index + serialIndexStart }}</td>
+        <td *ngIf="showSelect" class="col-select">
+          <label nz-checkbox></label>
+        </td>
         <td *ngFor="let col of columnsVisible">
-          <div>Data Cell</div>
+          <div>{{ row[col.field] }}</div>
         </td>
         <td *ngIf="rowActions" class="text-right text-nowrap">
-          <div>Actions Cell</div>
+          <div>
+            <ng-container *ngTemplateOutlet="rowActions; context: {$implicit: row}"></ng-container>
+          </div>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <div class="ml-table-after">
-    <div class="ml-table-pagination">
-      <ml-pagination [pagination]="{}"></ml-pagination>
+  <div class="ml-table-after d-flex">
+    <div class="ml-table-pagination ml-auto">
+      <ml-pagination [pagination]="pagination"></ml-pagination>
     </div>
   </div>
 
