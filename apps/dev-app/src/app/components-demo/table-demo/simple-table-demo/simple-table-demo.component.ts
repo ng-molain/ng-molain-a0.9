@@ -10,6 +10,17 @@ export class SimpleTableDemoComponent implements OnInit {
   columns = [
     {field: 'name', showSort: true},
     {field: 'age', showSort: true},
+    {field: 'sex', showSort: true, type: 'tag', tags: {
+      male: {text: '先生', color: '#108ee9'},
+      female: {text: '女士', color: 'magenta'},
+    }},
+    {field: 'badge', showSort: true, type: 'badge', badges: {
+      success: {text: '成功', status: 'success'},
+      error: {text: '失败', status: 'error'},
+      default: {text: '默认', status: 'default'},
+      processing: {text: '进行中', status: 'processing'},
+      warning: {text: '警告', status: 'warning'},
+    }},
     {field: 'address'},
     // {field: 'description'},
   ];
@@ -27,6 +38,8 @@ export class SimpleTableDemoComponent implements OnInit {
       this.dataList.push({
         name: 'John Brown',
         age: `${i}2`,
+        sex: ['male', 'female'][getRandomNumberByRange(0, 2)],
+        badge: ['success', 'error', 'default', 'processing', 'warning'][getRandomNumberByRange(0, 5)],
         address: `New York No. ${i} Lake Park`,
         description: `My name is John Brown, I am ${i}2 years old, living in New York No. ${i} Lake Park.`,
         checked: false,
@@ -34,4 +47,8 @@ export class SimpleTableDemoComponent implements OnInit {
       });
     }
   }
+}
+
+function getRandomNumberByRange(start, end) {
+  return Math.floor(Math.random() * (end - start) + start)
 }

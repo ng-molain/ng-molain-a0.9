@@ -1,4 +1,44 @@
-<ml-simple-table [columns]="columns" [data]="dataList" [rowActions]="rowActionsTpl">
+<nz-page-header nzTitle="Simple Data Table Demos" class="mb-3">
+    <nz-page-header-extra>
+        <button nz-button nzType="primary">
+            <i nz-icon nzType="user-add" nzTheme="outline"></i>
+            添加用户
+        </button>
+    </nz-page-header-extra>
+</nz-page-header>
+
+<div class="table-controls d-flex py-2">
+    <div class="table-simple-search">
+        <input nz-input type="text" style="width: 300px;">
+        <!-- <button nz-button class="ml-2">搜索</button> -->
+        <a href="" class="ml-2">高级搜索</a>
+    </div>
+
+    <div class="table-controls-actions ml-auto">
+        <nz-radio-group [ngModel]="'table'" nzButtonStyle="solid">
+            <label nz-radio-button nzValue="table">
+                <i nz-icon nzType="table" nzTheme="outline"></i>
+            </label>
+            <label nz-radio-button nzValue="list">
+                <i nz-icon nzType="bars" nzTheme="outline"></i>
+            </label>
+            <label nz-radio-button nzValue="card">
+                <i nz-icon nzType="appstore" nzTheme="outline"></i>
+            </label>
+        </nz-radio-group>
+
+
+        <button nz-button class="ml-2"><i nz-icon nzType="download" nzTheme="outline"></i></button>
+        <button nz-button class="ml-2"><i nz-icon nzType="setting" nzTheme="outline"></i></button>
+    </div>
+</div>
+<div class="table-advanced-search">
+    <!-- <form nz-form [formGroup]="advanced-search" nzLayout="horizontal">
+
+    </form> -->
+</div>
+
+<ml-simple-table [columns]="columns" [data]="dataList" [rowActions]="rowActionsTpl" [multipleSelection]="true">
     <ng-template #rowActionsTpl>
         <a href="">Edit</a>
         <nz-divider nzType="vertical"></nz-divider>

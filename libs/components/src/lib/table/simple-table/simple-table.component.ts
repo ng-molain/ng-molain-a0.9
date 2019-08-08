@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, EventEmitter, Output } from '@angular/core';
 import * as _ from 'lodash';
 import { Pagination, PageImpl } from '../../pagination/index';
+import { TableSelectionModel } from './selection-model';
 
 @Component({
   selector: 'ml-simple-table',
@@ -15,8 +16,8 @@ export class SimpleTableComponent implements OnInit {
   @Input() showSelect: boolean = false;
   @Input() loading: boolean = false;
 
-  @Input() clickRowToSelect: boolean;
-  @Input() singleSelect: boolean;
+  @Input() clickRowToSelect: boolean = true;
+  @Input() multipleSelection: boolean = true;
   @Input() selectable: boolean = true;
   @Input() highlightSelected: boolean = true;
 
@@ -44,9 +45,12 @@ export class SimpleTableComponent implements OnInit {
     return (this.oneIndexedParameter ? number - 1 : number) * size + 1;
   }
 
-  selection: any[];
+  // selection: any[];
   columnsVisible: any[];
   pagination: Pagination;
+
+  selection: TableSelectionModel;
+  @Output() selectionChanged = new EventEmitter<any>();
 
   get hasData(): boolean {
     return !_.isEmpty(this.data);
@@ -55,8 +59,15 @@ export class SimpleTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.showSerial = true;
+    // this.showSerial = true;
     this.showSelect = true;
+
+    if (this.selectable) {
+      this.selection = new TableSelectionModel(this.multipleSelection, [], true);
+      this.selection.changed.subscribe((selected) => {
+        this.selectionChanged.emit(selected);
+      });
+    }
   }
 
   updateSort(col) {
@@ -76,4 +87,42 @@ export class SimpleTableComponent implements OnInit {
         col.sort = 'ASC';
     }
   }
+
+
+  // selection start
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.visibleData.length;
+    
+    return numSelected === numRows;
+  }
+
+  selectAllToggle() {
+    if (this.isAllSelected()) {
+      this.selection.clear();
+    } else {
+      this.visibleData.forEach(row => {
+        this.selection.select(row);
+      });
+    }
+  }
+
+  // selection end
+
+  onRowClick($event: MouseEvent, row) {
+    $event.stopPropagation();
+    $event.preventDefault();
+
+    if (this.clickRowToSelect) {
+      const { ctrlKey, shiftKey } = $event;
+      // console.log(ctrlKey, shiftKey);
+      if (ctrlKey) {
+        this.selection.toggle(row);
+      } else {
+        this.selection.clear();
+        this.selection.select(row);
+      }
+    }
+  }
+
 }

@@ -1,0 +1,18 @@
+<!-- <div>{{ displayValue }}</div> -->
+
+<div [ngSwitch]="type">
+
+  <ng-container *ngSwitchCase="'tag'">
+    <nz-tag [nzColor]="tag.color">
+      {{tag.text || displayValue}}
+    </nz-tag>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'badge'">
+    <nz-badge [nzColor]="badge.color" [nzStatus]="badge.status" [nzText]="badge.text || displayValue"></nz-badge>
+  </ng-container>
+
+  <div *ngSwitchDefault>
+      {{ displayValue }}
+  </div>
+</div>

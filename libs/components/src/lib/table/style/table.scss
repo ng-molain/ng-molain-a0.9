@@ -4,7 +4,8 @@ $table-border-color: $gray-200;
 $table-header-bg-color: $gray-100;
 $table-footer-bg-color: $gray-100;
 $table-header-active-bg-color: $gray-200;
-$table-row-hover-bg-color: rgba(lighten($primary, 40%), 0.5);
+$table-row-hover-bg-color: rgba(lighten($primary, 40%), 0.4);
+$table-row-selected-bg-color: rgba(lighten($primary, 40%), 0.8);
 
 .ml-table {
     border: 1px solid $table-border-color;
@@ -95,7 +96,12 @@ $table-row-hover-bg-color: rgba(lighten($primary, 40%), 0.5);
         &:hover td {
             background: $table-row-hover-bg-color;
         }
+
+        &.ml-table-row-selected {
+            background: $table-row-selected-bg-color;
+        }
     }
+
 }
 
 .ml-table-after {

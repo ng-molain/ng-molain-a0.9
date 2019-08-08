@@ -8,7 +8,11 @@
       <tr>
         <th *ngIf="showSerial" class="col-serial"></th>
         <th *ngIf="showSelect" class="col-select">
-          <label nz-checkbox></label>
+          <label nz-checkbox *ngIf="multipleSelection"
+            [ngModel]="selection.hasValue() && isAllSelected()"
+            (ngModelChange)="$event !== undefined ? selectAllToggle() : null"
+            [nzIndeterminate]="selection.hasValue() && !isAllSelected()">
+          </label>
         </th>
         <th *ngFor="let col of columnsVisible">
           <div [class.ml-table-column-sortable]="col.showSort" (click)="updateSort(col)">
@@ -26,15 +30,20 @@
       </tr>
     </thead>
     <tbody *ngIf="hasData">
-      <tr *ngFor="let row of visibleData; index as index">
+      <tr *ngFor="let row of visibleData; index as index" (click)="onRowClick($event, row)" [class.ml-table-row-selected]="selection.isSelected(row)">
         <td *ngIf="showSerial" class="col-serial">{{ index + serialIndexStart }}</td>
-        <td *ngIf="showSelect" class="col-select">
-          <label nz-checkbox></label>
+        <td *ngIf="showSelect" class="col-select" (click)="$event.stopPropagation()">
+          <label nz-checkbox
+          [ngModel]="selection.isSelected(row)"
+          (ngModelChange)="$event !== undefined ? selection.toggle(row) : null"
+          (click)="$event.stopPropagation()">
+          </label>
         </td>
         <td *ngFor="let col of columnsVisible">
-          <div>{{ row[col.field] }}</div>
+          <!-- <div>{{ row[col.field] }}</div> -->
+          <ml-table-cell [row]="row" [col]="col"></ml-table-cell>
         </td>
-        <td *ngIf="rowActions" class="text-right text-nowrap">
+        <td *ngIf="rowActions" class="text-right text-nowrap" (click)="$event.stopPropagation()">
           <div>
             <ng-container *ngTemplateOutlet="rowActions; context: {$implicit: row}"></ng-container>
           </div>
