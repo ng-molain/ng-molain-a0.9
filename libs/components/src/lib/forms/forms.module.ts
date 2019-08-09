@@ -27,4 +27,4 @@ import { NgMolainCommonModule } from '@ng-molain/common';
     SimpleFormComponent,
   ]
 })
-export class NgMolainFormsModule { }
+export class SimpleFormsModule { }
