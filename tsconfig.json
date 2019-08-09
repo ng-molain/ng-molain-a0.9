@@ -23,7 +23,8 @@
       "@ng-molain/g2-charts": ["libs/g2-charts/src/index.ts"],
       "@ng-molain/demo/core": ["apps/demo/src/app/core/index.ts"],
       "@ng-molain/demo/shared": ["apps/demo/src/app/shared/index.ts"],
-      "@ng-molain/demo/layout": ["apps/demo/src/app/layout/index.ts"]
+      "@ng-molain/demo/layout": ["apps/demo/src/app/layout/index.ts"],
+      "@ng-molain/forms": ["libs/forms/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

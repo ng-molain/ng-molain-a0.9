@@ -43,6 +43,9 @@
     },
     "mock-api": {
       "tags": []
+    },
+    "forms": {
+      "tags": []
     }
   }
 }

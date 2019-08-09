@@ -73,6 +73,7 @@
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
+    "jest-preset-angular": "7.0.0",
     "@angular-devkit/build-angular": "^0.801.2",
     "@angular-devkit/build-ng-packagr": "~0.801.2",
     "@angular/cli": "8.1.2",
@@ -95,7 +96,6 @@
     "dotenv": "6.2.0",
     "fs-extra": "^8.1.0",
     "jest": "24.1.0",
-    "jest-preset-angular": "7.0.0",
     "mockjs": "^1.0.1-beta3",
     "ng-packagr": "^5.1.0",
     "prettier": "1.16.4",

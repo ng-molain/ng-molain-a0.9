@@ -89,9 +89,7 @@
               "apps/dev-app/tsconfig.app.json",
               "apps/dev-app/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -228,9 +226,7 @@
               "apps/site/tsconfig.app.json",
               "apps/site/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -361,9 +357,7 @@
               "apps/demo/tsconfig.app.json",
               "apps/demo/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -415,9 +409,7 @@
               "libs/examples/tsconfig.lib.json",
               "libs/examples/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -455,9 +447,7 @@
               "libs/common/tsconfig.lib.json",
               "libs/common/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -495,9 +485,7 @@
               "libs/components/tsconfig.lib.json",
               "libs/components/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -535,9 +523,7 @@
               "libs/drag-drop/tsconfig.lib.json",
               "libs/drag-drop/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -575,9 +561,7 @@
               "libs/g2-charts/tsconfig.lib.json",
               "libs/g2-charts/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -608,9 +592,7 @@
             "outputPath": "dist/apps/mock-api",
             "main": "apps/mock-api/src/main.ts",
             "tsConfig": "apps/mock-api/tsconfig.app.json",
-            "assets": [
-              "apps/mock-api/src/assets"
-            ]
+            "assets": ["apps/mock-api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -639,9 +621,7 @@
               "apps/mock-api/tsconfig.app.json",
               "apps/mock-api/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -650,6 +630,44 @@
             "jestConfig": "apps/mock-api/jest.config.js",
             "tsConfig": "apps/mock-api/tsconfig.spec.json"
           }
+        }
+      }
+    },
+    "forms": {
+      "projectType": "library",
+      "root": "libs/forms",
+      "sourceRoot": "libs/forms/src",
+      "prefix": "ml",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/forms/tsconfig.lib.json",
+            "project": "libs/forms/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/forms/tsconfig.lib.json",
+              "libs/forms/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/forms/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/forms/jest.config.js",
+            "tsConfig": "libs/forms/tsconfig.spec.json",
+            "setupFile": "libs/forms/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }
