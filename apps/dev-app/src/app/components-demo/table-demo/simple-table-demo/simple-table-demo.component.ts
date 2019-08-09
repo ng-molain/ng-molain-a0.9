@@ -41,6 +41,7 @@ export class SimpleTableDemoComponent implements OnInit {
 
   ngOnInit() {
     this.fetchData();
+    this.initSearchForm();
   }
 
   private fetchData() {

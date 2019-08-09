@@ -35,7 +35,7 @@
     </div>
 </div>
 <div class="table-advanced-search p-2 border-left border-right bg-white" [class.d-none]="!showAdvancedSearch">
-    <form nz-form [formGroup]="searchForm" nzLayout="horizontal" class="advance-search-form">
+    <form *ngIf="!!searchFrom" nz-form [formGroup]="searchFrom" nzLayout="horizontal" class="advance-search-form">
         <div nz-row nzGutter="32">
           <div nz-col nzSpan="8">
             <nz-form-item  nzFlex>
