@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'dev-simple-table-demo',
@@ -8,26 +9,35 @@ import { Component, OnInit } from '@angular/core';
 export class SimpleTableDemoComponent implements OnInit {
 
   columns = [
-    {field: 'name', showSort: true},
-    {field: 'age', showSort: true},
-    {field: 'sex', showSort: true, type: 'tag', tags: {
-      male: {text: '先生', color: '#108ee9'},
-      female: {text: '女士', color: 'magenta'},
-    }},
-    {field: 'badge', showSort: true, type: 'badge', badges: {
-      success: {text: '成功', status: 'success'},
-      error: {text: '失败', status: 'error'},
-      default: {text: '默认', status: 'default'},
-      processing: {text: '进行中', status: 'processing'},
-      warning: {text: '警告', status: 'warning'},
-    }},
-    {field: 'address'},
+    { field: 'name', showSort: true },
+    { field: 'age', showSort: true },
+    {
+      field: 'sex', showSort: true, type: 'tag', tags: {
+        male: { text: '先生', color: '#108ee9' },
+        female: { text: '女士', color: 'magenta' },
+      }
+    },
+    {
+      field: 'badge', showSort: true, type: 'badge', badges: {
+        success: { text: '成功', status: 'success' },
+        error: { text: '失败', status: 'error' },
+        default: { text: '默认', status: 'default' },
+        processing: { text: '进行中', status: 'processing' },
+        warning: { text: '警告', status: 'warning' },
+      }
+    },
+    { field: 'address' },
     // {field: 'description'},
   ];
 
   dataList = [];
 
-  constructor() { }
+  searchFrom: FormGroup;
+  showAdvancedSearch: boolean = false;
+
+  constructor(
+    private readonly fb: FormBuilder
+  ) { }
 
   ngOnInit() {
     this.fetchData();
@@ -46,6 +56,16 @@ export class SimpleTableDemoComponent implements OnInit {
         expand: false
       });
     }
+  }
+
+  initSearchForm() {
+    const form = this.fb.group({});
+
+    for (let i = 1; i < 12; i++) {
+      form.addControl(`field${i}`, new FormControl());
+    }
+
+    this.searchFrom = form;
   }
 }
 

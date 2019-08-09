@@ -7,11 +7,13 @@
     </nz-page-header-extra>
 </nz-page-header>
 
-<div class="table-controls d-flex py-2">
+<div class="table-controls d-flex p-2 border border-bottom-0 bg-white">
     <div class="table-simple-search">
-        <input nz-input type="text" style="width: 300px;">
+        <input nz-input type="text" style="width: 300px;" [disabled]="showAdvancedSearch">
         <!-- <button nz-button class="ml-2">搜索</button> -->
-        <a href="" class="ml-2">高级搜索</a>
+        <a class="ml-2" (click)="showAdvancedSearch = !showAdvancedSearch">
+            {{ showAdvancedSearch ? '普通搜索' : '高级搜索'}}
+        </a>
     </div>
 
     <div class="table-controls-actions ml-auto">
@@ -32,10 +34,59 @@
         <button nz-button class="ml-2"><i nz-icon nzType="setting" nzTheme="outline"></i></button>
     </div>
 </div>
-<div class="table-advanced-search">
-    <!-- <form nz-form [formGroup]="advanced-search" nzLayout="horizontal">
-
-    </form> -->
+<div class="table-advanced-search p-2 border-left border-right bg-white" [class.d-none]="!showAdvancedSearch">
+    <form nz-form [formGroup]="searchForm" nzLayout="horizontal" class="advance-search-form">
+        <div nz-row nzGutter="32">
+          <div nz-col nzSpan="8">
+            <nz-form-item  nzFlex>
+              <nz-form-label nzFor="field1">普通文本</nz-form-label>
+              <nz-form-control>
+                <input nz-input type="text" placeholder="请输入名称模糊查询">
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="8">
+            <nz-form-item  nzFlex>
+              <nz-form-label nzFor="field1">普通文本</nz-form-label>
+              <nz-form-control>
+                <input nz-input type="text" placeholder="请输入名称模糊查询">
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="8">
+            <nz-form-item  nzFlex>
+              <nz-form-label nzFor="field1">普通文本</nz-form-label>
+              <nz-form-control>
+                <input nz-input type="text" placeholder="请输入名称模糊查询">
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="8">
+            <nz-form-item  nzFlex>
+              <nz-form-label nzFor="field1">普通文本</nz-form-label>
+              <nz-form-control>
+                <input nz-input type="text" placeholder="请输入名称模糊查询">
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+          <div nz-col nzSpan="8">
+            <nz-form-item  nzFlex>
+              <nz-form-label nzFor="field1">普通文本</nz-form-label>
+              <nz-form-control>
+                <input nz-input type="text" placeholder="请输入名称模糊查询">
+              </nz-form-control>
+            </nz-form-item>
+          </div>
+        </div>
+        <div class="clearfix mt-1">
+            <div style="padding-left: 6rem;">
+                <button type="button" nz-button nzType="primary">搜索</button>
+                <button type="button" nz-button nzType="default" class="ml-2">清空</button>
+                <button type="button" nz-button nzType="default" class="ml-2">历史搜索</button>
+                <a class="ml-2">保存搜索</a>
+            </div>
+        </div>
+    </form>
 </div>
 
 <ml-simple-table [columns]="columns" [data]="dataList" [rowActions]="rowActionsTpl" [multipleSelection]="true">
