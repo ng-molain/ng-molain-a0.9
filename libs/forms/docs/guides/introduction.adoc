@@ -1,0 +1,10 @@
+[[forms]]
+= Forms Lib: 提高表单开发效率
+
+主要分两部分内容：
+
+1. 辅助表单布局组件，现在的 `components/forms/simple-form` 部分。
+2. 动态表单构建器，不断的迭代更新，最终达到可在线维护的动态表单构建的目的。前端不用关系表单，只需要定义entity，既可以根据entity结构构建出合理的表单。
+    
+例如::
+    - http://json-schema.org/implementations.html#web-ui-generation

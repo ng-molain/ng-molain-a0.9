@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { DynamicFormsModule } from './dynamic-forms';
 
 @NgModule({
-  imports: [CommonModule]
+  exports: [
+    DynamicFormsModule,
+  ],
 })
-export class FormsModule {}
+export class MlFormsModule {}
