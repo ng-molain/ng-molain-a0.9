@@ -22,6 +22,7 @@ export class SimpleTableComponent implements OnInit {
   @Input() highlightSelected: boolean = true;
 
   @Input() rowActions: TemplateRef<any>;
+  @Input() rowActionTitle: string;
 
 
   @Input() set columns(cols: any[]) {

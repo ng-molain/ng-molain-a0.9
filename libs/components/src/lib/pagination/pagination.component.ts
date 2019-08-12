@@ -19,7 +19,7 @@ export class PaginationComponent implements OnInit {
 
   activePageSizeOptions: { value: number, label: string, disabled: boolean }[];
 
-  private gotoNumber: number;
+  gotoNumber: number;
 
   constructor() { }
 
