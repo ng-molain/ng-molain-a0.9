@@ -1,0 +1,39 @@
+[[cropper]]
+= Cropper：图片裁剪
+
+本功能集成需要依赖 https://github.com/fengyuanchen/cropperjs[`Cropper.js`] 。 
+
+[source, bash]
+----
+yarn add cropperjs
+----
+
+需要在 主工程中把 样式文件 和 cropperjs 作为第三方依赖加入。
+
+.angular.json
+[source, json]
+----
+    "styles": [
+        "./node_modules/cropperjs/dist/cropper.min.css"     <1>
+    ],
+    "scripts": [
+        "./node_modules/cropperjs/dist/cropper.js"          <1>
+    ]
+----
+<1> 添加的行
+
+NOTE: 理论上为了保持发布库的干净整洁，应该让用户自己安装依赖的第三方库。现阶段，我们为了开发方便，暂时一起打包发布了。
+
+
+== 参考
+
+- https://github.com/matheusdavidson/angular-cropperjs[angular-cropperjs]
+
+- https://fengyuanchen.github.io/cropperjs/[Cropper.js v1.5.5] // v2.0 comming soon.
+- https://github.com/fengyuanchen/cropperjs[Cropper.js - GitHub]
+
+- https://github.com/freezyh/angular-cropper[Angular-Cropper - GitHub]
+- https://freezyh.github.io/angular-cropper/dist/angular-cropper/[Demo of Angular-Cropper]
+
+- http://fengyuanchen.github.io/cropper/[Cropper of JQuery Plugin v4.0.0]
+- https://github.com/fengyuanchen/cropper[Cropper of JQuery Plugin - GitHub]
