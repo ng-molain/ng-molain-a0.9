@@ -3631,6 +3631,11 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+cropperjs@^1.5.5:
+  version "1.5.5"
+  resolved "http://npm.parim.net/cropperjs/-/cropperjs-1.5.5.tgz#07d04c64244ab88c1bfc382a848ec346ef50b7b9"
+  integrity sha1-B9BMZCRKuIwb/DgqhI7DRu9Qt7k=
+
 cross-spawn@^3.0.0:
   version "3.0.1"
   resolved "http://npm.parim.net/cross-spawn/-/cross-spawn-3.0.1.tgz#1256037ecb9f0c5f79e3d6ef135e30770184b982"

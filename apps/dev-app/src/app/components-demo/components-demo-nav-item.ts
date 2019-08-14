@@ -31,6 +31,11 @@ export const __COMPONENTS_DEMO_NAV_ITEMS: NavItem = {
         { name: 'Pagination', route: 'pagination' },
         { name: 'Table', route: 'table' },
       ]
+    },
+    {
+      name: 'Utils', route: '', type: 'group', children: [
+        { name: 'Cropper', route: 'cropper' },
+      ]
     }
   ]
 };

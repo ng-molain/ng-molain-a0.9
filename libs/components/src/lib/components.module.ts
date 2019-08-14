@@ -15,6 +15,7 @@ import { NgMolainFormsModule } from './forms';
 
 import { PaginationModule } from './pagination';
 import { TableModule } from './table';
+import { CropperModule } from './cropper';
 
 @NgModule({
   exports: [
@@ -33,6 +34,7 @@ import { TableModule } from './table';
     PaginationModule,
     TableModule,
     NgMolainFormsModule,
+    CropperModule,
   ]
 })
 export class NgMolainComponentsModule {}
