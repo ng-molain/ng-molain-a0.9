@@ -1,3 +1,187 @@
 <h1>Cropper Demo</h1>
 
-<ml-cropper></ml-cropper>
+
+<div class="d-flex">
+    <div class="left">
+        <div class="ml-cropper-wrapper">
+            <!-- <img #image [src]="imageSrc"> -->
+            <ml-cropper [imageSrc]="imageSrc" [options]="options" (ready)="onCropperReady($event)"
+                (crop)="onCrop($event)"></ml-cropper>
+        </div>
+
+        <div class="actions-wrapper mb-3" [class.d-none]="!cropperReady">
+            <div class="actions mt-3">
+                <nz-button-group>
+                    <button nz-button nzType="primary" (click)="cropperRef!.setDragMode('move')"><i nz-icon
+                            nzType="fullscreen" nzTheme="outline" nzRotate="45"></i></button>
+                    <button nz-button nzType="primary" (click)="cropperRef!.setDragMode('crop')"><i nz-icon
+                            nzType="border-inner" nzTheme="outline"></i></button>
+                </nz-button-group>
+
+                <nz-button-group>
+                    <button nz-button nzType="primary" (click)="cropperRef!.zoom(0.1)"><i nz-icon nzType="zoom-in"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary" (click)="cropperRef!.zoom(-0.1)"><i nz-icon nzType="zoom-out"
+                            nzTheme="outline"></i></button>
+                </nz-button-group>
+
+                <nz-button-group>
+                    <button nz-button nzType="primary" (click)="cropperRef!.move(-10, 0)"><i nz-icon nzType="arrow-left"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary" (click)="cropperRef!.move(10, 0)"><i nz-icon nzType="arrow-right"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary" (click)="cropperRef!.move(0, -10)"><i nz-icon nzType="arrow-up"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary" (click)="cropperRef!.move(0, 10)"><i nz-icon nzType="arrow-down"
+                            nzTheme="outline"></i></button>
+                </nz-button-group>
+
+                <nz-button-group>
+                    <button nz-button nzType="primary" (click)="cropperRef!.rotate(-45)"><i nz-icon nzType="undo"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary" (click)="cropperRef!.rotate(45)"><i nz-icon nzType="redo"
+                            nzTheme="outline"></i></button>
+                </nz-button-group>
+
+                <nz-button-group>
+                    <button nz-button nzType="primary" (click)="cropperRef!.scaleX(-1)"><i nz-icon nzType="swap"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary" (click)="cropperRef!.scaleY(-1)"><i nz-icon nzType="swap"
+                            nzTheme="outline" nzRotate="90"></i></button>
+                </nz-button-group>
+
+                <nz-button-group>
+                    <button nz-button nzType="primary" (click)="cropperRef!.crop()"><i nz-icon nzType="check"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary" (click)="cropperRef!.clear()"><i nz-icon nzType="close"
+                            nzTheme="outline"></i></button>
+                </nz-button-group>
+
+                <nz-button-group>
+                    <button nz-button nzType="primary" (click)="cropperRef!.disable()"><i nz-icon nzType="lock"
+                            nzTheme="outline"></i></button>
+                    <button nz-button nzType="primary" (click)="cropperRef!.enable()"><i nz-icon nzType="unlock"
+                            nzTheme="outline"></i></button>
+                </nz-button-group>
+
+                <nz-button-group>
+                    <button nz-button nzType="primary" (click)="cropperRef!.reset()"><i nz-icon nzType="sync"
+                            nzTheme="outline"></i></button>
+                    <!-- <button nz-button nzType="primary" (click)="cropperRef!" disabled><i nz-icon nzType="upload" nzTheme="outline"></i>TODO</button> -->
+                    <nz-upload [nzBeforeUpload]="beforeUpload" class="d-inline-block">
+                        <button nz-button nzType="primary"><i nz-icon nzType="upload"></i></button>
+                    </nz-upload>
+                    <button nz-button nzType="primary" (click)="cropperRef!.destroy()"><i nz-icon nzType="poweroff"
+                            nzTheme="outline"></i></button>
+                </nz-button-group>
+            </div>
+            <div class="actions mt-2">
+                <nz-button-group>
+                    <button nz-button class="bg-success border-success text-white" (click)="getCroppedCanvas({ maxWidth: 4096, maxHeight: 4096 })">Get Cropped Canvas</button>
+                    <button nz-button class="bg-success border-success text-white" (click)="getCroppedCanvas({ width: 160, height: 90 })">160x90</button>
+                    <button nz-button class="bg-success border-success text-white" (click)="getCroppedCanvas({ width: 320, height: 180 })">320x180</button>
+                </nz-button-group>
+
+                <button nz-button (click)="tmpData = cropperRef!.getData()">Get Data</button>
+                <button nz-button (click)="cropperRef!.setData(tmpDataObj)">Set Data</button>
+                <button nz-button (click)="tmpData = cropperRef!.getContainerData()">Get Container Data</button>
+            </div>
+
+            <div class="actions mt-2">
+                <button nz-button (click)="tmpData = cropperRef!.getImageData()">Get Image Data</button>
+                <button nz-button (click)="tmpData = cropperRef!.getCanvasData()">Get Canvas Data</button>
+                <button nz-button (click)="cropperRef!.setCanvasData(tmpDataObj)">Set Canvas Data</button>
+                <button nz-button (click)="tmpData = cropperRef!.getCropBoxData()">Get Crop Box Data</button>
+                <button nz-button (click)="cropperRef!.setCropBoxData(tmpDataObj)">Set Crop Box Data</button>
+            </div>
+
+            <div class="actions mt-2">
+                <button nz-button (click)="cropperRef!.moveTo(0)">Move to [0, 0]</button>
+                <button nz-button (click)="cropperRef!.zoomTo(1)">Zoom to 100%</button>
+                <button nz-button (click)="cropperRef!.rotateTo(180)">Rotate 180°</button>
+                <button nz-button (click)="cropperRef!.scale(-2, -1)">Scale(-2, -1)</button>
+            </div>
+        </div>
+
+        <textarea nz-input [(ngModel)]="tmpData" placeholder="Get data to here or set data with this value"></textarea>
+
+        <nz-upload [nzBeforeUpload]="beforeUpload" class="d-block mt-3">
+            <button nz-button nzType="primary" nzBlock>
+                <i nz-icon nzType="upload"></i>
+                <span>上传一个图片</span>
+            </button>
+        </nz-upload>
+    </div>
+
+    <div class="right ml-4" style="width: 300px;">
+        <div class="preview">
+            <div class="img-preview preview-lg"></div>
+            <div class="img-preview preview-md"></div>
+            <div class="img-preview preview-sm"></div>
+            <div class="img-preview preview-xs"></div>
+        </div>
+        <div class="info-data" class="mb-2">
+            <nz-input-group nzAddOnBefore="X" nzAddOnAfter="px" class="mb-2">
+                <input nz-input [(ngModel)]="data.x" placeholder="X">
+            </nz-input-group>
+
+            <nz-input-group nzAddOnBefore="Y" nzAddOnAfter="px" class="mb-2">
+                <input nz-input [(ngModel)]="data.y" placeholder="Y">
+            </nz-input-group>
+
+            <nz-input-group nzAddOnBefore="Width" nzAddOnAfter="px" class="mb-2">
+                <input nz-input [(ngModel)]="data.width" placeholder="Width">
+            </nz-input-group>
+
+            <nz-input-group nzAddOnBefore="Height" nzAddOnAfter="px" class="mb-2">
+                <input nz-input [(ngModel)]="data.height" placeholder="Height">
+            </nz-input-group>
+
+            <nz-input-group nzAddOnBefore="Rotate" nzAddOnAfter="deg" class="mb-2">
+                <input nz-input [(ngModel)]="data.rotate" placeholder="Rotate">
+            </nz-input-group>
+
+            <nz-input-group nzAddOnBefore="ScaleX" class="mb-2">
+                <input nz-input [(ngModel)]="data.scaleX" placeholder="ScaleX">
+            </nz-input-group>
+
+            <nz-input-group nzAddOnBefore="ScaleY" class="mb-2">
+                <input nz-input [(ngModel)]="data.scaleY" placeholder="ScaleY">
+            </nz-input-group>
+
+        </div>
+
+        <div class="mb-2">
+            <nz-button-group>
+                <button nz-button nzType="primary" (click)="cropperRef!.setOptions({aspectRatio: 16/9})">16 : 9</button>
+                <button nz-button nzType="primary" (click)="cropperRef!.setOptions({aspectRatio: 4/3})">4 : 3</button>
+                <button nz-button nzType="primary" (click)="cropperRef!.setOptions({aspectRatio: 1})">1 : 1</button>
+                <button nz-button nzType="primary" (click)="cropperRef!.setOptions({aspectRatio: 2/3})">2 : 3</button>
+                <button nz-button nzType="primary" (click)="cropperRef!.setOptions({aspectRatio: NaN})">Free</button>
+            </nz-button-group>
+        </div>
+
+        <div class="mb-2">
+            <nz-button-group>
+                <button nz-button nzType="primary" (click)="cropperRef!.setOptions({viewMode: 0})">VM0</button>
+                <button nz-button nzType="primary" (click)="cropperRef!.setOptions({viewMode: 1})">VM1</button>
+                <button nz-button nzType="primary" (click)="cropperRef!.setOptions({viewMode: 2})">VM2</button>
+                <button nz-button nzType="primary" (click)="cropperRef!.setOptions({viewMode: 3})">VM3</button>
+            </nz-button-group>
+        </div>
+
+        <!-- <button nz-button nzBlock class="mb-2">TODO: Toggle Options</button> -->
+        <button nz-button nzBlock class="mb-2">Photo Editor</button>
+
+        <div class="mb-2">
+            <div *ngFor="let item of checkOptions">
+                <label nz-checkbox [ngModel]="item.checked"
+                    (ngModelChange)="onCheckOption($event, item.value)">{{item.label}}</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nz-modal [(nzVisible)]="isModalVisible" nzTitle="Cropped" nzWidth="800" (nzOnCancel)="isModalVisible=false" (nzOnOk)="isModalVisible=false">
+        <div #croppedResultContainer class="cropped-view"></div>
+</nz-modal>

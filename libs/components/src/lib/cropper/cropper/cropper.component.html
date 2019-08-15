@@ -1,144 +1,16 @@
-<div class="d-flex">
-  <div class="left">
-    <div class="ml-cropper-wrapper">
-      <img #image [src]="imageSrc">
+<div class="ml-cropper-wrapper" [class.revice-bg]="reviceBacground">
+    <!-- loading -->
+    <div *ngIf="showSpin && loading" class="ml-cropper-loading">
+        <nz-spin nzSimple></nz-spin>
     </div>
 
-    <div class="actions-wrapper mb-3">
-      <div class="actions mt-3">
-        <nz-button-group>
-          <button nz-button nzType="primary"><i nz-icon nzType="fullscreen" nzTheme="outline"
-              nzRotate="45"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="border-inner" nzTheme="outline"></i></button>
-        </nz-button-group>
-
-        <nz-button-group>
-          <button nz-button nzType="primary"><i nz-icon nzType="zoom-in" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="zoom-out" nzTheme="outline"></i></button>
-        </nz-button-group>
-
-        <nz-button-group>
-          <button nz-button nzType="primary"><i nz-icon nzType="arrow-left" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="arrow-left" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="arrow-up" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="arrow-down" nzTheme="outline"></i></button>
-        </nz-button-group>
-
-        <nz-button-group>
-          <button nz-button nzType="primary"><i nz-icon nzType="undo" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="undo" nzTheme="outline"></i></button>
-        </nz-button-group>
-
-        <nz-button-group>
-          <button nz-button nzType="primary"><i nz-icon nzType="swap" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="swap" nzTheme="outline" nzRotate="90"></i></button>
-        </nz-button-group>
-
-        <nz-button-group>
-          <button nz-button nzType="primary"><i nz-icon nzType="check" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="close" nzTheme="outline"></i></button>
-        </nz-button-group>
-
-        <nz-button-group>
-          <button nz-button nzType="primary"><i nz-icon nzType="lock" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="unlock" nzTheme="outline"></i></button>
-        </nz-button-group>
-
-        <nz-button-group>
-          <button nz-button nzType="primary"><i nz-icon nzType="sync" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="upload" nzTheme="outline"></i></button>
-          <button nz-button nzType="primary"><i nz-icon nzType="poweroff" nzTheme="outline"></i></button>
-        </nz-button-group>
-      </div>
-      <div class="actions mt-2">
-        <nz-button-group>
-          <button nz-button class="bg-success border-success text-white">Get Cropped Canvas</button>
-          <button nz-button class="bg-success border-success text-white">160x90</button>
-          <button nz-button class="bg-success border-success text-white">320x180</button>
-        </nz-button-group>
-
-        <button nz-button class="ml-2">Get Data</button>
-        <button nz-button>Set Data</button>
-        <button nz-button>Get Container Data</button>
-      </div>
-
-      <div class="actions mt-2">
-        <button nz-button>Get Image Data</button>
-        <button nz-button>Get Canvas Data</button>
-        <button nz-button>Set Canvas Data</button>
-        <button nz-button>Get Crop Box Data</button>
-        <button nz-button>Set Crop Box Data</button>
-      </div>
-
-      <div class="actions mt-2">
-        <button nz-button>Move to [0, 0]</button>
-        <button nz-button>Zoom to 100%</button>
-        <button nz-button>Rotate 180°</button>
-        <button nz-button>Scale(-2, -1)</button>
-      </div>
+    <!-- error -->
+    <div *ngIf="showFeedback && hasMessage" class="ml-cropper-feedback">
+        <nz-alert *ngFor="let msg of messages" nzBanner [nzType]="msg.type" [nzMessage]="msg.message" [nzCloseable]="msg.type !== 'error'" class="mb-1"></nz-alert>
     </div>
 
-    <textarea nz-input placeholder="Get data to here or set data with this value"></textarea>
-  </div>
-
-  <div class="right ml-4" style="width: 300px;">
-    <div class="preview">
-      <div class="img-preview preview-lg"></div>
-      <div class="img-preview preview-md"></div>
-      <div class="img-preview preview-sm"></div>
-      <div class="img-preview preview-xs"></div>
+    <div class="ml-cropper">
+        <img #image [src]="imageSrc">
+        <!-- <img #image> -->
     </div>
-    <div class="info-data" class="mb-2">
-      <nz-input-group nzAddOnBefore="X" nzAddOnAfter="px" class="mb-2">
-        <input nz-input placeholder="">
-      </nz-input-group>
-
-      <nz-input-group nzAddOnBefore="Y" nzAddOnAfter="px" class="mb-2">
-        <input nz-input placeholder="">
-      </nz-input-group>
-
-      <nz-input-group nzAddOnBefore="Width" nzAddOnAfter="px" class="mb-2">
-        <input nz-input placeholder="">
-      </nz-input-group>
-
-      <nz-input-group nzAddOnBefore="Height" nzAddOnAfter="px" class="mb-2">
-        <input nz-input placeholder="">
-      </nz-input-group>
-
-      <nz-input-group nzAddOnBefore="Rotate" nzAddOnAfter="deg" class="mb-2">
-        <input nz-input placeholder="">
-      </nz-input-group>
-
-      <nz-input-group nzAddOnBefore="ScaleX" class="mb-2">
-        <input nz-input placeholder="">
-      </nz-input-group>
-
-      <nz-input-group nzAddOnBefore="ScaleY" class="mb-2">
-        <input nz-input placeholder="">
-      </nz-input-group>
-
-    </div>
-
-    <div class="mb-2">
-      <nz-button-group>
-        <button nz-button nzType="primary">16 : 9</button>
-        <button nz-button nzType="primary">4 : 3</button>
-        <button nz-button nzType="primary">1 : 1</button>
-        <button nz-button nzType="primary">2 : 3</button>
-        <button nz-button nzType="primary">Free</button>
-      </nz-button-group>
-    </div>
-
-    <div class="mb-2">
-      <nz-button-group>
-        <button nz-button nzType="primary">VM0</button>
-        <button nz-button nzType="primary">VM1</button>
-        <button nz-button nzType="primary">VM2</button>
-        <button nz-button nzType="primary">VM3</button>
-      </nz-button-group>
-    </div>
-
-    <button nz-button nzBlock class="mb-2">TODO: Toggle Options</button>
-    <button nz-button nzBlock class="mb-2">Photo Editor</button>
-  </div>
 </div>

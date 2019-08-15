@@ -1,32 +1,42 @@
-
 @import '../style/cropper';
 
 .ml-cropper-wrapper {
-    width: 1200px;
-    height: 600px;
-    // background: #dddddd;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC');
+  position: relative;
+  height: 100%;
 
-    align-items: center;
+  .ml-cropper {
+    height: 100%;
+
+    &.revice-bg {
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC');
+    }
+
     display: flex;
+    align-items: center;
     justify-content: center;
 
-    & > img {
+    &>img {
       max-height: 100%;
       max-width: 100%;
-    //   opacity: 0;
+      //   opacity: 0;
     }
-}
+  }
 
-.actions {
-    > nz-button-group {
-        margin-left: 8px !important;
-        > button {
-            margin-left: -1px;
-        }
-    }
+  .ml-cropper-loading {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 
-    > button {
-        margin-left: 8px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ml-cropper-feedback {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }

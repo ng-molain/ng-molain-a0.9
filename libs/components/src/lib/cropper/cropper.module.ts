@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NzButtonModule, NzIconModule, NzInputModule } from 'ng-zorro-antd';
+import { NzButtonModule, NzIconModule, NzInputModule, NzSpinModule, NzAlertModule } from 'ng-zorro-antd';
 
 import { CropperComponent } from './cropper/cropper.component';
 
@@ -13,6 +13,8 @@ import { CropperComponent } from './cropper/cropper.component';
     NzButtonModule,
     NzIconModule,
     NzInputModule,
+    NzSpinModule,
+    NzAlertModule,
   ],
   declarations: [
     CropperComponent,

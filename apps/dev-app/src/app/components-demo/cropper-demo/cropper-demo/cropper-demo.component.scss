@@ -1,0 +1,68 @@
+
+.ml-cropper-wrapper {
+    width: 1000px;
+    height: 600px;
+}
+
+.actions {
+    > nz-button-group {
+        margin-right: 8px !important;
+        > button {
+            margin-left: -1px;
+        }
+    }
+
+    > button {
+        margin-right: 8px;
+    }
+}
+
+
+.img-preview {
+    float: left;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .img-preview > img {
+    max-width: 100%;
+  }
+  
+  .preview-lg {
+    height: 9rem;
+    width: 16rem;
+  }
+  
+  .preview-md {
+    height: 4.5rem;
+    width: 8rem;
+  }
+  
+  .preview-sm {
+    height: 2.25rem;
+    width: 4rem;
+  }
+  
+  .preview-xs {
+    height: 1.125rem;
+    margin-right: 0;
+    width: 2rem;
+  }
+  
+
+  .cropped-view {
+    max-width: 760px;
+    max-height: 480px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: auto;
+
+    // &::ng-deep > canvas {
+    //   max-width: 100%;
+    //   max-height: 100%;
+    // }
+  }
