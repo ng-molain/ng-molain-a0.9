@@ -1,6 +1,13 @@
 [[cropper]]
 = Cropper：图片裁剪
 
+.TODO
+- [ ] 样式文件结构调整
+- [ ] 修改原有样式，参考 WordPress 图片裁剪功能
+- [ ] 添加常用功能组件，通过服务的方式提供，如：头像裁剪功能，常用图片裁剪工具框
+
+== 如何使用
+
 本功能集成需要依赖 https://github.com/fengyuanchen/cropperjs[`Cropper.js`] 。 
 
 [source, bash]
