@@ -22,20 +22,23 @@ VERSION=$(node -p "require('./package.json').version")
 echo "Version ${VERSION}"
 
 # 1. build libs
+# npm run libs:build
 
 # 2. git tag
 
 # 3. fix libs package versions
-VERSION=0.8.0-beta.05
+# VERSION=0.8.0-beta.05
+echo "Fix all libs version with '${VERSION}'"
+
 fixLibsVersion() {
     (cd ${ROOT}; for p in `ls .`; do sed -i "s/0\.0\.0-PLACEHOLDER/${VERSION}/g" ${p}/package.json; done)
 }
 echo "Fixed all libs version to ${VERSION}"
-fixLibsVersion
+# fixLibsVersion
 
 # 4. publish on npm.parim.net
 publishToParim() {
     (cd ${ROOT}; for p in `ls .`; do npm publish $p --registry http://npm.parim.net; done)
 }
 
-publishToParim
+# publishToParim
