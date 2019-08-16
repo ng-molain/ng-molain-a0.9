@@ -36,12 +36,12 @@ echo "Fix all libs version with '${VERSION}'"
 fixLibsVersion() {
     (cd ${ROOT}; for p in `ls .`; do sed -i "s/0\.0\.0-PLACEHOLDER/${VERSION}/g" ${p}/package.json; done)
 }
-echo "Fixed all libs version to ${VERSION}"
-# fixLibsVersion
+# echo "Fixed all libs version to ${VERSION}"
+fixLibsVersion
 
 # 4. publish on npm.parim.net
 publishToParim() {
     (cd ${ROOT}; for p in `ls .`; do npm publish $p --registry http://npm.parim.net; done)
 }
 
-# publishToParim
+publishToParim
