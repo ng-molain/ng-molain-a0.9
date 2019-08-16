@@ -19,12 +19,15 @@ done
 echo "Use snapshot mode ${SNAPSHOT}"
 
 VERSION=$(node -p "require('./package.json').version")
-echo "Version ${VERSION}"
+echo "Prev version ${VERSION}"
 
-# 1. build libs
+# 1. patch version and git tag
+# npm version 0.8.0-beta.7 -m "Release version %s"
+# VERSION=$(node -p "require('./package.json').version")
+# echo "Current version ${VERSION}"
+
+# 2. build libs
 # npm run libs:build
-
-# 2. git tag
 
 # 3. fix libs package versions
 # VERSION=0.8.0-beta.05
