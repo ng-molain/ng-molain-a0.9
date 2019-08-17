@@ -9,6 +9,10 @@ import * as _ from 'lodash';
 import { CacheProxyService } from './cache-proxy.service';
 import { CacheNotifyManager } from './cache-notify-manager';
 
+/** Fix circular dependency detected */
+// tslint:disable-next-line:no-empty-interface
+export interface CacheServiceExt extends CacheService {}
+
 @Injectable({ providedIn: 'root' })
 export class CacheService implements OnDestroy {
 
@@ -53,11 +57,6 @@ export class CacheService implements OnDestroy {
     }
 
     private _save(type: 'm' | 's', key: string, value: ICache) {
-        // if (type === 'm') {
-        //     this._memoryCacheService.set(key, value);
-        // } else if (type === 's') {
-        //     this._localStorageCacheService.set(key, value);
-        // }
         this.cacheStorage.set(type, key, value);
 
         // notify change
@@ -75,7 +74,7 @@ export class CacheService implements OnDestroy {
         if (!cachedEntry || (cachedEntry.expire && cachedEntry.expire > 0 && cachedEntry.expire < new Date().valueOf())) {
             if (isPromise) {
                 return this.http.get(key).pipe(
-                    map((result: any) => _.get(result, this._config.reName as string[]), null),
+                    map((result: any) => !_.isEmpty(this._config.reName) ? _.get(result, this._config.reName as string[]) : result, null),
                     tap(v => this.set(key, v, options as any)),
                 );
             }
@@ -135,6 +134,10 @@ export class CacheService implements OnDestroy {
 
     
     // ---- notify ----
+    setFreq(value: number) {
+        this.notifyManager.freq = value;
+    }
+
     notify(key: string): Observable<CacheNotifyResult> {
         return this.notifyManager.notify(key);
     }

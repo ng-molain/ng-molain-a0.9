@@ -1,7 +1,7 @@
 import { OnDestroy } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { CacheNotifyResult, CacheNotifyType } from './typings';
-import { CacheService } from './cache.service';
+import { CacheServiceExt } from './cache.service';
 
 
 export class CacheNotifyManager {
@@ -11,7 +11,7 @@ export class CacheNotifyManager {
     private freqTime;
 
     constructor(
-        private readonly cacheService: CacheService
+        private readonly cacheService: CacheServiceExt
     ) {
     }
 

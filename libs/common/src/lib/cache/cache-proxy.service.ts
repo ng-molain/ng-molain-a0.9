@@ -29,6 +29,10 @@ export class CacheProxyService {
     }
 
     getCacheStorage(type: CacheStorageType) {
+        // fix: set default type as 'localStorage'
+        if (_.isEmpty(type)) {
+            type = 's';
+        }
         const cacheStorage = this._storageMap.get(type);
 
         if (!cacheStorage) {

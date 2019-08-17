@@ -1,0 +1,38 @@
+<h1>缓存</h1>
+
+<h2>基本用法</h2>
+
+<section>
+  <p>value: {{ value | json }}</p>
+  <div class="pt-sm">
+    Basic:
+    <button nz-button (click)="srv.set(key, newValue)">Set</button>
+    <button nz-button (click)="value = srv.getNone(key)">Get</button>
+    <button nz-button (click)="srv.remove(key)">Remove</button>
+    <button nz-button (click)="srv.clear()">Clear</button>
+  </div>
+  <div class="pt-sm">
+    Key is valid request:
+    <button nz-button (click)="getByHttp()">Get</button>
+    <button nz-button (click)="removeHttp()">Remove</button>
+  </div>
+  <div class="pt-sm">
+    Notify:
+    <button nz-button (click)="registerNotify()">Register</button>
+    <button nz-button (click)="unRegisterNotify()">UnRegister</button>
+  </div>
+</section>
+<hr>
+<section>
+  <h4>localCache</h4>
+  <div>
+    {{localCache.keys() | json}}
+  </div>
+</section>
+<hr>
+<section>
+  <h4>memoryCache</h4>
+  <div>
+    {{memoryCache.keys() | json}}
+  </div>
+</section>
