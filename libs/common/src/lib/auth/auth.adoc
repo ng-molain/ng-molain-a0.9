@@ -1,0 +1,9 @@
+[[authx]]
+= Auth[x]: 认证/授权/访问控制
+
+[[authentication]]
+== Authc: 认证
+
+[[authorization]]
+== Authz: 授权
+ **含 ACL(Access Control List)**
