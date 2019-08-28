@@ -3,6 +3,7 @@ import { Observable, Observer } from 'rxjs';
 import { Optional, Injector } from '@angular/core';
 import { AuthConfig } from '../auth.config';
 import * as _ from 'lodash';
+import { toLogin } from './helper';
 
 class AuthHttpHandler implements HttpHandler {
 
@@ -42,7 +43,8 @@ export abstract class BasicAuthInterceptor implements HttpInterceptor {
         }
 
         // need auth and !this.isAuth(options)
-        // toLogin(...)
+        toLogin(options, this.injector, req.urlWithParams);
+        
         const err$ = generateUnauthenticatedResponse(req);
         if (executeOtherInterceptors) {
             const interceptors = this.injector.get(HTTP_INTERCEPTORS, []);
@@ -79,4 +81,3 @@ function generateUnauthenticatedResponse(req: HttpRequest<any>) {
     });
 }
 
-function toLogin() { }

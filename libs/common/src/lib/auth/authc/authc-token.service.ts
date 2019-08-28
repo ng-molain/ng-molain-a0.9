@@ -5,15 +5,15 @@ import { share } from 'rxjs/operators';
 
 /**
  * T is type of token
- * @deprecated @see AuthcTokenService
  */
-export class AuthcService<T = any> {
+export class AuthcTokenService<T = any> {
     private change$ = new BehaviorSubject<T | null>(null);
 
-    private _referrer: string;
-    get referrer() {
-        return this.referrer;
-    }
+    // private _referrer: string;
+    // get referrer() {
+    //     return this.referrer;
+    // }
+    referrer: string;
 
     constructor(
         private readonly options: AuthConfig,
