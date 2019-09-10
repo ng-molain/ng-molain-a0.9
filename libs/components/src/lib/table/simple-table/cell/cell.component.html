@@ -2,6 +2,7 @@
 
 <div [ngSwitch]="type">
 
+  <!-- TODO: 处理无值的情况 -->
   <ng-container *ngSwitchCase="'tag'">
     <nz-tag [nzColor]="tag.color">
       {{tag.text || displayValue}}
