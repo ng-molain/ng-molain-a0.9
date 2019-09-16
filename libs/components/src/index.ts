@@ -14,5 +14,6 @@ export * from './lib/forms/index';
 export * from './lib/cropper/index';
 
 export * from './lib/pagination/index';
+export * from './lib/dynamic-form/index';
 
 export * from './lib/components.module';
