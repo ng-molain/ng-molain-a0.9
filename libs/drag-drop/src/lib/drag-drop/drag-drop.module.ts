@@ -41,4 +41,4 @@ import { DragPlaceholderWrapperDirective } from './directives/drag-placeholder-w
     DragDropService,
   ]
 })
-export class DragDropModule { }
+export class NgMolainDragDropModule { }
