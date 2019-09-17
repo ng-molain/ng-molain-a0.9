@@ -1,5 +1,4 @@
 import { Directive, ElementRef, Inject, ViewContainerRef, NgZone, Input, Output, EventEmitter, HostBinding, OnDestroy, ContentChildren, QueryList, AfterViewInit } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
 import { DragDropService } from '../drag-drop.service';
 import { DroppableRef, Tolerance } from '../droppable-ref';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
@@ -9,6 +8,7 @@ import { Subject } from 'rxjs';
 import { take, takeUntil, startWith, tap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { DraggableDirective } from './draggable.directive';
+import { DOCUMENT } from '@angular/common';
 
 type Selector = string;
 

@@ -1,7 +1,7 @@
 import { Directive, forwardRef, ElementRef, Inject, ViewContainerRef, NgZone } from '@angular/core';
 import { DraggableDirective } from './draggable.directive';
-import { DOCUMENT } from '@angular/common';
 import { DragDropService } from '../drag-drop.service';
+import { DOCUMENT } from '@angular/common';
 
 @Directive({
   selector: '[mlSortableItem], [npSortableItem]',
