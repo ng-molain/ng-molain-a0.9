@@ -38,4 +38,4 @@ import { SplitterDirective } from './directives/splitter.directive';
   ],
   providers: []
 })
-export class DragDropModule { }
+export class NgMolainDragDropModule { }
