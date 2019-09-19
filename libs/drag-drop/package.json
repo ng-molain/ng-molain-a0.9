@@ -3,9 +3,9 @@
   "version": "0.0.0-PLACEHOLDER",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0"
+    "@angular/core": "^8.0.0",
+    "css-element-queries": "^1.2.1"
   },
   "dependencies": {
-    "css-element-queries": "^1.2.1"
   }
 }
