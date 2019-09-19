@@ -3686,6 +3686,11 @@ crypto-random-string@^1.0.0:
   resolved "http://npm.parim.net/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
   integrity sha1-ojD2T1aDEOFJgAmUB5DsmVRbyn4=
 
+css-element-queries@^1.2.1:
+  version "1.2.1"
+  resolved "http://npm.parim.net/css-element-queries/-/css-element-queries-1.2.1.tgz#70d1a0f676fc0bd0a3306522a5b2d3bcc55c9fe6"
+  integrity sha1-cNGg9nb8C9CjMGUipbLTvMVcn+Y=
+
 css-parse@1.7.x:
   version "1.7.0"
   resolved "http://npm.parim.net/css-parse/-/css-parse-1.7.0.tgz#321f6cf73782a6ff751111390fc05e2c657d8c9b"
