@@ -21,5 +21,7 @@ export * from './directives/droppable.directive';
 export * from './directives/sortable-item.directive';
 export * from './directives/sortable.directive';
 export * from './directives/splitter.directive';
+export * from './directives/resizable.component';
+export * from './directives/resizable.directive';
 
 export * from './drag-drop.module';

@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding, Output, EventEmitter, Input } from '@angular/core';
-import { DragStartEvent, DragMoveEvent, DragEndEvent } from './drag-events';
+import { DragStartEvent, DragMoveEvent, DragEndEvent } from '../drag-events';
 
 interface Position {
   x: number;
@@ -12,13 +12,14 @@ export interface ResizeRef {
 }
 
 @Component({
-  selector: 'ap-resizable',
+  selector: 'ml-resizable, np-resizable',
   template: `
     <div *ngFor="let item of handlersConf" [class]="'resize-handler-'+item" 
-      apDraggable 
-      (dragStart)="onDragStart($event, item)"
-      (dragMove)="onDragMove($event, item)"
-      (dragEnd)="onDragEnd($event, item)"></div>
+      npDraggable 
+      [npDragPreviewAlways]="true"
+      (npDragStarted)="onDragStart($event, item)"
+      (npDragMoved)="onDragMove($event, item)"
+      (npDragEnded)="onDragEnd($event, item)"></div>
   `,
   styles: []
 })
@@ -31,9 +32,9 @@ export class ResizableComponent implements OnInit {
 
   offset: Position;
 
-  @Output() resizeStart = new EventEmitter<any>();
-  @Output() resize = new EventEmitter<ResizeRef>();
-  @Output() resizeEnd = new EventEmitter();
+  @Output("npResizeStart") resizeStart = new EventEmitter<any>();
+  @Output("npResize") resize = new EventEmitter<ResizeRef>();
+  @Output("npResizeEnd") resizeEnd = new EventEmitter();
 
   constructor() { }
 
@@ -41,11 +42,11 @@ export class ResizableComponent implements OnInit {
   }
 
   onDragStart(e: DragStartEvent, i) {
-    const { startPosition } = e;
+    const { pointerPosition } = e;
     // console.log(e, i);
     // console.log(i, 'drag start');
     // this.startPosition = {x: e.clientX, y: e.clientY};
-    this.startPosition = startPosition;
+    this.startPosition = pointerPosition;
     this.resizeStart.emit();
     // e.stopPropagation();
   }

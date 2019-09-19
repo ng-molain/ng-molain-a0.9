@@ -177,8 +177,8 @@ export class DraggableDirective<D = any> implements AfterViewInit, OnChanges, On
   }
 
   protected _handleEvents(ref: DraggableRef<DraggableDirective<D>>) {
-    ref.started.subscribe(() => {
-      this.started.emit({source: this});
+    ref.started.subscribe(({source, pointerPosition}) => {
+      this.started.emit({source: this, pointerPosition: pointerPosition});
     });
 
     ref.released.subscribe(() => {

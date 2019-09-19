@@ -10,6 +10,7 @@ const routes: Routes = [
       { path: '', component: DemosHomeComponent },
       { path: 'common', loadChildren: () => import('../common-demo/common-demo.module').then(m => m.CommonDemoModule) },
       { path: 'components', loadChildren: () => import('../components-demo/components-demo.module').then(m => m.ComponentsDemoModule) },
+      { path: 'drag-drop', loadChildren: () => import('../drag-drop-demo/drag-drop-demo.module').then(m => m.DragDropDemoModule) },
       { path: '**', component: NotFoundComponent },
     ]
   }

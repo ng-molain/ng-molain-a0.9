@@ -2,6 +2,7 @@ import { DraggableDirective } from './directives/draggable.directive';
 
 export interface DragStartEvent<T = any> {
     source: DraggableDirective<T>;
+    pointerPosition?: {x: number, y: number};
 }
 
 export interface DragReleaseEvent<T = any> {

@@ -3,7 +3,6 @@ import { ComponentPortal, DomPortalOutlet } from '@angular/cdk/portal';
 import { ResizableComponent, ResizeRef } from './resizable.component';
 import { DraggableDirective } from './draggable.directive';
 import * as _ from 'lodash';
-import { isBoolean, isString } from 'util';
 
 export interface Rect {
   x: number;
@@ -15,15 +14,15 @@ export interface Rect {
 type Handler = 'top' | 'top-right' | 'right' | 'right-bottom' | 'bottom' | 'bottom-left' | 'left' | 'left-top';
 
 @Directive({
-  selector: '[apResizable]'
+  selector: '[mlResizable], [npResizable]'
 })
 export class ResizableDirective implements OnInit, OnChanges {
 
   _resizable: boolean;
-  @Input("apResizable") set resizable(value: any) {
-    if (isBoolean(value)) {
+  @Input("npResizable") set resizable(value: any) {
+    if (_.isBoolean(value)) {
       this._resizable = value;
-    } else if (isString(value)) {
+    } else if (_.isString(value)) {
       this._resizable = value as string !== "false";
     } else {
       this._resizable = true;
@@ -40,9 +39,9 @@ export class ResizableDirective implements OnInit, OnChanges {
   resizeHandler: ResizableComponent;
 
 
-  @Output() resizeStart = new EventEmitter<Rect>();
-  @Output() resize = new EventEmitter<Rect>();
-  @Output() resizeEnd = new EventEmitter<Rect>();
+  @Output("npResizeStart") resizeStart = new EventEmitter<Rect>();
+  @Output("npResize") resize = new EventEmitter<Rect>();
+  @Output("npResizeEnd") resizeEnd = new EventEmitter<Rect>();
 
   constructor(
     private elementRef: ElementRef,
@@ -124,7 +123,7 @@ export class ResizableDirective implements OnInit, OnChanges {
 
     this.resizeHandler.resizeStart.subscribe(() => {
       if (this.draggable) {
-        this.draggable.stopDragging();
+        // this.draggable.stopDragging();
       }
 
       this.refreshRect();
@@ -134,7 +133,7 @@ export class ResizableDirective implements OnInit, OnChanges {
     this.resizeHandler.resize.subscribe((it: ResizeRef) => {
       // console.log(it);
       if (this.draggable) {
-        this.draggable.stopDragging();
+        // this.draggable.stopDragging();
       }
 
       let rect = this.rectEl;

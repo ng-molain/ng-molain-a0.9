@@ -10,6 +10,8 @@ import { SortableDirective } from './directives/sortable.directive';
 import { SortableItemDirective } from './directives/sortable-item.directive';
 import { SplitterDirective } from './directives/splitter.directive';
 import { DragPlaceholderWrapperDirective } from './directives/drag-placeholder-wrapper.directive';
+import { ResizableComponent } from './directives/resizable.component';
+import { ResizableDirective } from './directives/resizable.directive';
 
 @NgModule({
   imports: [
@@ -25,6 +27,8 @@ import { DragPlaceholderWrapperDirective } from './directives/drag-placeholder-w
     SortableItemDirective,
     SplitterDirective,
     DragPlaceholderWrapperDirective,
+    ResizableComponent,
+    ResizableDirective,
   ],
   exports: [
     DraggableDirective,
@@ -36,9 +40,13 @@ import { DragPlaceholderWrapperDirective } from './directives/drag-placeholder-w
     SortableItemDirective,
     SplitterDirective,
     DragPlaceholderWrapperDirective,
+    ResizableDirective,
   ],
   providers: [
     DragDropService,
+  ],
+  entryComponents: [
+    ResizableComponent
   ]
 })
 export class NgMolainDragDropModule { }
