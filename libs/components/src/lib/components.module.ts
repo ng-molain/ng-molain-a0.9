@@ -19,25 +19,6 @@ import { CropperModule } from './cropper';
 import { DynamicFormModule } from './dynamic-form';
 
 @NgModule({
-  imports: [
-    AvatarListModule,
-    CountDownModule,
-    DownFileModule,
-    EllipsisModule,
-    ExceptionModule,
-    ToolbarModule,
-    FullContentModule,
-    GlobalFooterModule,
-    PageHeaderModule,
-    ResultModule,
-    DetailsModule,
-    SidenavModule,
-    PaginationModule,
-    TableModule,
-    NgMolainFormsModule,
-    CropperModule,
-    DynamicFormModule,
-  ],
   exports: [
     AvatarListModule,
     CountDownModule,
