@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
-import { G2BarModule } from './bar';
-import { G2CardModule } from './card';
-import { G2CustomModule } from './custom';
-import { G2GaugeModule } from './gauge';
-import { G2MiniAreaModule } from './mini-area';
-import { G2MiniBarModule } from './mini-bar';
-import { G2MiniProgressModule } from './mini-progress';
-import { G2PieModule } from './pie';
-import { G2RadarModule } from './radar';
-import { G2TagCloudModule } from './tag-cloud';
-import { G2TimelineModule } from './timeline';
-import { G2WaterWaveModule } from './water-wave';
-import { G2SingleBarModule } from './single-bar';
-import { NumberInfoModule } from './number-info';
-import { TrendModule } from './trend';
+import { G2BarModule } from './bar/index';
+import { G2CardModule } from './card/index';
+import { G2CustomModule } from './custom/index';
+import { G2GaugeModule } from './gauge/index';
+import { G2MiniAreaModule } from './mini-area/index';
+import { G2MiniBarModule } from './mini-bar/index';
+import { G2MiniProgressModule } from './mini-progress/index';
+import { G2PieModule } from './pie/index';
+import { G2RadarModule } from './radar/index';
+import { G2TagCloudModule } from './tag-cloud/index';
+import { G2TimelineModule } from './timeline/index';
+import { G2WaterWaveModule } from './water-wave/index';
+import { G2SingleBarModule } from './single-bar/index';
+import { NumberInfoModule } from './number-info/index';
+import { TrendModule } from './trend/index';
 
 @NgModule({
   exports: [
