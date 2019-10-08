@@ -1,0 +1,13 @@
+<h1>Auto Grid Layout Demo</h1>
+
+<section class="h-100" style="position: relative;">
+  <div class="row" style="margin: 0 -4px; position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+    <div *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12]" class="col" style="padding: 0 4px; height: 100%;">
+      <div style="height: 100%; background: blue; opacity: 0.1; text-align: center;">{{item}}</div>
+    </div>
+  </div>
+
+  <div npGridLayout>
+    <div *ngFor="let item of list" npGridItem npDraggable npResizable class="bg-red-2" [rect]="item"></div>
+  </div>
+</section>
