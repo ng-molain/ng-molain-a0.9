@@ -191,10 +191,10 @@ export class GridItemComponent implements OnInit, AfterViewInit, OnDestroy {
     return { w, h };
   }
 
-  @HostListener("resizeStart", ["$event"])
+  @HostListener("npResizeStart", ["$event"])
   onResizeStart($event) { }
 
-  @HostListener("resize", ["$event"])
+  @HostListener("npResize", ["$event"])
   onResize($event) {
     // const { x, y, width, height } = $event;
     const { cols } = this.gridLayoutComponent;
@@ -215,16 +215,16 @@ export class GridItemComponent implements OnInit, AfterViewInit, OnDestroy {
     this._compact();
   }
 
-  @HostListener("resizeEnd", ["$event"])
+  @HostListener("npResizeEnd", ["$event"])
   onResizeEnd($event) { }
 
 
-  @HostListener("dragStart", ["$event"])
+  @HostListener("npDragStarted", ["$event"])
   onDragStart($event) {
     // console.log("drag start", $event);
   }
 
-  @HostListener("dragMove", ["$event"])
+  @HostListener("npDragMoved", ["$event"])
   onDragMove($event) {
     // console.log("drag move", $event);
     const {pointerPosition} = $event;
@@ -239,7 +239,7 @@ export class GridItemComponent implements OnInit, AfterViewInit, OnDestroy {
     this._compact();
   }
 
-  @HostListener("dragEnd", ["$event"])
+  @HostListener("npDragEnded", ["$event"])
   onDragEnd($event) {
     // console.log("drag end", $event);
   }

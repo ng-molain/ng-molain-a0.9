@@ -10,7 +10,7 @@ export const __DRAG_DROP_DEMO_NAV_ITEMS: NavItem = {
     },
     {
       name: 'GridLayout', route: '', type: 'group', children: [
-        { name: 'Ellipsis', route: 'ellipsis' },
+        { name: 'AutoGridLayout', route: 'autoGridLayout' },
       ]
     },
   ]
