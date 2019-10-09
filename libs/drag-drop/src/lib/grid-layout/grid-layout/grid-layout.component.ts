@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, HostBinding, Input, ContentChildren, QueryList, HostListener, AfterViewInit, AfterContentInit, EventEmitter, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ElementRef, HostBinding, Input, ContentChildren, QueryList, HostListener, AfterViewInit, AfterContentInit, EventEmitter, AfterViewChecked, Output } from '@angular/core';
 import { GridItemComponent } from '../grid-item/grid-item.component';
 import { Observable } from 'rxjs';
 import { GridLayoutService } from '../grid-layout.service';
@@ -27,6 +27,8 @@ export class GridLayoutComponent implements OnInit, AfterViewInit, AfterViewChec
   @Input() preventCollision = false;
   @Input() useCSSTransforms = true;
   @Input() usePercentages = false;
+  
+  @Output() moveOrResizeEnd = new EventEmitter();
 
   colWidth: number;
   // layout: LayoutItem[];

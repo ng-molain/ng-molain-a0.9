@@ -249,5 +249,11 @@ export class GridItemComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.gridLayoutService) {
       this.gridLayoutService.compact(this, cols, compactType);
     }
+
+    if (this.gridLayoutComponent) {
+      this.gridLayoutComponent.moveOrResizeEnd.emit({
+        source: this
+      });
+    }
   }
 }
