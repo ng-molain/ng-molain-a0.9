@@ -216,7 +216,9 @@ export class GridItemComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   @HostListener("npResizeEnd", ["$event"])
-  onResizeEnd($event) { }
+  onResizeEnd($event) {
+    this._emitChangeEnd();
+  }
 
 
   @HostListener("npDragStarted", ["$event"])
@@ -242,6 +244,7 @@ export class GridItemComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostListener("npDragEnded", ["$event"])
   onDragEnd($event) {
     // console.log("drag end", $event);
+    this._emitChangeEnd();
   }
 
   private _compact() {
@@ -249,7 +252,9 @@ export class GridItemComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.gridLayoutService) {
       this.gridLayoutService.compact(this, cols, compactType);
     }
+  }
 
+  private _emitChangeEnd() {
     if (this.gridLayoutComponent) {
       this.gridLayoutComponent.moveOrResizeEnd.emit({
         source: this
