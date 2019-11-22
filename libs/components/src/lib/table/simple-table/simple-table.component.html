@@ -14,7 +14,7 @@
             [nzIndeterminate]="selection.hasValue() && !isAllSelected()">
           </label>
         </th>
-        <th *ngFor="let col of columnsVisible">
+        <th *ngFor="let col of columnsVisible" (npResized)="onHeaderCellResized($event)">
           <div [class.ml-table-column-sortable]="col.showSort" (click)="updateSort(col)">
             <span class="ml-table-column-title">
                 {{col.title || col.name || col.data || col.field | uppercase}}

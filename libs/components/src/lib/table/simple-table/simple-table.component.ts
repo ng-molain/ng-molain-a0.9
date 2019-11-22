@@ -1,7 +1,9 @@
-import { Component, OnInit, Input, TemplateRef, EventEmitter, Output } from '@angular/core';
-import * as _ from 'lodash';
+import { Component, OnInit, Input, TemplateRef, EventEmitter, Output, ElementRef, Inject } from '@angular/core';
+import { coerceElement } from '@angular/cdk/coercion';
+import { DOCUMENT } from '@angular/common';
 import { Pagination, PageImpl } from '../../pagination/index';
 import { TableSelectionModel } from './selection-model';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'ml-simple-table',
@@ -42,7 +44,7 @@ export class SimpleTableComponent implements OnInit {
   }
 
   get serialIndexStart(): number {
-    const {number, size} = this.pagination;
+    const { number, size } = this.pagination;
     return (this.oneIndexedParameter ? number - 1 : number) * size + 1;
   }
 
@@ -57,7 +59,15 @@ export class SimpleTableComponent implements OnInit {
     return !_.isEmpty(this.data);
   }
 
-  constructor() { }
+  get isScroll() {
+    return true;
+  }
+  private _headerWrapper: HTMLElement;
+
+  constructor(
+    private readonly element: ElementRef,
+    @Inject(DOCUMENT) private readonly document: any,
+  ) { }
 
   ngOnInit() {
     // this.showSerial = true;
@@ -69,16 +79,20 @@ export class SimpleTableComponent implements OnInit {
         this.selectionChanged.emit(selected);
       });
     }
+
+    if (this.isScroll) {
+      this._wrapScroll();
+    }
   }
 
   updateSort(col) {
     if (!col.showSort) {
-      return ;
+      return;
     }
 
-    const {sort} = col;
+    const { sort } = col;
     switch (sort) {
-      case 'ASC': 
+      case 'ASC':
         col.sort = 'DESC';
         break;
       case 'DESC':
@@ -94,7 +108,7 @@ export class SimpleTableComponent implements OnInit {
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.visibleData.length;
-    
+
     return numSelected === numRows;
   }
 
@@ -124,6 +138,67 @@ export class SimpleTableComponent implements OnInit {
         this.selection.select(row);
       }
     }
+  }
+
+  onHeaderCellResized() {
+    // this._wrapScroll();
+  }
+
+  private _wrapScroll() {
+    // this._refreshHeader();
+  }
+
+  private _refreshHeader() {
+    const el = coerceElement<HTMLElement>(this.element).querySelector('div.ml-table-wrap');
+
+    let wrapper: HTMLElement = this._headerWrapper;
+    if (!!wrapper) {
+      el.removeChild(wrapper);
+      // 闪烁
+    }
+    wrapper = this._headerWrapper = this._createHeaderWrapper();
+    // el.appendChild(wrapper);
+  }
+
+  private _createHeaderWrapper() {
+    const el = coerceElement<HTMLElement>(this.element).querySelector('div.ml-table-wrap');
+    const document = this.document as Document;
+
+
+
+    const tbodyEl = el.querySelector("tbody");
+    const tableEl = tbodyEl ? tbodyEl.parentElement : el.querySelector("table.ml-table") as HTMLTableElement;
+    const theadEl = tableEl.querySelector("thead");
+    theadEl.style.opacity = '0';
+    tableEl.style.marginTop = '-21px'; // TODO: fix
+
+    // const theadEl = el.querySelector("thead");
+    const clonedTheadEl = theadEl.cloneNode(true) as HTMLElement;
+    clonedTheadEl.style.opacity = '1';
+
+    const headCells = theadEl.querySelectorAll("th");
+    const clonedHeadCells = clonedTheadEl.querySelectorAll("th");
+    headCells.forEach((oc, index) => {
+      const rect = oc.getBoundingClientRect();
+      const nc = clonedHeadCells[index];
+      nc.style.width = `${rect.width}px`;
+      nc.style.height = `${rect.height}px`;
+    });
+
+    const wrapper = document.createElement("div");
+    wrapper.style.position = 'sticky'; // 'absolute';
+    wrapper.style.top = '0';
+    wrapper.style.left = '0';
+
+    // const wrapperTable = document.createElement("table");
+    const wrapperTable = tableEl.cloneNode(false);
+
+    wrapper.appendChild(wrapperTable);
+    wrapperTable.appendChild(clonedTheadEl);
+
+    el.insertBefore(wrapper, tableEl);
+
+    return wrapper;
   }
 
 }
