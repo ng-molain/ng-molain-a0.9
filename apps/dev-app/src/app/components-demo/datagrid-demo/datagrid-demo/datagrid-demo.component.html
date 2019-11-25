@@ -1,0 +1,13 @@
+<h1>DataGrid Demo</h1>
+
+<div style="display: flex;">
+  <div style="width: 240px; min-width: 240px;">
+    <ul nz-menu>
+      <li nz-menu-item *ngFor="let item of demos" [routerLink]="item.routerLink">{{item.name}}</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1 1 auto; margin-left: 30px; overflow: auto;">
+      <router-outlet></router-outlet>
+  </div>
+</div>

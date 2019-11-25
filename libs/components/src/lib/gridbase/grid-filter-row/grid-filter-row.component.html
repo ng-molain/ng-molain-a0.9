@@ -1,0 +1,16 @@
+
+    <td *ngFor="let col of columns">
+      <div *ngIf="col.filterable" class="datagrid-filter-c f-row" (focusin)="onFocusin()">
+        <!-- <ml-grid-filter-button *ngIf="isOnLeft(col)" class="datagrid-filter-btn datagrid-filter-btn-left"
+            [column]="col" 
+            [(ngModel)]="col.filterOperator">
+        </ml-grid-filter-button> -->
+        <input *ngIf="!col.filterTemplate" [(ngModel)]="col.filterValue" class="datagrid-editable-input datagrid-filter f-full">
+        <ng-template *ngIf="col.filterTemplate" [mlGridFilterTemplate]="col.filterTemplate.template" [column]="col"></ng-template>
+        <!-- <ml-grid-filter-button *ngIf="isOnRight(col)" class="datagrid-filter-btn datagrid-filter-btn-right"
+            [column]="col" 
+            [(ngModel)]="col.filterOperator">
+        </ml-grid-filter-button> -->
+      </div>
+    </td>
+  

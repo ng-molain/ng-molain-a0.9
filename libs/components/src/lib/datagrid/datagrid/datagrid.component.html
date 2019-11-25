@@ -1,0 +1,47 @@
+
+  <div class="panel-body panel-body-noheader datagrid datagrid-wrap f-full f-column" 
+  [class.panel-body-noborder]="!border">
+<!-- <ml-pagination *ngIf="pagination && (pagePosition=='both' || pagePosition=='top')" class="datagrid-pager datagrid-pager-top f-noshrink" 
+    [total]="total" 
+    [pageSize]="pageSize" 
+    [pageNumber]="pageNumber" 
+    [loading]="loading"
+    [pageOptions]="pageOptions"
+    (pageChange)="onPageChange($event)"></ml-pagination> -->
+<div #view class="datagrid-view f-row f-full">
+  <ml-datagrid-view #view1 *ngIf="leftGroup || leftColumns" 
+      [viewIndex]="1" 
+      [columnGroup]="leftGroup" 
+      [columns]="leftColumns" 
+      [rows]="!virtualScroll && rows" 
+      [footerRows]="footerRows"
+      [style.width]="leftFrozenWidth"></ml-datagrid-view>
+  <ml-datagrid-view #view2 
+      [viewIndex]="2" 
+      [columnGroup]="centerGroup" 
+      [columns]="centerColumns" 
+      [rows]="rows"
+      [footerRows]="footerRows"
+      (bodyScroll)="onBodyScroll($event)"></ml-datagrid-view>
+  <ml-datagrid-view #view3 *ngIf="rightGroup || rightColumns" 
+      [viewIndex]="3" 
+      [columnGroup]="rightGroup" 
+      [columns]="rightColumns" 
+      [rows]="!virtualScroll && rows" 
+      [footerRows]="footerRows"
+      [style.width]="rightFrozenWidth"></ml-datagrid-view>
+</div>
+<!-- <ml-pagination *ngIf="pagination && (pagePosition=='both' || pagePosition=='bottom')" class="datagrid-pager f-noshrink" 
+    [total]="total" 
+    [pageSize]="pageSize" 
+    [pageNumber]="pageNumber" 
+    [loading]="loading"
+    [pageOptions]="pageOptions"
+    (pageChange)="onPageChange($event)"></ml-pagination> -->
+</div>
+<div *ngIf="loading" class="datagrid-loading f-row">
+<div class="datagrid-mask"></div>
+<div class="datagrid-mask-msg">{{loadMsg}}</div>
+</div>
+
+

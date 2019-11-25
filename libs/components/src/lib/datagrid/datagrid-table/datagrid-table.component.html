@@ -1,0 +1,89 @@
+
+    <colgroup>
+      <col *ngFor="let col of columns" [style.width]="col.width">
+    </colgroup>
+    <tbody>
+      <ng-container *ngFor="let row of rows;let rowIndex=index;">
+      <tr *ngIf="grid.isGroupRow(row)" class="datagrid-row datagrid-group-row"
+          [ngClass]="grid.groupTemplate && grid.groupTemplate.groupCls"
+          [ngStyle]="grid.groupTemplate && grid.groupTemplate.groupStyle">
+        <td class="datagrid-td-group" [attr.colspan]="columns.length">
+          <div class="datagrid-group f-row">
+            <span *ngIf="showExpandIcon" 
+                class="datagrid-group-expander f-row f-content-center f-noshrink" 
+                [style.width.px]="grid.expanderWidth"
+                (click)="onGroupExpanderClick(row.value, $event)">
+              <span class="datagrid-row-expander"
+                  [class.datagrid-row-expand]="row.collapsed"
+                  [class.datagrid-row-collapse]="!row.collapsed">
+              </span>
+            </span>
+            <div #groupTitle class="datagrid-group-title" [style.left.px]="-titleLeft">
+              <span *ngIf="!grid.groupTemplate">{{row.value}}</span>
+              <ng-template *ngIf="grid.groupTemplate" [mlDataGridGroupTemplate]="grid.groupTemplate.template" [value]="row.value" [rows]="row.rows"></ng-template>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr #rowEl *ngIf="!grid.isGroupRow(row)" class="datagrid-row"
+          [ngClass]="getRowClass(row)"
+          [ngStyle]="getRowStyle(row)"
+          [class.datagrid-row-over]="grid.isHighlighted(row)"
+          [class.datagrid-row-selected]="grid.isSelected(row)"
+          [class.datagrid-row-alt]="grid.striped && getRowIndex(rowIndex,row)%2"
+          (mouseenter)="grid.highlightRow=row"
+          (mouseleave)="grid.highlightRow=null"
+          (click)="onRowClick(row,$event)"
+          (dblclick)="onRowDblClick(row,$event)"
+          (contextmenu)="onRowContextMenu(row,$event)">
+        <ng-container *ngFor="let col of columns">
+        <td *ngIf="col.expander" class="datagrid-td-expander">
+          <div class="datagrid-cell f-row f-content-center">
+            <span class="datagrid-row-expander" (click)="onDetailExpanderClick(row, $event)"
+                [class.datagrid-row-collapse]="grid.isRowExpanded(row)"
+                [class.datagrid-row-expand]="!grid.isRowExpanded(row)">
+            </span>
+          </div>
+        </td>
+        <td *ngIf="!col.expander"
+            [ngClass]="getCellClass(col,row)"
+            [ngStyle]="getCellStyle(col,row)"
+            [class.datagrid-row-selected]="grid.isSelected(row,col)"
+            [class.datagrid-row-over]="grid.isHighlighted(row,col)"
+            (mouseenter)="grid.highlightCell={row:row,column:col}"
+            (mouseleave)="grid.highlightCell=null"
+            (click)="onCellClick(row,col,rowEl,cellEl,$event)"
+            (dblclick)="onCellDblClick(row,col,rowEl,cellEl,$event)"
+            (contextmenu)="onCellContextMenu(row,col,$event)"
+            (keydown)="onCellKeyDown(row,col,$event)">
+          <div #cellEl class="datagrid-cell" 
+              [class.datagrid-editable]="isEditable(row,col)"
+              [style.textAlign]="col.align || null">
+            <ng-container *ngIf="isEditable(row,col)">
+              <input *ngIf="!col.editTemplate" [(ngModel)]="row[col.field]" class="datagrid-editable-input textbox-text">
+              <ng-container *ngIf="col.editTemplate">
+                <ng-container *ngTemplateOutlet="col.editTemplate.template;context:{$implicit:col,row:row,rowIndex:getRowIndex(rowIndex,row)}"></ng-container>
+              </ng-container>
+            </ng-container>
+            <ng-container *ngIf="!isEditable(row,col)">
+              <ng-container *ngIf="!col.cellTemplate">{{row[col.field]}}</ng-container>
+              <ng-container *ngIf="col.cellTemplate">
+                <ng-container *ngTemplateOutlet="col.cellTemplate.template;context:{$implicit:row,rowIndex:getRowIndex(rowIndex,row),column:col}"></ng-container>
+              </ng-container>
+            </ng-container>
+          </div>
+        </td>
+        </ng-container>
+      </tr>
+      <tr *ngIf="grid.detailTemplate && grid.isRowExpanded(row) && !grid.isGroupRow(row)">
+        <td [attr.colspan]="columns.length">
+          <div class="datagrid-row-detail" [style.height.px]="grid.detailTemplate.height">
+            <ng-container *ngIf="gridBody.view.viewIndex==2">
+              <ng-container *ngTemplateOutlet="grid.detailTemplate.template;context:{$implicit:row,rowIndex:getRowIndex(rowIndex,row)}"></ng-container>
+            </ng-container>
+          </div>
+        </td>
+      </tr>
+      </ng-container>
+    </tbody>
+  

@@ -1,0 +1,30 @@
+
+  <div #body class="datagrid-body f-full" style="margin-top:0"
+      [ngClass]="{'datagrid-vbody f-column':isVirtualScroll}"
+      (scroll)="onScroll($event)">
+    <div #inner class="datagrid-body-inner"
+        [style.marginTop.px]="marginTop"
+        [ngClass]="{'f-column f-full panel-noscroll':isVirtualScroll}">
+      <ng-container *ngIf="!isVirtualScroll">
+        <table class="datagrid-btable" border="0" cellspacing="0" cellpadding="0"
+            mlDataGridTable [columns]="columns" [rows]="currRows">
+        </table>
+      </ng-container>
+      <ng-container *ngIf="isVirtualScroll">
+        <ml-virtual-scroll #vscroll 
+            [data]="rows" 
+            [total]="view.grid.total" 
+            [pageSize]="view.grid.pageSize" 
+            [rowHeight]="view.grid.rowHeight" 
+            [lazy]="view.grid.lazy"
+            [pageNumber]="view.grid.pageNumber"
+            (update)="onVirtualPageUpdate($event)"
+            (bodyScroll)="onVirtualScroll($event)"
+            (pageChange)="onVirtualPageChange($event)">
+        <table class="datagrid-btable" border="0" cellspacing="0" cellpadding="0"
+            mlDataGridTable [columns]="columns" [rows]="currRows">
+        </table>
+        </ml-virtual-scroll>
+      </ng-container>
+    </div>
+  </div>

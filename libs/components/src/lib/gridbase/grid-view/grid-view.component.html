@@ -1,0 +1,5 @@
+
+    <ml-grid-header #header [columnGroup]="columnGroup" [columns]="columns" [paddingWidth]="headerPaddingWidth"></ml-grid-header>
+    <ml-grid-body #body [columns]="columns" align="center" [rows]="rows" (bodyScroll)="onBodyScroll($event)"></ml-grid-body>
+    <ml-grid-footer #footer [columns]="columns" [rows]="footerRows"></ml-grid-footer>
+  

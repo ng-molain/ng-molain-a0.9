@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'pagination', loadChildren: () => import('./pagination-demo/pagination-demo.module').then(m => m.PaginationDemoModule) },
   { path: 'table', loadChildren: () => import('./table-demo/table-demo.module').then(m => m.TableDemoModule) },
   { path: 'cropper', loadChildren: () => import('./cropper-demo/cropper-demo.module').then(m => m.CropperDemoModule) },
+  { path: 'datagrid', loadChildren: () => import('./datagrid-demo/datagrid-demo.module').then(m => m.DatagridDemoModule) },
   // { path: '', loadChildren: () => import('.').then(m => m) },
 ];
 

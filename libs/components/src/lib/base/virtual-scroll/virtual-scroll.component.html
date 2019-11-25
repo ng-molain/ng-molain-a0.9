@@ -1,0 +1,13 @@
+
+    <div #body class="scroll-body f-full">
+      <div #top class="scroll-top">
+        <div *ngFor="let h of topHeights" [style.height.px]="h"></div>
+      </div>
+      <div #content class="scroll-content">
+        <ng-content></ng-content>
+      </div>
+      <div #bottom class="scroll-bottom">
+        <div *ngFor="let h of bottomHeights" [style.height.px]="h"></div>
+      </div>
+    </div>
+  

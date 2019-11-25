@@ -17,6 +17,8 @@ import { PaginationModule } from './pagination/index';
 import { TableModule } from './table/index';
 import { CropperModule } from './cropper/index';
 import { DynamicFormModule } from './dynamic-form/index';
+import { GridbaseModule } from './gridbase/index';
+import { DatagridModule } from './datagrid/index';
 
 @NgModule({
   exports: [
@@ -37,6 +39,8 @@ import { DynamicFormModule } from './dynamic-form/index';
     NgMolainFormsModule,
     CropperModule,
     DynamicFormModule,
+    GridbaseModule,
+    DatagridModule,
   ]
 })
 export class NgMolainComponentsModule {}

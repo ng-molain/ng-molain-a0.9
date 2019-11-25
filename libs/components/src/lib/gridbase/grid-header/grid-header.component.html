@@ -1,0 +1,62 @@
+
+  <div class="datagrid-header f-row">
+    <div #header class="datagrid-header-inner f-full" [style.height.px]="_height">
+      <table #content class="datagrid-htable" border="0" cellspacing="0" cellpadding="0">
+        <colgroup>
+          <col *ngFor="let col of columns" [style.width]="col.width">
+        </colgroup>
+        <tbody *ngIf="columnGroup">
+          <tr *ngIf="filterOnTop" class="datagrid-header-row datagrid-filter-row" mlGridFilterRow [columns]="columns" [grid]="grid"></tr>
+          <tr *ngFor="let row of columnGroup.rows" class="datagrid-header-row">
+            <td *ngFor="let col of row.columns"
+                [attr.rowspan]="col.rowspan"
+                [attr.colspan]="col.colspan"
+                [class.datagrid-field-td]="col.field"
+                [class.datagrid-header-over]="hoverColumn==col && col.sortable"
+                (mouseenter)="hoverColumn=col"
+                (mouseleave)="hoverColumn=null"
+                (click)="onCellClick($event,col)">
+              <!-- <div class="datagrid-cell" 
+                  mlResizable handles="e" [disabled]="!grid.columnResizing" (resizing)="onColumnResizing($event,col)" (resizeStop)="onColumnResizeStop($event,col)" -->
+              <div class="datagrid-cell" 
+                  [class.datagrid-cell-group]="!col.field"
+                  [class.datagrid-sort]="col.field && col.sortable"
+                  [class.datagrid-sort-asc]="col.currOrder=='asc'"
+                  [class.datagrid-sort-desc]="col.currOrder=='desc'"
+                  [style.textAlign]="col.halign || col.align || null">
+                <span *ngIf="!col.headerTemplate">{{col.title}}</span>
+                <ng-template *ngIf="col.headerTemplate" [mlGridHeaderTemplate]="col.headerTemplate.template" [column]="col"></ng-template>
+                <span class="datagrid-sort-icon"></span>
+              </div>
+            </td>
+          </tr>
+          <tr *ngIf="filterOnBottom" class="datagrid-header-row datagrid-filter-row" mlGridFilterRow [columns]="columns" [grid]="grid"></tr>
+        </tbody>
+        <tbody *ngIf="!columnGroup">
+          <tr *ngIf="filterOnTop" class="datagrid-header-row datagrid-filter-row" mlGridFilterRow [columns]="columns" [grid]="grid"></tr>
+          <tr class="datagrid-header-row">
+            <td *ngFor="let col of columns" 
+                class="datagrid-field-td"
+                [class.datagrid-header-over]="hoverColumn==col && col.sortable"
+                (mouseenter)="hoverColumn=col"
+                (mouseleave)="hoverColumn=null"
+                (click)="onCellClick($event,col)">
+              <!-- <div class="datagrid-cell" 
+                  mlResizable handles="e" [disabled]="!grid.columnResizing" (resizing)="onColumnResizing($event,col)" (resizeStop)="onColumnResizeStop($event,col)" -->
+              <div class="datagrid-cell" 
+                  [class.datagrid-sort]="col.field && col.sortable"
+                  [class.datagrid-sort-asc]="col.currOrder=='asc'"
+                  [class.datagrid-sort-desc]="col.currOrder=='desc'"
+                  [style.textAlign]="col.halign || col.align || null">
+                <span *ngIf="!col.headerTemplate">{{col.title}}</span>
+                <ng-template *ngIf="col.headerTemplate" [mlGridHeaderTemplate]="col.headerTemplate.template" [column]="col"></ng-template>
+                <span class="datagrid-sort-icon"></span>
+              </div>
+            </td>
+          </tr>
+          <tr *ngIf="filterOnBottom" class="datagrid-header-row datagrid-filter-row" mlGridFilterRow [columns]="columns" [grid]="grid"></tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="paddingWidth" class="datagrid-header f-noshrink" [style.width.px]="paddingWidth"></div>
+  </div>

@@ -1,0 +1,15 @@
+
+    <ml-grid-header *ngIf="grid.showHeader" #header 
+        [columnGroup]="columnGroup" 
+        [columns]="columns" 
+        [paddingWidth]="headerPaddingWidth"
+        [grid]="grid"
+        (cellClick)="onHeaderCellClick($event)"></ml-grid-header>
+    <ml-datagrid-body #body [columns]="columns" align="center" 
+        [rows]="rows" 
+        (bodyScroll)="onBodyScroll($event)"></ml-datagrid-body>
+    <ml-grid-footer *ngIf="grid.showFooter" #footer 
+        [columns]="columns" 
+        [paddingWidth]="headerPaddingWidth"
+        [rows]="footerRows"></ml-grid-footer>
+  
