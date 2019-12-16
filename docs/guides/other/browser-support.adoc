@@ -1,0 +1,88 @@
+= 浏览器支持
+
+Angular 框架本身对浏览器留有充分的适应性，但是随着项目体系的延伸，一些依赖的组件库不一定保持有较好的浏览器兼容性。
+因此在使用这些组件库时，需要对项目本身做好评估，是否放弃或降低某些浏览器兼容是可行的。
+
+== IE 浏览器支持
+
+|框架/组件库| IE兼容性 | 说明
+|Angular | IE9 \~ IE11 | IE9 需要更多的腻子脚本
+|NG-ZORRO | IE11 | 不能确定是否在添加腻子脚本后可对 IE9 和 IE10 保持兼容
+
+Angular 框架和编译体系对兼容性配置留有空间，通过一些简单的配置和腻子脚本（polyfill）可以实现对IE的兼容。
+
+参考 https://angular.cn/guide/browser-support[浏览器支持 . Angular 中文官网] 我们在项目中做如下操作。
+
+. 修改项目中的 `browserslist` 文件
++
+[source, bash]
+----
+# 注释原有行
+# not IE 9-11 # For IE 9-11 support, remove 'not'.
+
+# 新增行
+IE 9-11 # For IE 9-11 support, remove 'not'.
+----
+
+. 添加推荐的 `pollyfile` 脚本
++
+.根据 `pollyfile` 文件提示，安装需要的依赖包
+[source, bash]
+----
+yarn add classlist.js js-polyfills typedarray web-animations-js
+----
++
+.`pollyfile.ts` 文件 `BROWSER POLYFILLS` 部分追加如下内容
+[source, typescript]
+----
+import 'classlist.js';
+import 'js-polyfills/typedarray';
+import 'web-animations-js';
+
+/** IE9, IE10 and IE11 requires all of the following polyfills. **/
+import 'core-js/es6/symbol';
+import 'core-js/es6/object';
+import 'core-js/es6/function';
+import 'core-js/es6/parse-int';
+import 'core-js/es6/parse-float';
+import 'core-js/es6/number';
+import 'core-js/es6/math';
+import 'core-js/es6/string';
+import 'core-js/es6/date';
+import 'core-js/es6/array';
+import 'core-js/es6/regexp';
+import 'core-js/es6/map';
+import 'core-js/es6/weak-map';
+import 'core-js/es6/set';
+
+// Evergreen browsers require these. */
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
+
+import 'core-js/es7/array';
+----
+
+. 添加 FormData 腻子脚本
++
+从 https://github.com/francois2metz/html5-formdata/blob/master/formdata.js 下载 `formdata.js` 放到应用目录。
++
+- 一种方式是，在 `index.html` 中用 `<script>` 标签的方式直接引入。
+- 这里我们建议在 `pollyfill` 腻子脚本中引入，保持非相关文件（`index.html`）的整洁性。
+
+. 修改项目的 `tsconfig.json`
++
+.compilerOptions 部分添加以下项
+[source, bash]
+----
+"compilerOptions": {
+    // ...
+    "target": "ES5"
+}
+----
+
+
+== 参考文档
+
+. https://angular.cn/guide/browser-support[浏览器支持] . Angular 中文官网
+. https://ng.ant.design/docs/introduce/zh#%E6%94%AF%E6%8C%81%E7%8E%AF%E5%A2%83[Ant Design of Angular # 支持环境] . Ant Design of Angular (ng-zorro)
+. https://github.com/francois2metz/html5-formdata[FormData 腻子脚本] .GitHub - francois2metz/html5-formdata
