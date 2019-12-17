@@ -7845,10 +7845,10 @@ ng-packagr@^5.1.0:
     terser "^4.0.0"
     update-notifier "^3.0.0"
 
-ng-zorro-antd@^8.1.0:
-  version "8.1.0"
-  resolved "http://npm.parim.net/ng-zorro-antd/-/ng-zorro-antd-8.1.0.tgz#a28df435fa246e36cc5f361f50df26b4c56d6943"
-  integrity sha1-oo30NfokbjbMXzYfUN8mtMVtaUM=
+ng-zorro-antd@^8.5.2:
+  version "8.5.2"
+  resolved "http://npm.parim.net/ng-zorro-antd/-/ng-zorro-antd-8.5.2.tgz#575ea85a75df7bfcc8712e82f819b355fade6b2b"
+  integrity sha1-V16oWnXfe/zIcS6C+BmzVfreays=
   dependencies:
     "@angular/cdk" "^8.0.0"
     "@ant-design/icons-angular" "^8.0.2"
