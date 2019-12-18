@@ -13,7 +13,7 @@
             <div class="actions mt-3">
                 <nz-button-group>
                     <button nz-button nzType="primary" (click)="cropperRef!.setDragMode('move')"><i nz-icon
-                            nzType="fullscreen" nzTheme="outline" nzRotate="45"></i></button>
+                            nzType="drag" nzTheme="outline"></i></button>
                     <button nz-button nzType="primary" (click)="cropperRef!.setDragMode('crop')"><i nz-icon
                             nzType="border-inner" nzTheme="outline"></i></button>
                 </nz-button-group>
@@ -77,9 +77,12 @@
             </div>
             <div class="actions mt-2">
                 <nz-button-group>
-                    <button nz-button class="bg-success border-success text-white" (click)="getCroppedCanvas({ maxWidth: 4096, maxHeight: 4096 })">Get Cropped Canvas</button>
-                    <button nz-button class="bg-success border-success text-white" (click)="getCroppedCanvas({ width: 160, height: 90 })">160x90</button>
-                    <button nz-button class="bg-success border-success text-white" (click)="getCroppedCanvas({ width: 320, height: 180 })">320x180</button>
+                    <button nz-button class="bg-success border-success text-white"
+                        (click)="getCroppedCanvas({ maxWidth: 4096, maxHeight: 4096 })">Get Cropped Canvas</button>
+                    <button nz-button class="bg-success border-success text-white"
+                        (click)="getCroppedCanvas({ width: 160, height: 90 })">160x90</button>
+                    <button nz-button class="bg-success border-success text-white"
+                        (click)="getCroppedCanvas({ width: 320, height: 180 })">320x180</button>
                 </nz-button-group>
 
                 <button nz-button (click)="tmpData = cropperRef!.getData()">Get Data</button>
@@ -182,6 +185,7 @@
     </div>
 </div>
 
-<nz-modal [(nzVisible)]="isModalVisible" nzTitle="Cropped" nzWidth="800" (nzOnCancel)="isModalVisible=false" (nzOnOk)="isModalVisible=false">
-        <div #croppedResultContainer class="cropped-view"></div>
+<nz-modal [(nzVisible)]="isModalVisible" nzTitle="Cropped" nzWidth="800" (nzOnCancel)="isModalVisible=false"
+    (nzOnOk)="isModalVisible=false">
+    <div #croppedResultContainer class="cropped-view"></div>
 </nz-modal>
