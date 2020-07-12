@@ -119,5 +119,170 @@ UPDATE package.json (4054 bytes)
 
 tony@DESKTOP-KM63L8L:ng-molain$
 
+tony@DESKTOP-KM63L8L:ng-molain$ npx ng update @nrwl/angular @nrwl/cypress @nrwl/jest @nrwl/nest @nrwl/node @nrwl/workspace
+The installed local Angular CLI version is older than the latest stable version.
+Installing a temporary version to perform the update.
+Installing packages for tooling via yarn.
+Installed packages for tooling via yarn.
+Using package manager: 'yarn'
+Collecting installed dependencies...
+Found 63 dependencies.
+Fetching dependency metadata from registry...
+    Updating package.json with dependency @nrwl/cypress @ "9.5.1" (was "8.9.0")...
+    Updating package.json with dependency @nrwl/jest @ "9.5.1" (was "8.9.0")...
+    Updating package.json with dependency @nrwl/nest @ "9.5.1" (was "8.9.0")...
+    Updating package.json with dependency @nrwl/node @ "9.5.1" (was "8.9.0")...
+    Updating package.json with dependency @nrwl/workspace @ "9.5.1" (was "8.9.0")...
+    Updating package.json with dependency @nrwl/angular @ "9.5.1" (was "8.9.0")...
+    Updating package.json with dependency prettier @ "2.0.5" (was "1.16.4")...
+UPDATE package.json (4053 bytes)
+✔ Packages installed successfully.
+** Executing migrations of package '@nrwl/cypress' **
 
+▸ Update Cypress to 3.6.1
+UPDATE package.json (4053 bytes)
+  Migration completed.
+
+▸ Update Cypress to ^3.8.2
+UPDATE package.json (4054 bytes)
+  Migration completed.
+
+▸ Add Cypress ESLint plugin
+  Migration completed.
+
+** Executing migrations of package '@nrwl/jest' **
+
+▸ Upgrades jest-preset-angular to 8.0.0
+    \`jest-preset-angular\` 8.0.0 has restructured folders, introducing breaking changes to
+    jest.config.js files.
+
+    We are updating snapshotSerializers in each Angular project to include appropriate paths.
+
+    See: https://github.com/thymikee/jest-preset-angular/releases/tag/v8.0.0
+UPDATE package.json (4054 bytes)
+UPDATE apps/dev-app/jest.config.js (353 bytes)
+UPDATE apps/site/jest.config.js (347 bytes)
+UPDATE apps/demo/jest.config.js (347 bytes)
+UPDATE libs/examples/jest.config.js (355 bytes)
+UPDATE libs/common/jest.config.js (351 bytes)
+UPDATE libs/components/jest.config.js (359 bytes)
+UPDATE libs/drag-drop/jest.config.js (357 bytes)
+UPDATE libs/g2-charts/jest.config.js (357 bytes)
+  Migration completed.
+
+▸ Correctly sets passWithNoTests option
+UPDATE angular.json (20592 bytes)
+  Migration completed.
+
+▸ Update jest to v25
+UPDATE package.json (4054 bytes)
+  Migration completed.
+
+** Executing migrations of package '@nrwl/node' **
+
+▸ Set buildLibsFromSource property to true to not break existing projects.
+UPDATE angular.json (20633 bytes)
+  Migration completed.
+
+** Executing migrations of package '@nrwl/workspace' **
+
+▸ Fix rules in `tslint.json`
+    Nx generated invalid tslint configurations in a prior version.
+
+    These invalid configurations will be fixed.
+UPDATE apps/dev-app/tslint.json (187 bytes)
+UPDATE apps/site/tslint.json (187 bytes)
+UPDATE apps/demo/tslint.json (189 bytes)
+UPDATE libs/examples/tslint.json (185 bytes)
+UPDATE libs/common/tslint.json (185 bytes)
+UPDATE libs/components/tslint.json (185 bytes)
+UPDATE libs/drag-drop/tslint.json (201 bytes)
+UPDATE libs/g2-charts/tslint.json (185 bytes)
+UPDATE apps/mock-api/tslint.json (52 bytes)
+  Migration completed.
+
+▸ Add implicit e2e dependencies
+    Nx no longer infers implicit dependencies between e2e projects and their source projects based on name.
+
+    These dependencies have been added to nx.json.
+UPDATE nx.json (825 bytes)
+  Migration completed.
+
+▸ Add enforceBuildableLibDependency flag to the nx enforce boundary lint rule
+UPDATE tslint.json (2474 bytes)
+  Migration completed.
+
+▸ Update package.json dependencies
+UPDATE package.json (4054 bytes)
+  Migration completed.
+
+▸ Update typescript to 3.6 and angular/cli to version 9
+UPDATE package.json (4054 bytes)
+  Migration completed.
+
+▸ Update prettier to 1.19.1 with support for typescript 3.7; Update eslint and tslint
+UPDATE package.json (4052 bytes)
+  Migration completed.
+
+▸ Update eslint and tslint config to provide better IDE support
+UPDATE apps/dev-app/tslint.json (238 bytes)
+UPDATE apps/site/tslint.json (238 bytes)
+UPDATE apps/demo/tslint.json (240 bytes)
+UPDATE libs/examples/tslint.json (236 bytes)
+UPDATE libs/common/tslint.json (236 bytes)
+UPDATE libs/components/tslint.json (236 bytes)
+UPDATE libs/drag-drop/tslint.json (252 bytes)
+UPDATE libs/g2-charts/tslint.json (236 bytes)
+UPDATE apps/mock-api/tslint.json (103 bytes)
+  Migration completed.
+
+▸ Add cacheable operations to nx.json
+UPDATE package.json (4052 bytes)
+UPDATE nx.json (1027 bytes)
+  Migration completed.
+
+▸ Update prettier to v2
+UPDATE package.json (4052 bytes)
+  Migration completed.
+
+▸ Decorate cli to enable computation caching
+CREATE decorate-angular-cli.js (3093 bytes)
+UPDATE package.json (4105 bytes)
+  Migration completed.
+
+▸ Remove config builder option when using eslint to enable automatic detection
+UPDATE angular.json (20633 bytes)
+  Migration completed.
+
+▸ Fix exclude patterns in tslint and eslint to ensure it does not break linting when a files option is defined
+  Migration completed.
+
+** Executing migrations of package '@nrwl/angular' **
+
+▸ Changes Angular library builder to @nrwl/angular:package
+UPDATE angular.json (20565 bytes)
+  Migration completed.
+
+▸ Upgrades Angular and Angular CLI to 9.0.0
+UPDATE package.json (4192 bytes)
+    Updating @angular/cli to 9.0.1
+Repository is not clean. Update changes will be mixed with pre-existing changes.
+Using package manager: 'yarn'
+Collecting installed dependencies...
+Found 63 dependencies.
+Fetching dependency metadata from registry...
+UPDATE package.json (4191 bytes)
+✔ Packages installed successfully.
+    Updating @angular/core to 9.0.0
+
+>  NX   WARNING  The Angular CLI was invoked instead of the Nx CLI. Use "npx ng [command]" or "nx [command]" instead.
+
+Repository is not clean. Update changes will be mixed with pre-existing changes.
+Using package manager: 'yarn'
+Collecting installed dependencies...
+Found 63 dependencies.
+Fetching dependency metadata from registry...
+  Migration completed.
+
+tony@DESKTOP-KM63L8L:ng-molain$
 ----
