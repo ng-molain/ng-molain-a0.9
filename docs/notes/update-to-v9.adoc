@@ -94,5 +94,30 @@ tony@DESKTOP-KM63L8L:ng-molain$
 tony@DESKTOP-KM63L8L:ng-molain$
 
 
+tony@DESKTOP-KM63L8L:ng-molain$ npx ng update  @angular/cdk@9
+The installed local Angular CLI version is older than the latest stable version.
+Installing a temporary version to perform the update.
+Installing packages for tooling via yarn.
+Installed packages for tooling via yarn.
+Using package manager: 'yarn'
+Collecting installed dependencies...
+Found 63 dependencies.
+Fetching dependency metadata from registry...
+    Updating package.json with dependency @angular/cdk @ "9.2.4" (was "8.2.3")...
+UPDATE package.json (4054 bytes)
+✔ Packages installed successfully.
+** Executing migrations of package '@angular/cdk' **
+
+▸ Updates the Angular CDK to v9
+    Could not find TypeScript project for project: dev-app-e2e
+    Could not find TypeScript project for project: site-e2e
+    Could not find TypeScript project for project: demo-e2e
+
+      ✓  Updated Angular CDK to version 9
+
+  Migration completed.
+
+tony@DESKTOP-KM63L8L:ng-molain$
+
 
 ----
