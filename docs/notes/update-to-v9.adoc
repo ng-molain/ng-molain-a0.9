@@ -412,5 +412,25 @@ found 698 vulnerabilities (684 low, 14 moderate)
   run `npm audit fix` to fix them, or `npm audit` for details
 tony@DESKTOP-KM63L8L:ng-molain$
 
+tony@DESKTOP-KM63L8L:ng-molain$ npx ng update ng-zorro-antd
+The installed local Angular CLI version is older than the latest stable version.
+Installing a temporary version to perform the update.
+Installing packages for tooling via yarn.
+Installed packages for tooling via yarn.
+Using package manager: 'yarn'
+Collecting installed dependencies...
+Found 63 dependencies.
+Fetching dependency metadata from registry...
+    Updating package.json with dependency ng-zorro-antd @ "9.3.0" (was "8.5.2")...
+UPDATE package.json (4191 bytes)
+✔ Packages installed successfully.
+** Executing migrations of package 'ng-zorro-antd' **
 
+▸ Updates NG-ZORRO to v9 [https://github.com/NG-ZORRO/ng-zorro-antd/issues/5035]
+✖ Migration failed: Cannot read property 'startTag' of undefined
+  See "/tmp/ng-E1YUFe/angular-errors.log" for further details.
+
+tony@DESKTOP-KM63L8L:ng-molain$
+
+# 没能完成自动升级，依赖包版本升级了，剩下的，慢慢改吧
 ----

@@ -168,16 +168,7 @@
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-9.1.12.tgz#1c9c1a792be4b52b196cab1e5c88bd319b60716d"
   integrity sha512-tphpf9QHnOPoL2Jl7KpR+R5aHNW3oifLEmRUTajJYJGvo1uzdUDE82+V9OGOinxJsYseCth9gYJhN24aYTB9NA==
 
-"@angular/cdk@^8.0.0":
-  version "8.2.3"
-  resolved "http://npm.parim.net/@angular%2fcdk/-/cdk-8.2.3.tgz#16b96ffa935cbf5a646757ecaf2b19c434678f72"
-  integrity sha1-Frlv+pNcv1pkZ1fsrysZxDRnj3I=
-  dependencies:
-    tslib "^1.7.1"
-  optionalDependencies:
-    parse5 "^5.0.0"
-
-"@angular/cdk@^9.2.4":
+"@angular/cdk@^9.0.0", "@angular/cdk@^9.2.4":
   version "9.2.4"
   resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-9.2.4.tgz#8413958bd275e4c34be3b96f56444671dd30ba93"
   integrity sha512-iw2+qHMXHYVC6K/fttHeNHIieSKiTEodVutZoOEcBu9rmRTGbLB26V/CRsfIRmA1RBk+uFYWc6UQZnMC3RdnJQ==
@@ -275,13 +266,12 @@
   dependencies:
     tinycolor2 "^1.4.1"
 
-"@ant-design/icons-angular@^8.0.2":
-  version "8.1.1"
-  resolved "http://npm.parim.net/@ant-design%2ficons-angular/-/icons-angular-8.1.1.tgz#06889764a9fefed0f6a7f23c33a0ab64916b479f"
-  integrity sha1-BoiXZKn+/tD2p/I8M6CrZJFrR58=
+"@ant-design/icons-angular@^9.0.0":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@ant-design/icons-angular/-/icons-angular-9.0.1.tgz#5ac8bec5bc34d23120820c93f8511b59aa117bc5"
+  integrity sha512-bWdHOmO4LSQ3wpmivwTI7EWiRUMGSVA+fyfiGZ9IrQqoccg9XjGcWqT/VA9A45OV0QTKweo4hp3xaTzRBKsc+g==
   dependencies:
     "@ant-design/colors" "^3.1.0"
-    tslib "^1.9.0"
 
 "@antv/adjust@~0.1.0":
   version "0.1.1"
@@ -5207,12 +5197,12 @@ data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
-date-fns@^1.27.2, date-fns@^1.30.1:
+date-fns@^1.27.2:
   version "1.30.1"
   resolved "http://npm.parim.net/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
 
-date-fns@^2.14.0:
+date-fns@^2.10.0, date-fns@^2.14.0:
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.14.0.tgz#359a87a265bb34ef2e38f93ecf63ac453f9bc7ba"
   integrity sha512-1zD+68jhFgDIM0rF05rcwYO8cExdNqxjq4xP1QKM60Q45mnO6zaMWB4tOzrIr4M4GSLntsKeE4c9Bdl2jhL/yw==
@@ -9364,15 +9354,16 @@ ng-packagr@^9.1.5:
     terser "^4.3.8"
     update-notifier "^4.0.0"
 
-ng-zorro-antd@^8.5.2:
-  version "8.5.2"
-  resolved "http://npm.parim.net/ng-zorro-antd/-/ng-zorro-antd-8.5.2.tgz#575ea85a75df7bfcc8712e82f819b355fade6b2b"
-  integrity sha1-V16oWnXfe/zIcS6C+BmzVfreays=
+ng-zorro-antd@^9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/ng-zorro-antd/-/ng-zorro-antd-9.3.0.tgz#f80dbe2715e578c475728773449442f0099f152c"
+  integrity sha512-O7uRCnsFTGHn/74ly8VCUoaMlED3cWLJfvbD0FLzDjBlnz77kcuM5qd+yGMT2hAYXmXYWu2ZRRJWLx5QUGLHkA==
   dependencies:
-    "@angular/cdk" "^8.0.0"
-    "@ant-design/icons-angular" "^8.0.2"
-    date-fns "^1.30.1"
-    tslib "^1.9.0"
+    "@angular/cdk" "^9.0.0"
+    "@ant-design/icons-angular" "^9.0.0"
+    date-fns "^2.10.0"
+    resize-observer-polyfill "^1.5.1"
+    tslib "^1.10.0"
 
 ngx-countdown@^3.2.0:
   version "3.2.0"
@@ -11436,6 +11427,11 @@ requires-port@^1.0.0:
   resolved "http://npm.parim.net/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
+resize-observer-polyfill@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
+  integrity sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==
+
 resolve-cwd@^2.0.0:
   version "2.0.0"
   resolved "http://npm.parim.net/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
@@ -13165,7 +13161,7 @@ tslib@^1.10.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 
-tslib@^1.7.1, tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.8.1, tslib@^1.9.0:
   version "1.10.0"
   resolved "http://npm.parim.net/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
