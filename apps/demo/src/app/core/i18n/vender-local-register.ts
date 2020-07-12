@@ -3,8 +3,8 @@ import { registerLocaleData as ngRegisterLocaleData } from '@angular/common';
 import { default as ngZh } from '@angular/common/locales/zh';
 import { default as ngEn } from '@angular/common/locales/en';
 import { zh_CN as zorroZh, en_US as zorroEn, NZ_I18N } from 'ng-zorro-antd';
-import * as dfEn from 'date-fns/locale/en';
-import * as dfZh from 'date-fns/locale/zh_cn';
+import * as dfEn from 'date-fns/locale/en-US';
+import * as dfZh from 'date-fns/locale/zh-CN';
 import * as _ from 'lodash';
 import { I18N_CONFIG } from './i18n.config';
 
