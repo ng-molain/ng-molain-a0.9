@@ -28,8 +28,8 @@ export class DraggableDirective<D = any> implements AfterViewInit, OnChanges, On
   /** 用来控制拖动的元素，没有时整个元素可触发拖动 */
   @ContentChildren(DragHandleDirective, { descendants: true }) _handles: QueryList<DragHandleDirective>;
 
-  @ContentChild(DragPreviewDirective, {static: false}) _previewTemplate: DragPreviewDirective;
-  @ContentChild(DragPlaceholderDirective, {static: false}) _placeholderTemplate: DragPlaceholderDirective;
+  @ContentChild(DragPreviewDirective) _previewTemplate: DragPreviewDirective;
+  @ContentChild(DragPlaceholderDirective) _placeholderTemplate: DragPlaceholderDirective;
 
   @Input('npDragData') dragData: D;
 

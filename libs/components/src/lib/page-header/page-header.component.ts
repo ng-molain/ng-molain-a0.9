@@ -23,9 +23,9 @@ interface PageHeaderPath {
 export class PageHeaderComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
   private inited = false;
   private unsubscribe$ = new Subject<void>();
-  @ViewChild('conTpl', {static: false})
+  @ViewChild('conTpl')
   private conTpl: ElementRef;
-  @ViewChild('affix', {static: false})
+  @ViewChild('affix')
   private affix: NzAffixComponent;
   private _menus: Menu[] | null;
 

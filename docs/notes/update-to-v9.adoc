@@ -1,0 +1,98 @@
+= Update to v9
+
+[source, bash]
+----
+
+tony@DESKTOP-KM63L8L:ng-molain$ npx ng update  @angular/cli@9
+The installed Angular CLI version is older than the latest stable version.
+Installing a temporary version to perform the update.
+Installing packages for tooling via yarn.
+Installed packages for tooling via yarn.
+Using package manager: 'yarn'
+Collecting installed dependencies...
+Found 63 dependencies.
+Fetching dependency metadata from registry...
+    Updating package.json with dependency @angular/cli @ "9.1.11" (was "8.3.20")...
+    Updating package.json with dependency @angular-devkit/build-ng-packagr @ "0.901.11" (was "0.803.20")...
+    Updating package.json with dependency @angular/language-service @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency @angular-devkit/build-angular @ "0.901.11" (was "0.803.20")...
+    Updating package.json with dependency tsickle @ "0.38.1" (was "0.35.0")...
+    Updating package.json with dependency ng-packagr @ "9.1.5" (was "5.7.1")...
+    Updating package.json with dependency @angular/compiler-cli @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency @angular/common @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency @angular/animations @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency @angular/forms @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency @angular/platform-browser-dynamic @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency @angular/core @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency @angular/platform-browser @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency @angular/compiler @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency @angular/router @ "9.1.12" (was "8.2.14")...
+    Updating package.json with dependency zone.js @ "0.10.3" (was "0.9.1")...
+    Updating package.json with dependency typescript @ "3.8.3" (was "3.5.3")...
+UPDATE package.json (4054 bytes)
+✔ Packages installed successfully.
+** Executing migrations of package '@angular/cli' **
+
+▸ Update an Angular CLI project to version 9.
+UPDATE angular.json (20539 bytes)
+  Migration completed.
+
+** Executing migrations of package '@angular/core' **
+
+▸ Static flag migration.
+  Removes the `static` flag from dynamic queries.
+  As of Angular 9, the "static" flag defaults to false and is no longer required for your view and content queries.
+  Read more about this here: https://v9.angular.io/guide/migration-dynamic-flag
+UPDATE libs/components/src/lib/ellipsis/ellipsis.component.ts (6581 bytes)
+UPDATE libs/components/src/lib/page-header/page-header.component.ts (5735 bytes)
+UPDATE libs/components/src/lib/forms/form-item/form-item.component.ts (5086 bytes)
+UPDATE libs/components/src/lib/cropper/cropper/cropper.component.ts (4927 bytes)
+UPDATE apps/dev-app/src/app/components-demo/cropper-demo/cropper-demo/cropper-demo.component.ts (4295 bytes)
+UPDATE libs/drag-drop/src/lib/drag-drop/directives/draggable.directive.ts (9001 bytes)
+UPDATE libs/drag-drop/src/lib/drag-drop/directives/sortable.directive.ts (7800 bytes)
+UPDATE libs/g2-charts/src/lib/bar/bar.component.ts (3483 bytes)
+UPDATE libs/g2-charts/src/lib/pie/pie.component.ts (5762 bytes)
+UPDATE libs/g2-charts/src/lib/radar/radar.component.ts (4235 bytes)
+UPDATE libs/g2-charts/src/lib/timeline/timeline.component.ts (4957 bytes)
+UPDATE libs/g2-charts/src/lib/water-wave/water-wave.component.ts (6492 bytes)
+UPDATE apps/demo/src/app/pro/account/center/center.component.ts (2201 bytes)
+  Migration completed.
+
+▸ Missing @Injectable and incomplete provider definition migration.
+  In Angular 9, enforcement of @Injectable decorators for DI is a bit stricter and incomplete provider definitions behave differently.
+  Read more about this here: https://v9.angular.io/guide/migration-injectable
+  Migration completed.
+
+▸ ModuleWithProviders migration.
+  In Angular 9, the ModuleWithProviders type without a generic has been deprecated.
+  This migration adds the generic where it is missing.
+  Read more about this here: https://v9.angular.io/guide/migration-module-with-providers
+
+UPDATE libs/common/src/lib/i18n/translate/translate.module.ts (2829 bytes)
+  Migration completed.
+
+▸ Renderer to Renderer2 migration.
+  As of Angular 9, the Renderer class is no longer available.
+  Renderer2 should be used instead.
+  Read more about this here: https://v9.angular.io/guide/migration-renderer
+  Migration completed.
+
+▸ Undecorated classes with decorated fields migration.
+  As of Angular 9, it is no longer supported to have Angular field decorators on a class that does not have an Angular decorator.
+  Read more about this here: https://v9.angular.io/guide/migration-undecorated-classes
+  Migration completed.
+
+▸ Undecorated classes with DI migration.
+  As of Angular 9, it is no longer supported to use Angular DI on a class that does not have an Angular decorator.
+  Read more about this here: https://v9.angular.io/guide/migration-undecorated-classes
+  Migration completed.
+
+
+Your project has been updated to Angular version 9!
+For more info, please see: https://v9.angular.io/guide/updating-to-version-9
+tony@DESKTOP-KM63L8L:ng-molain$
+tony@DESKTOP-KM63L8L:ng-molain$
+
+
+
+----

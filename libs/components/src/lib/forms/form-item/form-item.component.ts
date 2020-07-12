@@ -25,8 +25,8 @@ let nextUniqueId = 0;
 export class FormItemComponent implements OnChanges, AfterContentInit, AfterViewInit, OnDestroy {
   private el: HTMLElement;
   private status$: Subscription;
-  @ContentChild(NgModel, { static: false }) private readonly ngModel: NgModel;
-  @ContentChild(FormControlName, { static: false }) private readonly formControlName: FormControlName;
+  @ContentChild(NgModel) private readonly ngModel: NgModel;
+  @ContentChild(FormControlName) private readonly formControlName: FormControlName;
   @ViewChild('contentElement', { static: true }) private readonly contentElement: ElementRef;
   private clsMap: string[] = [];
   private inited = false;

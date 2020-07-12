@@ -32,7 +32,7 @@ export class CropperComponent implements OnInit, OnDestroy, AfterViewInit, OnCha
   @Input() showFeedback: boolean = true;
   @Input() loadImgErrorText: string = "图片加载失败，请检查网络或重新选择图片。";
 
-  @ViewChild("image", { static: false }) imageElementRef: ElementRef<HTMLImageElement>;
+  @ViewChild("image") imageElementRef: ElementRef<HTMLImageElement>;
 
   @Output() crop = new EventEmitter<CropperEvent>();
   @Output() cropEnd = new EventEmitter<CropperEvent>();

@@ -33,7 +33,7 @@ export class CenterComponent implements OnInit, OnDestroy {
 
   taging = false;
   tagValue = '';
-  @ViewChild('tagInput', { static: false })
+  @ViewChild('tagInput')
   private tagInput: ElementRef;
 
   private setActive() {

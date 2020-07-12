@@ -37,7 +37,7 @@ export interface G2PieData {
 })
 export class G2PieComponent implements OnInit, OnDestroy, OnChanges {
   private resize$: Subscription;
-  @ViewChild('container',{static: false}) private node: ElementRef;
+  @ViewChild('container') private node: ElementRef;
   private chart: any;
   private isPercent: boolean;
   private percentColor: any;

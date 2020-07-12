@@ -12,9 +12,9 @@ import { take } from 'rxjs/operators';
 export class EllipsisComponent implements AfterViewInit, OnChanges {
   // tslint:disable-next-line:no-string-literal
   private isSupportLineClamp = this.doc.body.style['webkitLineClamp'] !== undefined;
-  @ViewChild('orgEl', { static: false }) private orgEl: ElementRef;
-  @ViewChild('shadowOrgEl', { static: false }) private shadowOrgEl: ElementRef;
-  @ViewChild('shadowTextEl', { static: false }) private shadowTextEl: ElementRef;
+  @ViewChild('orgEl') private orgEl: ElementRef;
+  @ViewChild('shadowOrgEl') private shadowOrgEl: ElementRef;
+  @ViewChild('shadowTextEl') private shadowTextEl: ElementRef;
   private inited = false;
   orgHtml: SafeHtml;
   type = 'default';

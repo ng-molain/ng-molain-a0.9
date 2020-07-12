@@ -71,7 +71,7 @@ export class CropperDemoComponent implements OnInit {
     scaleY: undefined,
   };
 
-  @ViewChild("croppedResultContainer", {static: false})
+  @ViewChild("croppedResultContainer")
   croppedResultContainer: ElementRef<HTMLDivElement>;
   croppedCanvas: string;
   isModalVisible: boolean = false;

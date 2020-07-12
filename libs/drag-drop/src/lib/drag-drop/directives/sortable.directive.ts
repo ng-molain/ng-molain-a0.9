@@ -38,7 +38,7 @@ export class SortableDirective<S = any> implements AfterContentInit, OnDestroy {
 
   @ContentChildren(SortableItemDirective) items: QueryList<SortableItemDirective>;
   // @ContentChildren(SortableDirective) childSortables: QueryList<SortableDirective>;
-  @ContentChild(DragPlaceholderWrapperDirective, {static: false}) _placeholderWrapperTemplate: DragPlaceholderWrapperDirective;
+  @ContentChild(DragPlaceholderWrapperDirective) _placeholderWrapperTemplate: DragPlaceholderWrapperDirective;
 
   @Output('npSortActivate')
   activated = new EventEmitter<any>();
