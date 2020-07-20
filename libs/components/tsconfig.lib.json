@@ -6,11 +6,7 @@
     "declaration": true,
     "inlineSources": true,
     "types": [],
-    "lib": ["dom", "es2018"],
-    "baseUrl": ".",
-    "paths": {
-      "@ng-molain/common": ["../../dist/libs/common"],
-    }
+    "lib": ["dom", "es2018"]
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,

@@ -22,7 +22,7 @@
 <ng-template #formItemTpl let-field let-flex="flex">
   <nz-form-item [nzFlex]="!!flex" [formGroup]="field.formGroup">
     <nz-form-label [nzFor]="field.key" [nzRequired]="field.required" [nzSpan]="itemGrid?.label">{{field.label || field.key}}</nz-form-label>
-    <nz-form-control [nzSpan]="itemGrid?.control">
+    <nz-form-control [nzSpan]="itemGrid?.control" [nzErrorTip]="errorTipTpl">
       <div [ngSwitch]="field.controlType">
         <div *ngSwitchCase="'text'">
           <input nz-input [formControlName]="field.key" [placeholder]="field.placeholder || ''">
@@ -41,7 +41,9 @@
       <!-- <ng-container *ngIf="!!field.explain && hasError(field.key)">
         <nz-form-explain *ngFor="let err of getErrorArray(field.key)">{{field.explain.errors[err.key]}}</nz-form-explain>
       </ng-container> 这种写法会出现闪现，多次闪现效果的问题 -->
-      <nz-form-explain *ngIf="field.formGroup.get(field.key).hasError('required')">必填</nz-form-explain>
+      <ng-template #errorTipTpl let-control>
+        <span *ngIf="control.hasError('required')">必填</span>
+      </ng-template>
     </nz-form-control>
   </nz-form-item>
 </ng-template>
