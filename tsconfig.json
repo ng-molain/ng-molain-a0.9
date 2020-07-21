@@ -26,5 +26,8 @@
       "@ng-molain/demo/layout": ["apps/demo/src/app/layout/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "angularCompilerOptions": {
+    "enableIvy": false
+  }
 }
