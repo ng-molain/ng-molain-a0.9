@@ -38,9 +38,6 @@
         </div>
         <div *ngSwitchDefault>Empty Control</div>
       </div>
-      <!-- <ng-container *ngIf="!!field.explain && hasError(field.key)">
-        <nz-form-explain *ngFor="let err of getErrorArray(field.key)">{{field.explain.errors[err.key]}}</nz-form-explain>
-      </ng-container> 这种写法会出现闪现，多次闪现效果的问题 -->
       <ng-template #errorTipTpl let-control>
         <span *ngIf="control.hasError('required')">必填</span>
       </ng-template>

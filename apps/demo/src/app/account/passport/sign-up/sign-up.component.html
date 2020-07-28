@@ -36,10 +36,10 @@
                 <input nz-input formControlName="mail" placeholder="Email">
               </nz-input-group>
               <ng-container *ngIf="mail.dirty && mail.errors">
-                <nz-form-explain *ngIf="mail.errors?.required">{{ 'validation.email.required' }}
+                <!-- <nz-form-explain *ngIf="mail.errors?.required">{{ 'validation.email.required' }}
                 </nz-form-explain>
                 <nz-form-explain *ngIf="mail.errors?.email">{{ 'validation.email.wrong-format' }}
-                </nz-form-explain>
+                </nz-form-explain> -->
               </ng-container>
             </nz-form-control>
           </nz-form-item>
@@ -50,8 +50,8 @@
                 <nz-input-group nzSize="large" nz-popover nzAddonBeforeIcon="anticon anticon-lock">
                   <input nz-input type="password" formControlName="password" placeholder="Password">
                 </nz-input-group>
-                <nz-form-explain *ngIf="password.dirty && password.errors">
-                  {{ 'validation.password.required' }}</nz-form-explain>
+                <!-- <nz-form-explain *ngIf="password.dirty && password.errors">
+                  {{ 'validation.password.required' }}</nz-form-explain> -->
                 <ng-template #nzTemplate>
                   <div style="padding: 4px 0;">
                     <ng-container [ngSwitch]="status">
@@ -76,14 +76,14 @@
               <nz-input-group nzSize="large" nzAddonBeforeIcon="anticon anticon-lock">
                 <input nz-input type="password" formControlName="confirm" placeholder="Confirm Password">
               </nz-input-group>
-              <nz-form-explain *ngIf="confirm.dirty && confirm.errors">
+              <!-- <nz-form-explain *ngIf="confirm.dirty && confirm.errors">
                 <ng-container *ngIf="confirm.errors.required">
                   {{ 'validation.confirm-password.required' }}
                 </ng-container>
                 <ng-container *ngIf="confirm.errors.equar">
                   {{ 'validation.password.twice' }}
                 </ng-container>
-              </nz-form-explain>
+              </nz-form-explain> -->
             </nz-form-control>
           </nz-form-item>
           <nz-form-item>
@@ -97,14 +97,14 @@
                 </ng-template>
                 <input formControlName="mobile" nz-input placeholder="Phone number">
               </nz-input-group>
-              <nz-form-explain *ngIf="mobile.dirty && mobile.errors">
+              <!-- <nz-form-explain *ngIf="mobile.dirty && mobile.errors">
                 <ng-container *ngIf="mobile.errors.required">
                   {{ 'validation.phone-number.required' }}
                 </ng-container>
                 <ng-container *ngIf="mobile.errors.pattern">
                   {{ 'validation.phone-number.wrong-format' }}
                 </ng-container>
-              </nz-form-explain>
+              </nz-form-explain> -->
             </nz-form-control>
           </nz-form-item>
           <nz-form-item>
@@ -114,9 +114,9 @@
                   <nz-input-group nzSize="large" nzAddonBeforeIcon="anticon anticon-mail">
                     <input nz-input formControlName="captcha" placeholder="Captcha">
                   </nz-input-group>
-                  <nz-form-explain *ngIf="captcha.dirty && captcha.errors">
+                  <!-- <nz-form-explain *ngIf="captcha.dirty && captcha.errors">
                     {{ 'validation.verification-code.required' }}
-                  </nz-form-explain>
+                  </nz-form-explain> -->
                 </nz-col>
                 <nz-col [nzSpan]="8">
                   <button type="button" nz-button nzSize="large" (click)="getCaptcha()" [disabled]="count" nzBlock

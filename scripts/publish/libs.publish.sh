@@ -39,8 +39,15 @@ fixLibsVersion() {
 fixLibsVersion
 
 # 4. publish on npm.parim.net
-publishToParim() {
-    (cd ${ROOT}; for p in `ls .`; do npm publish $p --registry http://npm.parim.net; done)
+# publishToParim() {
+#     (cd ${ROOT}; for p in `ls .`; do npm publish $p --registry http://npm.parim.net; done)
+# }
+
+# publishToParim
+
+# 5. publish on npmjs
+publishToNpmjs() {
+    (cd ${ROOT}; for p in `ls .`; do npm publish $p --access public --registry https://registry.npmjs.org ; done)
 }
 
-publishToParim
+publishToNpmjs
