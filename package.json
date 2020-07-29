@@ -1,6 +1,6 @@
 {
   "name": "ng-molain",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "license": "MIT",
   "engines": {
     "node": ">=10.0.0"
