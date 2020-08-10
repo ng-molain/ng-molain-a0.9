@@ -164,16 +164,14 @@
             <span *ngIf="editIndex !== i">
               <a (click)="edit(i)">编辑</a>
               <nz-divider nzType="vertical"></nz-divider>
-              <nz-popconfirm (nzOnConfirm)="del(i)" [nzTitle]="'是否要删除此行？'">
-                <a nz-popconfirm>删除</a>
-              </nz-popconfirm>
+              <a nz-popconfirm (nzOnConfirm)="del(i)" [nzPopconfirmTitle]="'是否要删除此行？'">
+                删除</a>
             </span>
             <span *ngIf="editIndex === i">
               <a (click)="save(i)">保存</a>
               <nz-divider nzType="vertical"></nz-divider>
-              <nz-popconfirm (nzOnConfirm)="cancel(i)" [nzTitle]="'是否要取消操作？'">
-                <a nz-popconfirm>取消</a>
-              </nz-popconfirm>
+              <a nz-popconfirm (nzOnConfirm)="cancel(i)" [nzPopconfirmTitle]="'是否要取消操作？'">
+                取消</a>
             </span>
           </td>
         </tr>

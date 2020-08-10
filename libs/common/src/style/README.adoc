@@ -16,3 +16,9 @@
 == 关于 `ng-molain` 扩展的样式
 
 这些样式并不是笔者自己臆想出来的，而是从 `bootstrap` 局部迁移过来的。用来弥补 `antd` 样式集的缺陷，提高日常开发效率。
+
+=== 过时的 ng-molain 扩展样式
+
+笔者最近了解到 tailwindcss ，其 utility first 的思想和 这里 ng-molain 的初衷不谋而和，为了功能能得到长期维护，并且本着不重复造轮子的原则，我们将放弃 ng-molain 扩展样式的维护。
+并且在 1.0 版本时，将其和tailwindcss交叉重复的功能移除，某些自定义功能样式也将基于tailwindcss构建。
+
