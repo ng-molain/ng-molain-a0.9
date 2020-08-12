@@ -15,8 +15,11 @@
       "prefix": "dev",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./extra-webpack.config.js"
+            },
             "outputPath": "dist/apps/dev-app",
             "index": "apps/dev-app/src/index.html",
             "main": "apps/dev-app/src/main.ts",
@@ -69,7 +72,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "dev-app:build",
             "port": 4700

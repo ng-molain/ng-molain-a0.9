@@ -43,7 +43,7 @@
           <!-- <div>{{ row[col.field] }}</div> -->
           <ml-table-cell [row]="row" [col]="col"></ml-table-cell>
         </td>
-        <td *ngIf="rowActions" class="text-right text-nowrap" (click)="$event.stopPropagation()">
+        <td *ngIf="rowActions" class="text-right whitespace-no-wrap" (click)="$event.stopPropagation()">
           <div>
             <ng-container *ngTemplateOutlet="rowActions; context: {$implicit: row}"></ng-container>
           </div>

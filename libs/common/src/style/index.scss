@@ -1,1 +1,19 @@
 // @import './ng-molain/index.scss';
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.anticon svg {
+  vertical-align: text-top;
+}
+
+.d-flex {
+  @apply flex;
+}
+
+.d-none {
+  @apply hidden;
+}
