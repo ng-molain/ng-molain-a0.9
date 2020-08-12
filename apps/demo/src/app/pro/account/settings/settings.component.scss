@@ -1,4 +1,11 @@
-@import '../../../../../../../libs/common/src/style/theming.scss';
+// @import '../../../../../../../libs/common/src/style/theming.scss';
+
+$body-background: #ffffff;
+$border-width-base: 1px;
+$border-style-base: solid;
+$border-color-split: #e8e8e8;
+
+$heading-color: blue;
 
 :host {
   display: block;
@@ -51,15 +58,15 @@
   }
 }
 
-@media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
-  .main {
-    flex-direction: column;
-    .menu {
-      width: 100%;
-      border: none;
-    }
-    .content {
-      padding: 40px;
-    }
-  }
-}
+// @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
+//   .main {
+//     flex-direction: column;
+//     .menu {
+//       width: 100%;
+//       border: none;
+//     }
+//     .content {
+//       padding: 40px;
+//     }
+//   }
+// }

@@ -1,249 +1,254 @@
-@import '../../../../../../libs//common/src/style/theming';
+// // @import '../../../../../../libs//common/src/style/theming';
 
-$font-size-base: 14px;
-$disabled-color: $gray-500;
-$text-color: $body-color;
-$heading-color: $dark;
-$border-color-split: $gray-500;
-$text-color-secondary: $secondary;
+// $gray-500: #999999;
+// $body-color: #ffffff;
+// $dark: #222222;
+// $secondary: $gray-500;
 
-:host ::ng-deep {
-  .content {
-    display: flex;
-    .avatar {
-      flex: 0 1 72px;
-      margin-bottom: 8px;
-      .ant-avatar {
-        display: block;
-        width: 72px;
-        height: 72px;
-        border-radius: 72px;
-      }
-    }
-    .desc {
-      position: relative;
-      top: 4px;
-      flex: 1 1 auto;
-      margin-left: 24px;
-      color: $text-color-secondary;
-      line-height: 22px;
-      .desc-title {
-        margin-bottom: 12px;
-        color: $heading-color;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 28px;
-      }
-    }
-  }
-  .page-extra {
-    @include clearfix();
+// $font-size-base: 14px;
+// $disabled-color: $gray-500;
+// $text-color: $body-color;
+// $heading-color: $dark;
+// $border-color-split: $gray-500;
+// $text-color-secondary: $secondary;
 
-    float: right;
-    white-space: nowrap;
-    & > div {
-      position: relative;
-      display: inline-block;
-      padding: 0 32px;
-      & > p:first-child {
-        margin-bottom: 4px;
-        color: $text-color-secondary;
-        font-size: $font-size-base;
-        line-height: 22px;
-      }
-      & > p {
-        margin: 0;
-        color: $heading-color;
-        font-size: 30px;
-        line-height: 38px;
-        & > span {
-          color: $text-color-secondary;
-          font-size: 20px;
-        }
-      }
-      &::after {
-        position: absolute;
-        top: 8px;
-        right: 0;
-        width: 1px;
-        height: 40px;
-        background-color: $border-color-split;
-        content: '';
-      }
-    }
-    & > div:last-child {
-      padding-right: 0;
-      &::after {
-        display: none;
-      }
-    }
-  }
-  .project-list {
-    .ant-card-meta-description {
-      height: 44px;
-      overflow: hidden;
-      color: $secondary;
-      line-height: 22px;
-    }
-    .card-title {
-      font-size: 0;
-      a {
-        display: inline-block;
-        height: 24px;
-        margin-left: 12px;
-        color: $heading-color;
-        font-size: $font-size-base;
-        line-height: 24px;
-        vertical-align: top;
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
-    .project-grid {
-      width: 33.33%;
-    }
-    .project-item {
-      display: flex;
-      height: 20px;
-      margin-top: 8px;
-      overflow: hidden;
-      font-size: 12px;
-      line-height: 20px;
-    //   .textOverflow();
-      a {
-        display: inline-block;
-        flex: 1 1 0;
-        color: $secondary;
-        // .textOverflow();
-        &:hover {
-          color: $primary;
-        }
-      }
-      .datetime {
-        flex: 0 0 auto;
-        float: right;
-        color: $disabled-color;
-      }
-    }
-  }
-  .activities {
-    padding: 0 24px 8px;
-    .username {
-      color: $text-color;
-    }
-    .event {
-      font-weight: normal;
-    }
-  }
-  .members {
-    a {
-      display: block;
-      height: 24px;
-      margin: 12px 0;
-      line-height: 24px;
-    //   .textOverflow();
-      .member {
-        display: inline-block;
-        max-width: 100px;
-        margin-left: 12px;
-        color: $body-color;
-        font-size: $font-size-base;
-        line-height: 24px;
-        vertical-align: top;
-        transition: all 0.3s;
-        // .textOverflow();
-      }
-      &:hover {
-        span {
-          color: $primary;
-        }
-      }
-    }
-  }
-  .datetime {
-    color: $disabled-color;
-  }
-  .links {
-    padding: 20px 0 8px 24px;
-    font-size: 0;
-    > a {
-      display: inline-block;
-      width: 25%;
-      margin-bottom: 13px;
-      color: $body-color;
-      font-size: $font-size-base;
-      &:hover {
-        color: $primary;
-      }
-    }
-  }
+// :host ::ng-deep {
+//   .content {
+//     display: flex;
+//     .avatar {
+//       flex: 0 1 72px;
+//       margin-bottom: 8px;
+//       .ant-avatar {
+//         display: block;
+//         width: 72px;
+//         height: 72px;
+//         border-radius: 72px;
+//       }
+//     }
+//     .desc {
+//       position: relative;
+//       top: 4px;
+//       flex: 1 1 auto;
+//       margin-left: 24px;
+//       color: $text-color-secondary;
+//       line-height: 22px;
+//       .desc-title {
+//         margin-bottom: 12px;
+//         color: $heading-color;
+//         font-weight: 500;
+//         font-size: 20px;
+//         line-height: 28px;
+//       }
+//     }
+//   }
+//   .page-extra {
+//     @include clearfix();
 
-  @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'xl')) and (min-width: map-get($map: $grid-breakpoints, $key: 'lg')) {
-    .active-card {
-      margin-bottom: 24px;
-    }
-    .members {
-      margin-bottom: 0;
-    }
-    .page-extra {
-      margin-left: -44px;
-      & > div {
-        padding: 0 16px;
-      }
-    }
-  }
+//     float: right;
+//     white-space: nowrap;
+//     & > div {
+//       position: relative;
+//       display: inline-block;
+//       padding: 0 32px;
+//       & > p:first-child {
+//         margin-bottom: 4px;
+//         color: $text-color-secondary;
+//         font-size: $font-size-base;
+//         line-height: 22px;
+//       }
+//       & > p {
+//         margin: 0;
+//         color: $heading-color;
+//         font-size: 30px;
+//         line-height: 38px;
+//         & > span {
+//           color: $text-color-secondary;
+//           font-size: 20px;
+//         }
+//       }
+//       &::after {
+//         position: absolute;
+//         top: 8px;
+//         right: 0;
+//         width: 1px;
+//         height: 40px;
+//         background-color: $border-color-split;
+//         content: '';
+//       }
+//     }
+//     & > div:last-child {
+//       padding-right: 0;
+//       &::after {
+//         display: none;
+//       }
+//     }
+//   }
+//   .project-list {
+//     .ant-card-meta-description {
+//       height: 44px;
+//       overflow: hidden;
+//       color: $secondary;
+//       line-height: 22px;
+//     }
+//     .card-title {
+//       font-size: 0;
+//       a {
+//         display: inline-block;
+//         height: 24px;
+//         margin-left: 12px;
+//         color: $heading-color;
+//         font-size: $font-size-base;
+//         line-height: 24px;
+//         vertical-align: top;
+//         &:hover {
+//           color: $primary;
+//         }
+//       }
+//     }
+//     .project-grid {
+//       width: 33.33%;
+//     }
+//     .project-item {
+//       display: flex;
+//       height: 20px;
+//       margin-top: 8px;
+//       overflow: hidden;
+//       font-size: 12px;
+//       line-height: 20px;
+//     //   .textOverflow();
+//       a {
+//         display: inline-block;
+//         flex: 1 1 0;
+//         color: $secondary;
+//         // .textOverflow();
+//         &:hover {
+//           color: $primary;
+//         }
+//       }
+//       .datetime {
+//         flex: 0 0 auto;
+//         float: right;
+//         color: $disabled-color;
+//       }
+//     }
+//   }
+//   .activities {
+//     padding: 0 24px 8px;
+//     .username {
+//       color: $text-color;
+//     }
+//     .event {
+//       font-weight: normal;
+//     }
+//   }
+//   .members {
+//     a {
+//       display: block;
+//       height: 24px;
+//       margin: 12px 0;
+//       line-height: 24px;
+//     //   .textOverflow();
+//       .member {
+//         display: inline-block;
+//         max-width: 100px;
+//         margin-left: 12px;
+//         color: $body-color;
+//         font-size: $font-size-base;
+//         line-height: 24px;
+//         vertical-align: top;
+//         transition: all 0.3s;
+//         // .textOverflow();
+//       }
+//       &:hover {
+//         span {
+//           color: $primary;
+//         }
+//       }
+//     }
+//   }
+//   .datetime {
+//     color: $disabled-color;
+//   }
+//   .links {
+//     padding: 20px 0 8px 24px;
+//     font-size: 0;
+//     > a {
+//       display: inline-block;
+//       width: 25%;
+//       margin-bottom: 13px;
+//       color: $body-color;
+//       font-size: $font-size-base;
+//       &:hover {
+//         color: $primary;
+//       }
+//     }
+//   }
 
-  @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'lg')) {
-    .active-card {
-      margin-bottom: 24px;
-    }
-    .members {
-      margin-bottom: 0;
-    }
-    .page-extra {
-      float: none;
-      margin-right: 0;
-      & > div {
-        padding: 0 16px;
-        text-align: left;
-        &::after {
-          display: none;
-        }
-      }
-    }
-  }
+//   @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'xl')) and (min-width: map-get($map: $grid-breakpoints, $key: 'lg')) {
+//     .active-card {
+//       margin-bottom: 24px;
+//     }
+//     .members {
+//       margin-bottom: 0;
+//     }
+//     .page-extra {
+//       margin-left: -44px;
+//       & > div {
+//         padding: 0 16px;
+//       }
+//     }
+//   }
 
-  @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
-    .page-extra {
-      margin-left: -16px;
-    }
-    .project-list {
-      .project-grid {
-        width: 50%;
-      }
-    }
-  }
+//   @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'lg')) {
+//     .active-card {
+//       margin-bottom: 24px;
+//     }
+//     .members {
+//       margin-bottom: 0;
+//     }
+//     .page-extra {
+//       float: none;
+//       margin-right: 0;
+//       & > div {
+//         padding: 0 16px;
+//         text-align: left;
+//         &::after {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
 
-  @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'sm')) {
-    .content {
-      display: block;
-      .desc {
-        margin-left: 0;
-      }
-    }
-    .page-extra {
-      & > div {
-        float: none;
-      }
-    }
-  }
+//   @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'md')) {
+//     .page-extra {
+//       margin-left: -16px;
+//     }
+//     .project-list {
+//       .project-grid {
+//         width: 50%;
+//       }
+//     }
+//   }
 
-  @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'xs')) {
-    .project-list {
-      .project-grid {
-        width: 100%;
-      }
-    }
-  }
-}
+//   @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'sm')) {
+//     .content {
+//       display: block;
+//       .desc {
+//         margin-left: 0;
+//       }
+//     }
+//     .page-extra {
+//       & > div {
+//         float: none;
+//       }
+//     }
+//   }
+
+//   @media screen and (max-width: map-get($map: $grid-breakpoints, $key: 'xs')) {
+//     .project-list {
+//       .project-grid {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }

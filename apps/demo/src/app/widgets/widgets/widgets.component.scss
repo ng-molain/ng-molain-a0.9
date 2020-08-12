@@ -1,4 +1,6 @@
-@import '../../../../../../libs/common/src/style/theming.scss';
+// @import '../../../../../../libs/common/src/style/theming.scss';
+$gray-100: rgba(0, 0, 0, 0.1);
+$primary: blue;
 
 :host ::ng-deep {
   .ant-carousel {
