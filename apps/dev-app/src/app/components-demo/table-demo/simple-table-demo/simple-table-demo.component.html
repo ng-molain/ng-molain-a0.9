@@ -89,7 +89,7 @@
     </form>
 </div>
 
-<ml-simple-table [columns]="columns" [data]="dataList" [rowActions]="rowActionsTpl" [multipleSelection]="true">
+<ml-simple-table [columns]="columns" [data]="dataList" [rowActions]="rowActionsTpl" [multipleSelection]="true" showPagination="true" frontPagination="true">
     <ng-template #rowActionsTpl>
         <a href="">Edit</a>
         <nz-divider nzType="vertical"></nz-divider>

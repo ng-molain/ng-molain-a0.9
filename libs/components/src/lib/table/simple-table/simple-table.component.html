@@ -52,15 +52,14 @@
     </tbody>
   </table>
 
-  <div class="ml-table-after d-flex">
+  <div class="ml-table-empty py-4 bg-white border border-t-0" *ngIf="!hasData && !loading">
+    <nz-empty></nz-empty>
+  </div>
+
+  <div class="ml-table-after d-flex" *ngIf="showPagination && pagination && hasData">
     <div class="ml-table-pagination ml-auto">
       <ml-pagination [pagination]="pagination"></ml-pagination>
     </div>
-  </div>
-
-  <div class="ml-table-empty" *ngIf="!hasData && !loading">
-    <!-- <div class="ml-table-empty-placeholder py-4 my-4 text-center"></div> -->
-    <nz-empty></nz-empty>
   </div>
 
   <div class="ml-table-loading" *ngIf="loading">

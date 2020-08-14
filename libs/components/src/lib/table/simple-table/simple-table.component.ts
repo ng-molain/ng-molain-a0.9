@@ -2,6 +2,7 @@ import { Component, OnInit, Input, TemplateRef, EventEmitter, Output } from '@an
 import * as _ from 'lodash';
 import { Pagination, PageImpl } from '../../pagination/index';
 import { TableSelectionModel } from './selection-model';
+import { InputBoolean } from 'ng-zorro-antd';
 
 @Component({
   selector: 'ml-simple-table',
@@ -10,16 +11,19 @@ import { TableSelectionModel } from './selection-model';
 })
 export class SimpleTableComponent implements OnInit {
 
-  oneIndexedParameter = false;
+  // TODO: set as config and with global config
+  @Input() @InputBoolean() oneIndexedParameter = false;
 
-  @Input() showSerial: boolean = false;
-  @Input() showSelect: boolean = false;
-  @Input() loading: boolean = false;
+  @Input() @InputBoolean() showSerial: boolean = false;
+  @Input() @InputBoolean() showSelect: boolean = false;
+  @Input() @InputBoolean() loading: boolean = false;
+  @Input() @InputBoolean() frontPagination: boolean = false;
+  @Input() @InputBoolean() showPagination: boolean = true;
 
-  @Input() clickRowToSelect: boolean = true;
-  @Input() multipleSelection: boolean = true;
-  @Input() selectable: boolean = true;
-  @Input() highlightSelected: boolean = true;
+  @Input() @InputBoolean() clickRowToSelect: boolean = true;
+  @Input() @InputBoolean() multipleSelection: boolean = true;
+  @Input() @InputBoolean() selectable: boolean = true;
+  @Input() @InputBoolean() highlightSelected: boolean = true;
 
   @Input() rowActions: TemplateRef<any>;
   @Input() rowActionTitle: string;
@@ -31,18 +35,19 @@ export class SimpleTableComponent implements OnInit {
 
   @Input() set data(data: any[]) {
     this._data = data;
-    this.pagination = new PageImpl(data, data.length);
+    if (this.frontPagination) {
+      this.pagination = new PageImpl(data, data.length);
+    }
   }
   get data() { return this._data; }
   private _data: any[] = [];
 
   get visibleData() {
-    // console.log('Visible Data')
-    return this.pagination.content;
+    return (this.pagination ? this.pagination.content : this.data) || [];
   }
 
   get serialIndexStart(): number {
-    const {number, size} = this.pagination;
+    const {number, size} = this.pagination || {number: this.oneIndexedParameter ? 1 : 0, size: 1};
     return (this.oneIndexedParameter ? number - 1 : number) * size + 1;
   }
 
