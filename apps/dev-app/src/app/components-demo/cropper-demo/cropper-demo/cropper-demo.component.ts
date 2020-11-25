@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CropperOptions, CropperEvent, CropperRef, CropperData } from '@ng-molain/components';
 import * as _ from 'lodash';
-import { UploadFile } from 'ng-zorro-antd';
+import { NzUploadFile } from 'ng-zorro-antd';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -116,7 +116,7 @@ export class CropperDemoComponent implements OnInit {
     this.cropperRef.setOptions(opt);
   }
 
-  beforeUpload = (file: UploadFile): boolean => {
+  beforeUpload = (file: NzUploadFile): boolean => {
     console.log(file);
     this.setUpFile(file);
 
